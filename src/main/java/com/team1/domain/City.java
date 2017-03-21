@@ -21,23 +21,18 @@ public class City {
 	public void setCountry(Country country) {
 		this.country = country;
 	}
-
-	public City() {
-		// TODO Auto-generated constructor stub
-	}
 	
 	@Override
-	public String toString() {
-		String str= null;
-		
-		ObjectMapper mapper = new ObjectMapper();
+	public String toString()
+	{
 		try {
-			str = mapper.writeValueAsString(this);
+			ObjectMapper mapper = new ObjectMapper();
+			return mapper.writeValueAsString(this);
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
 
-		return str;
+		return null;
 	}
 
 	public int getId() {

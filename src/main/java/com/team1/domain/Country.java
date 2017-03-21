@@ -23,15 +23,15 @@ public class Country {
 	private String headOfState;
 	private BigDecimal capital;
 	private String code2;
-	private List<City> citys;
+	private List<City> cities;
 	
 
-	public List<City> getCitys() {
-		return citys;
+	public List<City> getCities() {
+		return cities;
 	}
 
-	public void setCitys(List<City> citys) {
-		this.citys = citys;
+	public void setCities(List<City> cities) {
+		this.cities = cities;
 	}
 
 	public Country() {
