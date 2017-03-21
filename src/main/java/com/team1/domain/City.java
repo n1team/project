@@ -1,11 +1,8 @@
 package com.team1.domain;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.math.BigDecimal;
 
-public class City {
+public class City extends ToString {
 
 	private int id;
 	private String name;
@@ -20,19 +17,6 @@ public class City {
 
 	public void setCountry(Country country) {
 		this.country = country;
-	}
-	
-	@Override
-	public String toString()
-	{
-		try {
-			ObjectMapper mapper = new ObjectMapper();
-			return mapper.writeValueAsString(this);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-
-		return null;
 	}
 
 	public int getId() {

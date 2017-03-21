@@ -1,11 +1,8 @@
 package com.team1.domain;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.util.List;
 
-public class Dept {
+public class Dept extends ToString {
 
 	private int deptno;
 	private String dname;
@@ -19,24 +16,6 @@ public class Dept {
 
 	public void setEmps(List<Emp> emps) {
 		this.emps = emps;
-	}
-
-	public Dept() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	@Override
-	public String toString() {
-		String str= null;
-		
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			str = mapper.writeValueAsString(this);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-
-		return str;
 	}
 
 	public int getDeptno() {

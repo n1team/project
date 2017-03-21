@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class Country {
+public class Country extends ToString {
 
 	private String code;
 	private String name;
@@ -32,24 +32,6 @@ public class Country {
 
 	public void setCities(List<City> cities) {
 		this.cities = cities;
-	}
-
-	public Country() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	@Override
-	public String toString() {
-		String str= null;
-		
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			str = mapper.writeValueAsString(this);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-
-		return str;
 	}
 	
 	public String getCode() {
