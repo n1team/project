@@ -14,7 +14,7 @@ public abstract class ToString {
 		} catch (JsonProcessingException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return super.toString();
 	}
 
 }
