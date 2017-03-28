@@ -27,121 +27,74 @@
 <style>
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); 
     body {
-	background-image: url("../../../img/M1449567698.jpg");
-	background-size: 150%;
+	background-image: url("../../../img/y_dot.png");
+/* 	background-size: 150%; */
     }
     
     h1 {
-         color : floralwhite;
+         color : gray;
          font-family: 'Space Mono';
-         text-shadow: 4px 2px 0px lightskyblue;
+         text-align: center;
+         margin-top:70px;
     }
-    .bg, .table{
-        background-color: rgba(255,255,255,0.7);
+    .bg{
+        background-color: rgba(255,255,255,0.2);
         padding : 20px;
         margin: 20px;
         text-align: center;
         width : 100%;
         color : DarkSlateGrey;
     }
-    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-        background-color: rgba(30,144,255,0.3)
+    .table {
+    	background-color: white;
+    	padding : 20px;
+        margin: 20px;
+        text-align: center;
+        width : 100%;
+        color : DarkSlateGrey;
     }
-    #all, #skin, #base, #eye, #lip {
-        margin : 10px;
-        font-family: 'Space Mono';
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+        background-color: rgba(255,165,05,0.3)
     }
     .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
         background-color: rgba(255,255,255,0.7);
         border-radius: 0;
         font-family: 'Jeju Gothic';
+        color : orange;
     }
-    .btst {
-        background-color: rgba(72,209,204,0.5);
-        border: 1px solid grey;
+    
+    .btn-default>a {
+    	color : #FF8C00;
+    	text-decoration: none;
     }
-    .btst2 {
-        background-color: rgba(255,99,71,0.5);
-        border: 1px solid grey;
+    
+    .pagination {
+    	display : block;
+    	text-align: center;
+    	margin-top : 100px;
     }
-    .modal-header {
-        font-family: 'Jeju Gothic';
-        padding : 20px;
+    
+    .pagination > li > a {
+    	float : none;
+     	margin-left:  -5px;
     }
-    .btn2 {
-        background-color: LightSkyBlue;
-        font-family: 'Jeju Gothic';
-    }
-    .btn3 {
-        background-color: #20B2AA;
-        font-family: 'Jeju Gothic';
-        color : white;
-    }
-    .btn4 {
-        background-color: #FF6347;
-        font-family: 'Jeju Gothic';
-        color : white;
-    }
-	.pagination {
-    height: 36px;
-    margin: 18px 0;
-    color: #6c58bF;
-}
-
-.pagination ul {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    margin-left: 0;
-    color: #ffffff;
-    margin-bottom: 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.pagination li {
-    display: inline;
-    color: #6c58bF;
-}
-
-.pagination a {
-    float: left;
-    padding: 0 14px;
-    line-height: 34px;
-    color: #6c58bF;
-    text-decoration: none;
-    border: 1px solid #ddd;
-    border-left-width: 0;
-}
-
-.pagination a:hover,
-.pagination .active a {
-    background-color: #6c58bF;
-    color: #ffffff;
-}
-
-.pagination a:focus {
-    background-color: #6c58bF;
-    color: #ffffff;
-}   
 </style>
 
 <body class="container">
 
-<header><h1>cosmatic Page pageno=${page.paging.pageNo}</h1></header>
+<header>
+<%-- <h1>cosmatic Page pageno=${page.paging.pageNo}</h1> --%>
+<h1>Welcome Cosmatic</h1>
+</header>
 
 <section class="row">    
 <fieldset class="bg">
-	<button class="all btn btn-default"><a href="/cosmatic/register?pageNo=${page.paging.pageNo}">제품추가하기</a></button>
-	<button class="lip btn btn-default"><a href="/cosmatic/category/SKINCARE">스킨케어 조회하기</a></button>
-	<button class="skin btn btn-default"><a href="/cosmatic/category/BASE">베이스 조회하기</a></button>
-	<button class="base btn btn-default"><a href="/cosmatic/category/EYE">아이제품 조회하기</a></button>
-	<button class="base btn btn-default"><a href="/cosmatic/category/LIP">립제품 조회하기</a></button>
+	<button class="btn btn-default"><a href="/cosmatic/category/SKINCARE?pageNo=${page.paging.pageNo}">스킨케어 조회하기</a></button>
+	<button class="btn btn-default"><a href="/cosmatic/category/BASE?pageNo=${page.paging.pageNo}">베이스 조회하기</a></button>
+	<button class="btn btn-default"><a href="/cosmatic/category/EYE?pageNo=${page.paging.pageNo}">아이제품 조회하기</a></button>
+	<button class="btn btn-default"><a href="/cosmatic/category/LIP?pageNo=${page.paging.pageNo}">립제품 조회하기</a></button>
    </fieldset>
+	<button class="btn btn-default"><a href="/cosmatic/register?pageNo=${page.paging.pageNo}">제품추가하기</a></button>
 </section>
     
  
@@ -158,16 +111,16 @@
             <tr>
 				<td>${cosmatic.productno}</td>
 				<td><a href="/cosmatic/item/${cosmatic.productno}?pageNo=${page.paging.pageNo}">${cosmatic.productname}</a></td>
-				<td><a href="/cosmatic/modify/${cosmatic.productno}?pageNo=${page.paging.pageNo}">수정</td>
-				<td><a href="/cosmatic/unregister/${cosmatic.productno}?pageNo=${page.paging.pageNo}">삭제</a></td>
+				<td><a class="deco-none" href="/cosmatic/modify/${cosmatic.productno}?pageNo=${page.paging.pageNo}">수정</td>
+				<td><a class="deco-none" href="/cosmatic/unregister/${cosmatic.productno}?pageNo=${page.paging.pageNo}">삭제</a></td>
 			</tr>
 			</c:forEach>
             </tbody>
         </table>
     </article>
 
-<div>
-	<ul class="pagination ">
+<p style="text-align: center;">
+	<ul  class="pagination">
 		<li ><a href="/cosmatic/page/1" >First</a></li>
 		<li><a href="/cosmatic/page/${page.paging.firstPage -1 }">Prev</a></li>
 		<c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage}">
@@ -176,7 +129,8 @@
 		<li><a href="/cosmatic/page/${page.paging.lastPage +1 }">Next</a></li>
 		<li><a href="/cosmatic/page/${page.paging.totalPage}">Last</a></li>
 	</ul>
-</div>
+</p>
+
 
 </body>
 </html>
