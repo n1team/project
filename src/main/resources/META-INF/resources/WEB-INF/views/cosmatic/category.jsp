@@ -24,7 +24,63 @@
 </c:if>
 
 </head>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); 
+    body {
+	background-image: url("../../../img/y_dot.png");
+/* 	background-size: 150%; */
+    }
+    
+    h1 {
+         color : gray;
+         font-family: 'Space Mono';
+         text-align: center;
+         margin-top:70px;
+    }
+    .bg{
+        background-color: rgba(255,255,255,0.2);
+        padding : 20px;
+        margin: 20px;
+        text-align: center;
+        width : 100%;
+        color : DarkSlateGrey;
+    }
+    .table {
+    	background-color: white;
+    	padding : 20px;
+        margin: 20px;
+        text-align: center;
+        width : 100%;
+        color : DarkSlateGrey;
+    }
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+        background-color: rgba(255,165,05,0.3)
+    }
+    .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 0;
+        font-family: 'Jeju Gothic';
+        color : orange;
+    }
+    
+    .btn-default>a {
+    	color : #FF8C00;
+    	text-decoration: none;
+    }
+    
+    .pagination {
+    	display : block;
+    	text-align: center;
+    	margin-top : 100px;
+    }
+    
+    .pagination > li > a {
+    	float : none;
+     	margin-left:  -5px;
+    }
+</style>
 <body>
+<a href="/cosmatic/page/${param.pageNo}">뒤로가기</a>
 <h1 style="text-align: center;">Category List</h1>
 
 <div class="container">

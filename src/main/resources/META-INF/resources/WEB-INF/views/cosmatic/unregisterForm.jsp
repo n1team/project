@@ -25,6 +25,43 @@
 </c:if>
 
 </head>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); 
+    body {
+	background-image: url("../../../img/y_dot.png");
+/* 	background-size: 150%; */
+    }
+    
+    h1 {
+         color : gray;
+         font-family: 'Space Mono';
+         text-align: center;
+         margin-top:70px;
+    }
+    .bg{
+        background-color: rgba(255,255,255,0.2);
+        padding : 20px;
+        margin: 20px;
+        text-align: center;
+        width : 100%;
+        color : DarkSlateGrey;
+    }
+    .table {
+    	background-color: white;
+    	padding : 20px;
+        margin: 20px;
+        text-align: center;
+        width : 100%;
+        color : DarkSlateGrey;
+    }
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+        background-color: rgba(255,165,05,0.3)
+    }
+    
+     form{ 
+     	text-align: left; 
+    } 
+</style>
 <body>
 <h1>Cosmatic Delete</h1>
 ${cosmatic }
