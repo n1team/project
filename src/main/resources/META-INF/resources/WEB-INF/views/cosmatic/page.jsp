@@ -24,54 +24,149 @@
 </c:if>
 
 </head>
-<body>
-<h1 style="text-align: center;">cosmatic Page pageno=${page.paging.pageNo}</h1>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); 
+    body {
+	background-image: url("../../../img/M1449567698.jpg");
+	background-size: 150%;
+    }
+    
+    h1 {
+         color : floralwhite;
+         font-family: 'Space Mono';
+         text-shadow: 4px 2px 0px lightskyblue;
+    }
+    .bg, .table{
+        background-color: rgba(255,255,255,0.7);
+        padding : 20px;
+        margin: 20px;
+        text-align: center;
+        width : 100%;
+        color : DarkSlateGrey;
+    }
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+        background-color: rgba(30,144,255,0.3)
+    }
+    #all, #skin, #base, #eye, #lip {
+        margin : 10px;
+        font-family: 'Space Mono';
+    }
+    .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 0;
+        font-family: 'Jeju Gothic';
+    }
+    .btst {
+        background-color: rgba(72,209,204,0.5);
+        border: 1px solid grey;
+    }
+    .btst2 {
+        background-color: rgba(255,99,71,0.5);
+        border: 1px solid grey;
+    }
+    .modal-header {
+        font-family: 'Jeju Gothic';
+        padding : 20px;
+    }
+    .btn2 {
+        background-color: LightSkyBlue;
+        font-family: 'Jeju Gothic';
+    }
+    .btn3 {
+        background-color: #20B2AA;
+        font-family: 'Jeju Gothic';
+        color : white;
+    }
+    .btn4 {
+        background-color: #FF6347;
+        font-family: 'Jeju Gothic';
+        color : white;
+    }
+	.pagination {
+    height: 36px;
+    margin: 18px 0;
+    color: #6c58bF;
+}
 
-<!-- <a href="/cosmatic/register">제품추가하기</a><br> -->
-<!-- <a href="/cosmatic/category/SKINCARE">스킨케어 조회하기</a><br> -->
-<!-- <a href="/cosmatic/category/BASE">베이스 조회하기</a><br> -->
-<!-- <a href="/cosmatic/category/EYE">아이제품 조회하기</a><br> -->
-<!-- <a href="/cosmatic/category/LIP">립제품 조회하기</a><br> -->
+.pagination ul {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-left: 0;
+    color: #ffffff;
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
 
-<%-- 	<c:forEach var="cosmatic" items="${page.cosmatics}"> --%>
-<%-- 		<li>${cosmatic.productno}, --%>
-<%-- 		<a href="/cosmatic/item/${cosmatic.productno}?pageNo=${page.paging.pageNo}">${cosmatic.productname}</a> --%>
-<%-- 		<a href="/cosmatic/modify/${cosmatic.productno}?pageNo=${page.paging.pageNo}">수정</a> --%>
-<%-- 		<a href="/cosmatic/unregister/${cosmatic.productno}?pageNo=${page.paging.pageNo}">삭제</a> --%>
-<!-- 		</li> -->
-<%-- 	</c:forEach> --%>
+.pagination li {
+    display: inline;
+    color: #6c58bF;
+}
 
-<p style="text-align: center;">
-	<button><a href="/cosmatic/register?pageNo=${page.paging.pageNo}">제품추가하기</a></button>
-	<button><a href="/cosmatic/category/SKINCARE">스킨케어 조회하기</a></button>
-	<button><a href="/cosmatic/category/BASE">베이스 조회하기</a></button>
-	<button><a href="/cosmatic/category/EYE">아이제품 조회하기</a></button>
-	<button><a href="/cosmatic/category/LIP">립제품 조회하기</a></button>
-</p>
+.pagination a {
+    float: left;
+    padding: 0 14px;
+    line-height: 34px;
+    color: #6c58bF;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-left-width: 0;
+}
 
+.pagination a:hover,
+.pagination .active a {
+    background-color: #6c58bF;
+    color: #ffffff;
+}
 
-<div class="container">
-<table class="table table-hover">
-	<tr>
-		<td>Product - Number</td>
-		<td>Product - Name</td>
-		<td>Product Modify</td>
-		<td>Product Delete</td>
-	</tr>
-	
-	<c:forEach var="cosmatic" items="${page.cosmatics}">
-	<tr>
-		<td>${cosmatic.productno}</td>
-		<td><a href="/cosmatic/item/${cosmatic.productno}?pageNo=${page.paging.pageNo}">${cosmatic.productname}</a></td>
-		<td><a href="/cosmatic/modify/${cosmatic.productno}?pageNo=${page.paging.pageNo}">수정</td>
-		<td><a href="/cosmatic/unregister/${cosmatic.productno}?pageNo=${page.paging.pageNo}">삭제</a></td>
-	</tr>
-	</c:forEach>
-</table>
-</div>
+.pagination a:focus {
+    background-color: #6c58bF;
+    color: #ffffff;
+}   
+</style>
 
+<body class="container">
 
-<div class="container">
+<header><h1>cosmatic Page pageno=${page.paging.pageNo}</h1></header>
+
+<section class="row">    
+<fieldset class="bg">
+	<button class="all btn btn-default"><a href="/cosmatic/register?pageNo=${page.paging.pageNo}">제품추가하기</a></button>
+	<button class="lip btn btn-default"><a href="/cosmatic/category/SKINCARE">스킨케어 조회하기</a></button>
+	<button class="skin btn btn-default"><a href="/cosmatic/category/BASE">베이스 조회하기</a></button>
+	<button class="base btn btn-default"><a href="/cosmatic/category/EYE">아이제품 조회하기</a></button>
+	<button class="base btn btn-default"><a href="/cosmatic/category/LIP">립제품 조회하기</a></button>
+   </fieldset>
+</section>
+    
+ 
+    <article>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>제품번호</th><th>제품명</th><th>항목수정</th><th>항목삭제</th>
+                </tr>
+            </thead>
+            
+            <tbody id="listview">
+            <c:forEach var="cosmatic" items="${page.cosmatics}">
+            <tr>
+				<td>${cosmatic.productno}</td>
+				<td><a href="/cosmatic/item/${cosmatic.productno}?pageNo=${page.paging.pageNo}">${cosmatic.productname}</a></td>
+				<td><a href="/cosmatic/modify/${cosmatic.productno}?pageNo=${page.paging.pageNo}">수정</td>
+				<td><a href="/cosmatic/unregister/${cosmatic.productno}?pageNo=${page.paging.pageNo}">삭제</a></td>
+			</tr>
+			</c:forEach>
+            </tbody>
+        </table>
+    </article>
+
+<div>
 	<ul class="pagination ">
 		<li ><a href="/cosmatic/page/1" >First</a></li>
 		<li><a href="/cosmatic/page/${page.paging.firstPage -1 }">Prev</a></li>
@@ -82,5 +177,6 @@
 		<li><a href="/cosmatic/page/${page.paging.totalPage}">Last</a></li>
 	</ul>
 </div>
+
 </body>
 </html>
