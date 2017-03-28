@@ -7,7 +7,7 @@ create sequence player_playerno_seq start with 21;
 
 CREATE TABLE POSITION (
 	PSTNO number(2) NOT NULL,
-	PSTNAME varchar2(10 char),
+	PSTNAME varchar2(20 char),
 	LOC varchar2(10),
 	PRIMARY KEY (PSTNO)
 );
