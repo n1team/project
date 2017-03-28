@@ -31,4 +31,15 @@ public class MemberbookSearchControllerTests {
 		System.out.println(html);
 	}
 	
+	@Test
+	public void test02_getPage(){
+		String html = rest.getForObject("/memberbook/page/1", String.class);
+		System.out.println(html);
+	}
+	
+	@Test
+	public void test03_getItem(){
+		String html = rest.getForObject("/memberbook/item/201700056", String.class);
+		System.out.println(html);
+	}
 }

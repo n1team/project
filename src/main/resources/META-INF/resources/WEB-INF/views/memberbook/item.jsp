@@ -7,27 +7,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>list.jsp</title>
+<title>item.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../../code_assist/animate.css">
 	<link rel="stylesheet" href="../../code_assist/bootstrap.css">
 </c:if>
-
 </head>
 <body>
-<h1>회원 현황</h1> 
-<ol>
-<c:forEach var="member" items="${memberbooks}">
-	<li>
-		${member.memberCode}, 
-		${member.memberName},
-		${member.bookCode},
-		${member.checkState},
-		${member.rentReserveDate}
-	</li>
-</c:forEach>
-</ol>
+<h1>Member Detail Info</h1> 
+${memberbook}
+<hr>
+
 </body>
 </html>

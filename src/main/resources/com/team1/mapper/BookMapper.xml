@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team1.mapper.BookMapper">
+
+<resultMap type="com.team1.domain.Book" id="bookWithMemberbook">
+	<id		property="bookCode" 		column="book_book_code"/>
+	<result	property="bookName"			column="book_book_name"/>
+	<result	property="writer"			column="book_writer"/>
+	<result	property="publishedDate"	column="book_published_date"/>
+	<result	property="categorizeCode"	column="book_categorize_code"/>
+	<result	property="checkState"		column="book_check_state"/>	
+	<association property="memberbook" javaType="com.team1.domain.Memberbook">
+		<id		property="memberCode"			column="memberbook_member_code"/>
+		<result	property="memberName"			column="memberbook_member_name"/>
+		<result	property="bookCode"				column="memberbook_book_code"/>
+		<result	property="checkState"			column="memberbook_check_state"/>
+		<result	property="rentReserveDate"		column="memberbook_rent_reserve_date"/>	
+	</association>
+</resultMap>
+
+<select id="selectAllWithMemberbook" resultMap="bookWithMemberbook">
+	select b.book_code			as book_book_code,
+		   b.book_name			as book_book_name,
+		   b.writer				as book_writer,
+		   b.published_date		as book_published_date,
+		   b.categorize_code	as book_categorize_code,
+		   b.check_state		as book_check_state,
+		   m.member_code		as memberbook_member_code,
+		   m.member_name		as memberbook_member_name,
+		   m.book_code			as memberbook_book_code,
+		   m.check_state		as memberbook_check_state,
+		   m.rent_reserve_date  as memberbook_rent_reserve_date
+	  from book b left outer join memberbook m
+	    on b.book_code = m.book_code
+</select>
+
+<select id="selectPageWithMemberbook" resultMap="bookWithMemberbook">
+	select b.book_code			as book_book_code,
+		   b.book_name			as book_book_name,
+		   b.writer				as book_writer,
+		   b.published_date		as book_published_date,
+		   b.categorize_code	as book_categorize_code,
+		   b.check_state		as book_check_state,
+		   m.member_code		as memberbook_member_code,
+		   m.member_name		as memberbook_member_name,
+		   m.book_code			as memberbook_book_code,
+		   m.check_state		as memberbook_check_state,
+		   m.rent_reserve_date  as memberbook_rent_reserve_date
+	  from book b left outer join memberbook m
+	    on b.book_code = m.book_code
+	offset #{firstItem} - 1 rows
+	 fetch next #{itemsPerPage} rows only
+</select>
+
+<select id="selectByBookcodeWithMemberbook" resultMap="bookWithMemberbook">
+	select b.book_code			as book_book_code,
+		   b.book_name			as book_book_name,
+		   b.writer				as book_writer,
+		   b.published_date		as book_published_date,
+		   b.categorize_code	as book_categorize_code,
+		   b.check_state		as book_check_state,
+		   m.member_code		as memberbook_member_code,
+		   m.member_name		as memberbook_member_name,
+		   m.book_code			as memberbook_book_code,
+		   m.check_state		as memberbook_check_state,
+		   m.rent_reserve_date  as memberbook_rent_reserve_date
+	  from book b left outer join memberbook m
+	    on b.book_code = m.book_code
+	 where b.book_code = #{book_code}
+</select>
+
+</mapper>

@@ -10,6 +10,16 @@ public class Book extends ToString {
 	private Date publishedDate;
 	private BigDecimal categorizeCode;
 	private String checkState;
+	
+	private Memberbook memberbook;
+		
+	public Memberbook getMemberbook() {
+		return memberbook;
+	}
+
+	public void setMemberbook(Memberbook memberbook) {
+		this.memberbook = memberbook;
+	}
 
 	public Book() {
 		

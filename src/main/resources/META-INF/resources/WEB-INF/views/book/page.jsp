@@ -7,27 +7,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>list.jsp</title>
+<title>page.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../../code_assist/animate.css">
 	<link rel="stylesheet" href="../../code_assist/bootstrap.css">
 </c:if>
-
 </head>
 <body>
-<h1>회원 현황</h1> 
-<ol>
-<c:forEach var="member" items="${memberbooks}">
-	<li>
-		${member.memberCode}, 
-		${member.memberName},
-		${member.bookCode},
-		${member.checkState},
-		${member.rentReserveDate}
-	</li>
-</c:forEach>
+<h1>Member Page pageNo=${page.paging.pageNo}</h1> 
+<ol class="list-group">
+	<c:forEach var="member" items="${page.members}">
+		<li class="list-group-item-info">
+			${member.memberCode}
+			${member.memberName}
+			${member.bookCode}
+			${member.checkState}
+			${member.rentReserveDate}
+		</li>
+	</c:forEach>
 </ol>
+<hr>
+
 </body>
 </html>
