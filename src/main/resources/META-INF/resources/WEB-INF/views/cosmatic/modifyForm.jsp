@@ -27,8 +27,8 @@
 </head>
 <body>
 <h1>Cosmatic Modify</h1>
-<a href="/cosmatic/page/${param.pageNo}">이전 Page List로....</a>
-<form:form action="/cosmatic/modify?pageNo=${param.pageNo}" method="post" modelAttribute="cosmaticForm">
+<a href="/cosmatic/page/${param.pageNo}"><img src=""></a>
+<form:form action="/cosmatic/modify?pageNo=${param.pageNo}" method="post" modelAttribute="cosmaticForm" name="form1">
 
 	<div>
 		<label for="productname" >productname : </label>
@@ -59,7 +59,7 @@
 		<form:input path="category"/>
 		<form:errors path="category"/>
 <!-- 		<label for="category">category : </label> -->
-<!-- 		<select> -->
+<!-- 		<select name="ca" onchange="changevalue(this.form)"> -->
 <!-- 			<option value="카테고리를 설정해주세요">카테고리를 설정해주세요</option> -->
 <!-- 			<option value="SKINCARE">SKINCARE</option> -->
 <!-- 			<option value="BASE">BASE</option> -->
@@ -71,4 +71,12 @@
 	<input type="submit" value="등록">
 </form:form>
 </body>
+<script type="text/javascript">
+// 	function changevalue(form) {
+// 		var value = form.ca.options[form.ca.selectedIndex].value;
+// 		var text = form.ca.options[form.ca.selectedIndex].text;
+		
+// 		alert("text..>"+text+"value"+value);
+// 	}
+</script>
 </html>
