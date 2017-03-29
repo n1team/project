@@ -53,6 +53,17 @@ public class BookSearchService {
 	}
 	
 	public Book getBookByBookcode(int bookcode){
-		return getBookByBookcode(bookcode);
+		return getBookByBookcode(bookcode, false);
+	}
+	
+	public Book getBookByBookcode(int bookcode, boolean withMemberbook){
+		Book book = null;
+		
+		if(withMemberbook)
+			book = bookMapper.selectByBookcodeWithMemberbook(bookcode);
+		else
+			book = bookMapper.selectByBookcode(bookcode);
+		
+		return book;
 	}
 }

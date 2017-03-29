@@ -53,13 +53,13 @@ public class MemberbookSearchServiceTests {
 	
 	@Test
 	public void test03_getBookstateByMembercode(){
-		Memberbook bs = memberbookSearchService.getBookstateByMembercode(201700056);
+		Memberbook bs = memberbookSearchService.getMemberbookByMembercode(201700056);
 		System.out.println(bs);
 	}
 	
 	@Test
 	public void test03_getBookstateByMembercode_withBook(){
-		Memberbook bs = memberbookSearchService.getBookstateByMembercode(201700056, true);
+		Memberbook bs = memberbookSearchService.getMemberbookByMembercode(201700056, true);
 		System.out.println(bs);
 }
 }

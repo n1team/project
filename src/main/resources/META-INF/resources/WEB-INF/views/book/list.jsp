@@ -17,15 +17,16 @@
 
 </head>
 <body>
-<h1>회원 현황</h1> 
+<h1>책 현황</h1> 
 <ol>
-<c:forEach var="member" items="${memberbooks}">
+<c:forEach var="book" items="${books}">
 	<li>
-		${member.memberCode}, 
-		${member.memberName},
-		${member.bookCode},
-		${member.checkState},
-		${member.rentReserveDate}
+		${book.bookCode},
+		${book.bookName},
+		${book.writer},
+		${book.publishedDate},
+		${book.categorizeCode},
+		${book.checkState}
 	</li>
 </c:forEach>
 </ol>

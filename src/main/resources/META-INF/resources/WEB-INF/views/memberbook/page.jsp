@@ -16,7 +16,8 @@
 </c:if>
 </head>
 <body>
-<h1>Member Page pageNo=${page.paging.pageNo}</h1> 
+<h1>Member Page pageNo=${page.paging.pageNo}</h1>
+<a href="/memberbook/register" class="btn btn-primary">Member 등록 </a>
 <ol class="list-group">
 	<c:forEach var="member" items="${page.members}">
 		<li class="list-group-item-info">

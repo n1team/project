@@ -50,4 +50,16 @@ public class BookSearchServiceTests {
 		System.out.println(map.get("books"));
 		System.out.println(map.get("paging"));
 	}
+	
+	@Test
+	public void test03_getItem(){
+		Book b = bookSearchService.getBookByBookcode(11114260);
+		System.out.println("book = " + b);
+	}
+	
+	@Test
+	public void test03_getItem_withMemberbook(){
+		Book b = bookSearchService.getBookByBookcode(11114260, true);
+		System.out.println("book = " + b);
+	}
 }

@@ -68,7 +68,27 @@
 	 where m.member_code = #{member_code}
 </select>
 
-
+<insert id="insert">
+	<selectKey keyProperty="memberCode" keyColumn="memberCode" resultType="int" order="BEFORE">
+		select memberbook_member_code_seq.nextval from dual
+	</selectKey>
+	insert into memberbook
+	(
+		member_code,
+		member_name,
+		book_code,
+		check_state,
+		rent_reserve_date
+	)
+	values
+	(
+		#{memberCode},
+		#{memberName},
+		#{bookCode},
+		#{checkState},
+		#{rentReserveDate}
+	)
+</insert>
 
 
 

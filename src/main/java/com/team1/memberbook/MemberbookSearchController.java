@@ -41,7 +41,7 @@ public class MemberbookSearchController {
 	@GetMapping("/item/{memberCode}")
 	public String getItem(@PathVariable int memberCode, Model model){
 		
-		Memberbook memberbook = memberbookSearchService.getBookstateByMembercode(memberCode, true);
+		Memberbook memberbook = memberbookSearchService.getMemberbookByMembercode(memberCode, true);
 		model.addAttribute("memberbook", memberbook);
 		
 		return "memberbook/item";

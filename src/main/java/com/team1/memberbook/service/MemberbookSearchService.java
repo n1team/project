@@ -53,11 +53,11 @@ public class MemberbookSearchService {
 		return map;
 	}
 
-	public Memberbook getBookstateByMembercode(int memberCode) {
-		return getBookstateByMembercode(memberCode, false);
+	public Memberbook getMemberbookByMembercode(int memberCode) {
+		return getMemberbookByMembercode(memberCode, false);
 	}
 
-	public Memberbook getBookstateByMembercode(int memberCode, boolean withBook) {
+	public Memberbook getMemberbookByMembercode(int memberCode, boolean withBook) {
 		Memberbook memberbook = null;
 		if (withBook)
 			memberbook = memberbookMapper.selectBymemberCodeWithBook(memberCode);

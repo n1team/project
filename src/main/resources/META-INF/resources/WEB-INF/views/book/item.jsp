@@ -16,8 +16,8 @@
 </c:if>
 </head>
 <body>
-<h1>Member Detail Info</h1> 
-${memberbook}
+<h1>Book Detail Info</h1> 
+${book}
 <hr>
 
 </body>

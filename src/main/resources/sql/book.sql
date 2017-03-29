@@ -1,26 +1,32 @@
 DROP TABLE book CASCADE CONSTRAINTS;
 DROP TABLE memberBook CASCADE CONSTRAINTS;
 
+--
+-- memberBook_member_code_seq sequence
+--
+drop sequence memberBook_member_code_seq;
+create sequence memberBook_member_code_seq start with 201700100;
+
 CREATE TABLE book (
-	book_code number(8) NOT NULL,
-	book_name varchar2(35 char) NOT NULL,
-	writer varchar2(20 char),
-	published_date date,
+	book_code 		number(8) 			NOT NULL,
+	book_name 		varchar2(35 char) 	NOT NULL,
+	writer 			varchar2(20 char),
+	published_date 	date,
 	categorize_code number(8),
-	check_state varchar2(15 char),
+	check_state 	varchar2(15 char),
 	PRIMARY KEY (book_code)
 );
 
 CREATE TABLE memberBook (
-	member_code number(10) NOT NULL,
-	member_name varchar2(15 char) NOT NULL,
-	book_code number(8) NOT NULL,
-	check_state varchar2(15 char),
-	rent_reserve_date date,
-	PRIMARY KEY (member_code)
+	member_code 		number(10) 			NOT NULL,
+	member_name 		varchar2(15 char) 	NOT NULL,
+	book_code 			number(8),
+	check_state 		varchar2(15 char),
+	rent_reserve_date 	date,
+	constraint pk_memberBook PRIMARY KEY (member_code),
+	constraint fk_memberBook foreign key(book_code) references book(book_code) on delete set null
 );
 
-ALTER TABLE bookState ADD FOREIGN KEY (book_code) REFERENCES book(book_code);
 
 --
 -- insert into book

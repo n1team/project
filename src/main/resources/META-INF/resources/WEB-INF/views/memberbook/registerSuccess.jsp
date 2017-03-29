@@ -2,12 +2,13 @@
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%> 
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>page.jsp</title>
+<title>registerSuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -16,19 +17,8 @@
 </c:if>
 </head>
 <body>
-<h1>Book Page pageNo=${page.paging.pageNo}</h1> 
-<ol class="list-group">
-	<c:forEach var="book" items="${page.books}">
-		<li class="list-group-item-info">
-			${book.bookCode},
-			${book.bookName},
-			${book.writer},
-			${book.publishedDate},
-			${book.categorizeCode},
-			${book.checkState}
-		</li>
-	</c:forEach>
-</ol>
+<h1>Member 등록 성공입니다.</h1> 
+${memberbook}
 <hr>
 
 </body>
