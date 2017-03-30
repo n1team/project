@@ -24,10 +24,78 @@
 </c:if>
 
 </head>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); 
+    body {
+	background-image: url("../../../img/y_dot.png");
+/* 	background-size: 150%; */
+    }
+    
+    h1 {
+         color : gray;
+         font-family: 'Space Mono';
+         text-align: center;
+         margin-top:70px;
+    }
+    .bg{
+        background-color: rgba(255,255,255,0.2);
+        padding : 20px;
+        margin: 20px;
+        text-align: center;
+        width : 100%;
+        color : DarkSlateGrey;
+    }
+    .table {
+    	background-color: white;
+    	padding : 20px;
+        margin: 20px;
+        text-align: center;
+        width : 100%;
+        color : DarkSlateGrey;
+    }
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+        background-color: rgba(255,165,05,0.3)
+    }
+    
+    .btn {
+		margin : 0 auto;
+		margin-top : 70px;
+	} 
+	.btn-default>a {
+    	color : #FF8C00;
+    	text-decoration: none;
+    } 
+    
+      .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 0;
+        font-family: 'Jeju Gothic';
+        color : #000080;
+    }
+</style>
 <body>
 
 <h1>cosmatic modify complete :)</h1>
-<a href="/cosmatic/page/${param.pageNo}">이전 Page로...</a>
-${cosmatic}
+<div class="container">
+<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
+<table class="table table-hover">
+	<tr>
+		<td>Product - Number</td>
+		<td>Product - Name</td>
+		<td>Price</td>
+		<td>Capacity</td>
+		<td>Category</td>
+	</tr>
+	
+	<tr>
+		<td>${cosmatic.productno}</td>
+		<td>${cosmatic.productname}</td>
+		<td>${cosmatic.price}</td>
+		<td>${cosmatic.capacity}</td>
+		<td>${cosmatic.category}</td>
+	</tr>
+</table>
+</div>
+
 </body>
 </html>

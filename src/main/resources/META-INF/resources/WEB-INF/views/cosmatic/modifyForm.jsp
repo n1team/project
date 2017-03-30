@@ -38,64 +38,52 @@
          text-align: center;
          margin-top:70px;
     }
-    .bg{
-        background-color: rgba(255,255,255,0.2);
-        padding : 20px;
-        margin: 20px;
-        text-align: center;
-        width : 100%;
-        color : DarkSlateGrey;
-    }
-    .table {
-    	background-color: white;
-    	padding : 20px;
-        margin: 20px;
-        text-align: center;
-        width : 100%;
-        color : DarkSlateGrey;
-    }
-    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-        background-color: rgba(255,165,05,0.3)
-    }
-    
-     form{ 
-     	text-align: left; 
+	
+	.btn {
+		margin : 0 auto;
+		margin-top : 70px;
+	}   
+	.btn-default>a {
+    	color : #FF8C00;
+    	text-decoration: none;
     } 
+	
+    
 </style>
 <body>
 <h1>Cosmatic Modify</h1>
-<a href="/cosmatic/page/${param.pageNo}">뒤로가기</a>
+
 
 <div style="text-align: center;">
 	<form:form action="/cosmatic/modify?pageNo=${param.pageNo}" method="post" modelAttribute="cosmaticForm">
 
-	<div style="margin:0 auto;">
-		<label for="productname" >productname : </label>
-		<form:input path="productname" readonly="true"/>
+	<div class="col-xs-4" style="float: none; margin:0 auto;padding : 10px;">
+		<label for="productname" style="float:left; ">productname : </label>
+		<form:input path="productname" readonly="true" class="form-control"/>
 		<form:errors path="productname"/>
 	</div>
 	
-	<div>
-		<label for="productno">productno : </label>
-		<form:input path="productno" readonly="true"/>
+	<div class="col-xs-4" style="float: none; margin:0 auto; padding : 10px;">
+		<label for="productno" style="float:left;">productno : </label>
+		<form:input path="productno" readonly="true" class="form-control"/>
 		<form:errors path="productno"/>
 	</div>
 
-	<div>
-		<label for="price">price : </label>
-		<form:input path="price"/>
+	<div class="col-xs-4" style="float: none; margin:0 auto; padding : 10px;">
+		<label for="price" style="float:left;">price : </label>
+		<form:input path="price" class="form-control" />
 		<form:errors path="price"/>
 	</div>
 	
-	<div>
-		<label for="capacity">capacity : </label>
-		<form:input path="capacity"/>
+	<div class="col-xs-4" style="float: none; margin:0 auto; padding : 10px;"> 
+		<label for="capacity" style="float:left;">capacity : </label>
+		<form:input path="capacity" class="form-control"/>
 		<form:errors path="capacity"/>
 	</div>
 	
-	<div>
-		<label for="category">category : </label>
-		<form:input path="category"/>
+	<div class="col-xs-4" style="float: none; margin:0 auto; padding : 10px;">
+		<label for="category" style="float:left;">category : </label>
+		<form:input path="category" class="form-control"/>
 		<form:errors path="category"/>
 <!-- 		<label for="category">category : </label> -->
 <!-- 		<select name="ca" onchange="changevalue(this.form)"> -->
@@ -107,17 +95,10 @@
 <!-- 		</select> -->
 	</div>
 	
-	<input type="submit" value="등록">
+	<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
+	<input type="submit" value="등록" class="btn btn-default" style="text-align: center;" >
 </form:form>
 </div>
 
 </body>
-<script type="text/javascript">
-// 	function changevalue(form) {
-// 		var value = form.ca.options[form.ca.selectedIndex].value;
-// 		var text = form.ca.options[form.ca.selectedIndex].text;
-		
-// 		alert("text..>"+text+"value"+value);
-// 	}
-</script>
 </html>
