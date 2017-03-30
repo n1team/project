@@ -19,12 +19,12 @@ public class PositionModifyService {
 	 PositionMapper posMapper;
 	 
 	 public void modify(Position pos, BindingResult errors){
-		 if(pos.getPstname() != null){
-			 Player ply = plyMapper.selectByPstno(pos.getPstno());
-			 if(ply == null)
-				 errors.reject("invalidPstno","유효한 숫자가 아닙니다.");
-		 }
+		
+		 Position position = posMapper.selectByPstno(pos.getPstno());
+		 if(position != null)
+			 errors.reject("invalidPstno","유효한 숫자가 아닙니다.");
+		 
 		 if (!errors.hasErrors())
-			 posMapper.updateByPstno(pos);
+			 posMapper.updateByPstno(position);
 	 }
 }

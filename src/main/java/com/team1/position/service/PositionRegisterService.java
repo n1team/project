@@ -19,11 +19,11 @@ public class PositionRegisterService {
 	 PositionMapper posMapper;
 	 
 	 public void register(Position pos, BindingResult errors){
-		 if(pos.getPstname()!=null){	
-			 Position position = posMapper.selectByPstno(pos.getPstno());
-			 if(position == null)
-				 errors.reject("invalidPstno","유효한 숫자가 아닙니다.");
-		 }
+		
+		 Position position = posMapper.selectByPstno(pos.getPstno());
+		 if(position != null)
+			 errors.reject("invalidPstno","유효한 숫자가 아닙니다.");
+		 
 		 if (!errors.hasErrors())
 			 posMapper.insert(pos);
 	 }

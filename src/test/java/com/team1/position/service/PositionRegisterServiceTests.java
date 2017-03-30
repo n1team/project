@@ -42,7 +42,7 @@ public class PositionRegisterServiceTests {
 	public void test01_register(){
 		PositionForm posForm = new PositionForm();
 		BindingResult errors = new BeanPropertyBindingResult(posForm, "posForm");
-		//posForm.setPstno(70);
+		posForm.setPstno(70);
 		posForm.setPstname("custroms");
 		
 		validator.validate(posForm, errors);
