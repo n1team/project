@@ -58,16 +58,51 @@
         background-color: rgba(255,165,05,0.3)
     }
     
-     form{ 
-     	text-align: left; 
+    .btn {
+		margin : 0 auto;
+		margin-top : 70px;
+	} 
+	.btn-default>a {
+    	color : #FF8C00;
+    	text-decoration: none;
     } 
+    
+      .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 0;
+        font-family: 'Jeju Gothic';
+        color : #000080;
+    }
 </style>
 <body>
 <h1>Cosmatic Delete</h1>
-${cosmatic }
-<a href="/cosmatic/page/${param.pageNo}">이전 Page List로....</a><br>
-<form action="/cosmatic/unregister/${productno}?pageNo=${param.pageNo}" method="post">
-	<input type="submit" value="cosmatic 삭제">
-</form>
+<div class="container">
+<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
+<table class="table table-hover">
+	<tr>
+		<td>Product - Number</td>
+		<td>Product - Name</td>
+		<td>Price</td>
+		<td>Capacity</td>
+		<td>Category</td>
+	</tr>
+	
+	<tr>
+		<td>${cosmatic.productno}</td>
+		<td>${cosmatic.productname}</td>
+		<td>${cosmatic.price}</td>
+		<td>${cosmatic.capacity}</td>
+		<td>${cosmatic.category}</td>
+	</tr>
+</table>
+</div>
+
+<div style="text-align: center;">
+	<form action="/cosmatic/unregister/${productno}?pageNo=${param.pageNo}" method="post">
+	<input type="submit" class="btn btn-default" value="삭제">
+	</form>
+</div>
+
+
 </body>
 </html>

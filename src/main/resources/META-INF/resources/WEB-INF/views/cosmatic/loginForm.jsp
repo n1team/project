@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>insert complete.jsp</title>
+<title>Login</title>
 <!-- 1. animate -->
 <link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.min.css">
 <!-- 2. bootstrap -->
@@ -45,55 +45,54 @@
         width : 100%;
         color : DarkSlateGrey;
     }
-    .table {
-    	background-color: white;
-    	padding : 20px;
-        margin: 20px;
-        text-align: center;
-        width : 100%;
-        color : DarkSlateGrey;
-    }
-    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-        background-color: rgba(255,165,05,0.3)
-    }
     
     .btn {
 		margin : 0 auto;
 		margin-top : 70px;
-	} 
-	.btn-default>a {
     	color : #FF8C00;
+	}   
+	.btn-default>a {
     	text-decoration: none;
     } 
-    
-      .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
-        background-color: rgba(255,255,255,0.7);
-        border-radius: 0;
-        font-family: 'Jeju Gothic';
-        color : #000080;
-    }
 </style>
 <body>
-<h1>cosmatic insert complete :)</h1>
-<div class="container">
-<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
-<table class="table table-hover">
-	<tr>
-		<td>Product - Number</td>
-		<td>Product - Name</td>
-		<td>Price</td>
-		<td>Capacity</td>
-		<td>Category</td>
-	</tr>
+
+<h1 style="text-align: center;">LOGIN</h1>
+
+
+<!-- 	<form:form action="/login" method="post"> -->
 	
-	<tr>
-		<td>${cosmatic.productno}</td>
-		<td>${cosmatic.productname}</td>
-		<td>${cosmatic.price}</td>
-		<td>${cosmatic.capacity}</td>
-		<td>${cosmatic.category}</td>
-	</tr>
-</table>
+<!-- 		<div class="col-xs-4" style="float: none; margin:0 auto;padding : 10px;"> -->
+<!-- 			<label for="username" >User Name : </label> -->
+<!-- 			<form:input path="username" type="text" name="username" class="form-control input-sm"/> -->
+<!-- 			<form:errors path="username"/> -->
+<!-- 		</div> -->
+		
+<!-- 		<div class="col-xs-4" style="float: none; margin:0 auto;padding : 10px;"> -->
+<!-- 			<label for="password" style="float:left; ">Password : </label> -->
+<!-- 			<form:input path="password" type="password" name="password" class="form-control input-sm" /> -->
+<!-- 			<form:errors path="password"/> -->
+<!-- 		</div> -->
+<%-- 		<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button> --%>
+<!-- 		<input type="submit" class="btn btn-default" value="로그인"> -->
+<!-- 	</form:form> -->
+
+<div style="text-align: center;">
+	<form action="/login" method="post">
+	
+	<div class="col-xs-4" style="float: none; margin:0 auto;padding : 10px;">
+		<label style="float:left; ">User Name : </label>
+		<input type="text" name="username" class="form-control"><br>
+	</div>
+	<div class="col-xs-4" style="float: none; margin:0 auto;padding : 10px;">
+		<label style="float:left; ">Password : </label>
+		<input type="password" name="password" class="form-control"><br>
+	</div>
+	
+	<input type="submit" value="Login" class="btn btn-default">
+</form>
 </div>
+
+
 </body>
 </html>

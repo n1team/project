@@ -38,61 +38,56 @@
          text-align: center;
          margin-top:70px;
     }
-    .bg{
-        background-color: rgba(255,255,255,0.2);
-        padding : 20px;
-        margin: 20px;
-        text-align: center;
-        width : 100%;
-        color : DarkSlateGrey;
-    }
-    .table {
-    	background-color: white;
-    	padding : 20px;
-        margin: 20px;
-        text-align: center;
-        width : 100%;
-        color : DarkSlateGrey;
-    }
-    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-        background-color: rgba(255,165,05,0.3)
+    .btn-default>a {
+    	color : #FF8C00;
+    	text-decoration: none;
+    } 
+    
+      .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 0;
+        font-family: 'Jeju Gothic';
+        color : #000080;
     }
     
-     form{ 
-     	text-align: left; 
-    } 
+     .btn {
+		margin : 0 auto;
+		margin-top : 70px;
+	} 
 </style>
 <body>
 <h1>Cosmatic Insert</h1>
-<a href="/cosmatic/page/${param.pageNo}">이전 Page List로....</a>
-<form:form action="/cosmatic/register?pageNo=${param.pageNo}" method="post" modelAttribute="cosmaticForm">
-	<div>
-		<label for="productname" >productname : </label>
-		<form:input path="productname" placeholder="50자이내로 입력해주세요"/>
+
+<div style="text-align: center;">
+	<form:form action="/cosmatic/register?pageNo=${param.pageNo}" method="post" modelAttribute="cosmaticForm">
+	
+	<div class="col-xs-4" style="float: none; margin:0 auto; padding : 10px;">
+		<label for="productname" style="float:left; ">productname : </label>
+		<form:input path="productname" placeholder="50자이내로 입력해주세요" class="form-control"/>
 		<form:errors path="productname"/>
 	</div>
 	
-	<div>
-		<label for="productno">productno : </label>
-		<form:input path="productno"/>
-		<form:errors path="productno"/>
-	</div>
+<!-- 	<div class="col-xs-4" style="float: none; margin:0 auto;"> -->
+<!-- 		<label for="productno">productno : </label> -->
+<%-- 		<form:input path="productno" value="" class="form-control"/> --%>
+<%-- 		<form:errors path="productno"/> --%>
+<!-- 	</div> -->
 
-	<div>
-		<label for="price">price : </label>
-		<form:input path="price"/>
+	<div class="col-xs-4" style="float: none; margin:0 auto; padding : 10px;">
+		<label for="price" style="float:left; ">price : </label>
+		<form:input path="price" class="form-control"/>
 		<form:errors path="price"/>
 	</div>
 	
-	<div>
-		<label for="capacity">capacity : </label>
-		<form:input path="capacity"/>
+	<div class="col-xs-4" style="float: none; margin:0 auto; padding : 10px;">
+		<label for="capacity" style="float:left; ">capacity : </label>
+		<form:input path="capacity" class="form-control" placeholder=""/>
 		<form:errors path="capacity"/>
 	</div>
 	
-	<div>
-		<label for="category">category : </label>
-		<form:input path="category"/>
+	<div class="col-xs-4" style="float: none; margin:0 auto; padding : 10px;">
+		<label for="category" style="float:left; ">category : </label>
+		<form:input path="category" class="form-control"/>
 		<form:errors path="category"/>
 <!-- 		<label for="category">category : </label> -->
 <!-- 		<select> -->
@@ -103,19 +98,10 @@
 <!-- 			<option value="LIP">LIP</option> -->
 <!-- 		</select> -->
 	</div>
-	
-<!-- 	<div> -->
-<!-- 		<label for="category">category : </label> -->
-<!-- 		<select> -->
-<!-- 			<option value="카테고리를 설정해주세요">카테고리를 설정해주세요</option> -->
-<!-- 			<option name="SKINCARE" value="SKINCARE">SKINCARE</option> -->
-<!-- 			<option value="BASE">BASE</option> -->
-<!-- 			<option value="EYE">EYE</option> -->
-<!-- 			<option value="LIP">LIP</option> -->
-<!-- 		</select> -->
-<!-- 	</div> -->
-	
-	<input type="submit" value="등록">
+	<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
+	<input type="submit" class="btn btn-default" value="등록">
 </form:form>
+</div>
+
 </body>
 </html>

@@ -56,16 +56,16 @@
     .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
         background-color: rgba(255,165,05,0.3)
     }
-    .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
-        background-color: rgba(255,255,255,0.7);
-        border-radius: 0;
-        font-family: 'Jeju Gothic';
-        color : orange;
-    }
-    
     .btn-default>a {
     	color : #FF8C00;
     	text-decoration: none;
+    } 
+    
+      .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 0;
+        font-family: 'Jeju Gothic';
+        color : #000080;
     }
     
     .pagination {
@@ -78,11 +78,16 @@
     	float : none;
      	margin-left:  -5px;
     }
+    .btn {
+		margin : 0 auto;
+		margin-top : 70px;
+		text-align: center;
+	} 
 </style>
 <body>
 <h1>Cosmatic Detail info</h1>
-<a href="/cosmatic/page/${param.pageNo}">뒤로가기</a>
 <div class="container">
+<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
 <table class="table table-hover">
 	<tr>
 		<td>Product - Number</td>
@@ -100,6 +105,7 @@
 		<td>${cosmatic.category}</td>
 	</tr>
 </table>
+
 </div>
 </body>
 </html>

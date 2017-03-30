@@ -97,7 +97,6 @@
 	<button class="btn btn-default"><a href="/cosmatic/register?pageNo=${page.paging.pageNo}">제품추가하기</a></button>
 </section>
     
- 
     <article>
         <table class="table table-hover">
             <thead>
