@@ -7,10 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template.jsp</title>
-
-
-
+<title>registerSuccess.jsp</title>
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
@@ -19,6 +16,7 @@
 
 </head>
 <body>
-
+<h1>선수 등록 성공</h1>
+${player}
 </body>
 </html>

@@ -7,9 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template.jsp</title>
-
-
+<title>position_item.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -19,6 +17,11 @@
 
 </head>
 <body>
-
+<h1>Player Detail Info</h1>
+${position}
+<hr>
+${position.pstno}
+<hr>
+<a href="/position/page/${param.pageNo}">이전 Page List로....</a>
 </body>
 </html>

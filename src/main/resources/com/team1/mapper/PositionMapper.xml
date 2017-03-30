@@ -74,5 +74,11 @@ select 	p1.pstno			as position_pstno,
 	#{loc}
 	)
 </insert>
-
+<update id="updateByPstno">
+ update position
+    set pstno			= #{pstno},
+    	pstname	 		= #{pstname},
+	 	loc			    = #{loc}
+where 	pstno 			= #{pstno}	 
+ </update>
 </mapper>

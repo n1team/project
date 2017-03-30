@@ -43,8 +43,8 @@
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">LotteGiants<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="/position/list">Position</a></li>
-						<li><a href="/player/list">Player</a></li>
+						<li><a href="/position/page/1">Position</a></li>
+						<li><a href="/player/page/1">Player</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -52,7 +52,6 @@
 					<ul class="dropdown-menu">
 						<li><a href="/country/page/1">Country</a></li>
 						<li><a href="/city/page/1">City</a></li>
-						<li><a href="/player/page/1">Player</a></li>
 					</ul>
 				</li>
 				<li><a href="#">Q & A</a></li>

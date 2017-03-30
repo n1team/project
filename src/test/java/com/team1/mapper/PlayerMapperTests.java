@@ -102,7 +102,7 @@ public class PlayerMapperTests {
 	
 	@Test
 	public void test06_deleteByPlayerno(){
-		int playerno = 21;
+		int playerno = 25;
 		int pnt = plyMapper.deleteByPlayerno(playerno);
 		System.out.println("pnt="+pnt);
 	}

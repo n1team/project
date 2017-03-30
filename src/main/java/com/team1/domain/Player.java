@@ -32,6 +32,7 @@ public class Player extends ToString {
 	}
 	public void setPname(String pname) {
 		this.pname = pname;
+		
 	}
 	public String getJob() {
 		return job;

@@ -88,6 +88,16 @@ select 	p1.playerno 		as player_playerno,
  	#{pstno} 	
  ) 
  </insert> 
- 
+ <update id="updateByPlayerno">
+ update player
+    set pstno			= #{pstno},
+    	pname	 		= #{pname},
+    	job		 		= #{job},
+	 	join	 		= #{join},
+	 	heights	 		= #{heights},
+	 	uniform_number  = #{uniformNumber}
+where 	playerno 		= #{playerno}
+    	 
+ </update>
  
 </mapper>

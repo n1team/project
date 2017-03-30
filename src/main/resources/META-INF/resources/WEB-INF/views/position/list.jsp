@@ -7,9 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template.jsp</title>
-
-
+<title>position_list.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -19,6 +17,11 @@
 
 </head>
 <body>
-
+<h1>list</h1>
+<ol>
+<c:forEach var="position" items="${position}">
+<li>${position.pstno},${position.pstname},${position.loc}</li>
+</c:forEach>
+</ol>
 </body>
 </html>

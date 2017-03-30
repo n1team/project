@@ -33,6 +33,9 @@ public interface PlayerMapper {
 	Player selectByPlayerno(int playerno);
 	Player selectByPlayernoWithPosition(int playerno);
 	
+	@Select("select * from player where pstno=#{pstno}")
+	Player selectByPstno(int pstno);
+	
 	int insert(Player player);
 	int updateByPlayerno(Player player);
 	

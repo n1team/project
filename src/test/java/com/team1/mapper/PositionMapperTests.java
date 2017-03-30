@@ -78,11 +78,29 @@ public class PositionMapperTests {
 	@Test
 	public void test04_insert(){
 		Position pos = new Position();
-		pos.setPstno(50);
+		pos.setPstno(60);
 		pos.setPstname("D");
 		
 		int pnt = posMapper.insert(pos);
 		System.out.println(posMapper.selectByPstno(pos.getPstno()));
+	}
+	
+	@Test
+	public void test05_updateByPstno(){
+		Position pos = new Position();
+		pos.setPstno(70);
+		pos.setPstname("COACH");
+		
+		
+		int pnt=posMapper.insert(pos);
+		System.out.println(posMapper.selectByPstno(pos.getPstno()));
+	}
+	
+	@Test
+	public void test06_deleteByPstno(){
+		int pstno = 70;
+		int pnt = posMapper.deleteByPstno(pstno);
+		System.out.println("삭제갯수="+pnt);
 	}
 	
 	

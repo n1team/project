@@ -20,11 +20,11 @@
 
 
 <a href="/player/register" class="btn btn-warning">player 등록</a>
-<button type="button" class="btn btn-danger">Player Page <span class="badge">pageNo=${page.paging.pageNo}</button>
+<button type="button" class="btn btn-success">Player Page <span class="badge">pageNo=${page.paging.pageNo}</button>
 <div class="table-responsive">
 <table class="table">
 <thead>
-<tr class="info">
+<tr class="success">
 <th>수정</th>
 <th>삭제</th>
 <th>Playerno</th>
