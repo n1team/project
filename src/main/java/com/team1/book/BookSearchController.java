@@ -23,7 +23,7 @@ public class BookSearchController {
 	@GetMapping("/list")
 	public String getList(Model model){
 		
-		List<Book> list = bookSearchService.getListAll(true);
+		List<Book> list = bookSearchService.getListAll();
 		model.addAttribute("books", list);
 		
 		return "book/list";
@@ -41,7 +41,7 @@ public class BookSearchController {
 	@GetMapping("/item/{bookcode}")
 	public String getItem(@PathVariable int bookcode, Model model){
 		
-		Book book = bookSearchService.getBookByBookcode(bookcode, true);
+		Book book = bookSearchService.getBookByBookcode(bookcode);
 		model.addAttribute("book", book);
 		
 		return "book/item";

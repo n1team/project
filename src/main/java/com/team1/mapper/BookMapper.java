@@ -11,12 +11,14 @@ import com.team1.util.Pagination;
 @Mapper
 public interface BookMapper {
 
+	/*
+	 * 	Select
+	 */
 	@Select("select count(*) from book")
 	int selectTotalCount();
 	
 	@Select("select * from book")
 	List<Book> selectAll();
-	List<Book> selectAllWithMemberbook();
 	
 	@Select({
 		"select *					",
@@ -26,9 +28,13 @@ public interface BookMapper {
 		" fetch next #{itemsPerPage} rows only	"
 	})
 	List<Book> selectPage(Pagination paging);
-	List<Book> selectPageWithMemberbook(Pagination paging);
 	
 	@Select("select * from book where book_code = #{book_code}")
 	Book selectByBookcode(int bookCode);
-	Book selectByBookcodeWithMemberbook(int bookCode);
+	
+	/*
+	 * Insert
+	 */
+	int insert(Book book);
+	
 }

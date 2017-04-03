@@ -31,22 +31,8 @@ public class BookSearchServiceTests {
 	}
 	
 	@Test
-	public void test01_getListAll_withMemberbook(){
-		List<Book> list = bookSearchService.getListAll(true);
-		for(Book b : list)
-			System.out.println(b);
-	}
-	
-	@Test
 	public void test02_getPage(){
 		Map<String, Object> map = bookSearchService.getPage(1);
-		System.out.println(map.get("books"));
-		System.out.println(map.get("paging"));
-	}
-	
-	@Test
-	public void test02_getPage_withMemberbook(){
-		Map<String, Object> map = bookSearchService.getPage(1, true);
 		System.out.println(map.get("books"));
 		System.out.println(map.get("paging"));
 	}
@@ -57,9 +43,4 @@ public class BookSearchServiceTests {
 		System.out.println("book = " + b);
 	}
 	
-	@Test
-	public void test03_getItem_withMemberbook(){
-		Book b = bookSearchService.getBookByBookcode(11114260, true);
-		System.out.println("book = " + b);
-	}
 }

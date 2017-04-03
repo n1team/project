@@ -18,51 +18,29 @@ public class BookSearchService {
 	BookMapper bookMapper;
 	
 	public List<Book> getListAll(){
-		return getListAll(false);
-	}
-	
-	public List<Book> getListAll(boolean withMemberbook){
 		List<Book> list = null;
-		if(withMemberbook)
-			list = bookMapper.selectAllWithMemberbook();
-		else
-			list = bookMapper.selectAll();
+		list = bookMapper.selectAll();
+		
 		return list;
 	}
 	
 	public Map<String, Object> getPage(int pageNo){
-		return getPage(pageNo, false);
-	}
-	
-	public Map<String, Object> getPage(int pageNo, boolean withMemberbook){
 		Pagination paging = new Pagination();
 		paging.setTotalItem(bookMapper.selectTotalCount());
 		paging.setPageNo(pageNo);
 		
 		List<Book> list = null;
-		if(withMemberbook)
-			list = bookMapper.selectPageWithMemberbook(paging);
-		else
-			list = bookMapper.selectPage(paging);
+		list = bookMapper.selectPage(paging);
 		
 		Map<String, Object> map = new HashMap<>();
 		map.put("books", list);
 		map.put("paging", paging);
-		
 		return map;
 	}
 	
 	public Book getBookByBookcode(int bookcode){
-		return getBookByBookcode(bookcode, false);
-	}
-	
-	public Book getBookByBookcode(int bookcode, boolean withMemberbook){
 		Book book = null;
-		
-		if(withMemberbook)
-			book = bookMapper.selectByBookcodeWithMemberbook(bookcode);
-		else
-			book = bookMapper.selectByBookcode(bookcode);
+		book = bookMapper.selectByBookcode(bookcode);
 		
 		return book;
 	}

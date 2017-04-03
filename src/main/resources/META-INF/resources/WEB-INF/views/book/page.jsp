@@ -24,8 +24,9 @@
 			${book.bookName},
 			${book.writer},
 			${book.publishedDate},
-			${book.categorizeCode},
-			${book.checkState}
+			${book.categorize},
+			${book.pageNumber},
+			${book.price}
 		</li>
 	</c:forEach>
 </ol>

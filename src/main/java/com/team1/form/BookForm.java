@@ -1,6 +1,5 @@
 package com.team1.form;
 
-import java.math.BigDecimal;
 import java.sql.Date;
 
 import javax.validation.constraints.Digits;
@@ -56,26 +55,36 @@ public class BookForm extends Book {
 		super.setPublishedDate(publishedDate);
 	}
 
-	@Digits(integer=8, fraction=0)
+	@Size(max=20)
 	@Override
-	public BigDecimal getCategorizeCode() {
-		return super.getCategorizeCode();
+	public String getCategorize() {
+		return super.getCategorize();
 	}
 
 	@Override
-	public void setCategorizeCode(BigDecimal categorizeCode) {
-		super.setCategorizeCode(categorizeCode);
+	public void setCategorize(String categorize) {
+		super.setCategorize(categorize);
 	}
 
-	@Size(max=15)
+	@Digits(integer=10, fraction=0)
 	@Override
-	public String getCheckState() {
-		return super.getCheckState();
+	public Integer getPageNumber() {
+		return super.getPageNumber();
 	}
 
 	@Override
-	public void setCheckState(String checkState) {
-		super.setCheckState(checkState);
+	public void setPageNumber(Integer pageNumber) {
+		super.setPageNumber(pageNumber);
 	}
-	
+
+	@Digits(integer=10, fraction=0)
+	@Override
+	public Integer getPrice() {
+		return super.getPrice();
+	}
+
+	@Override
+	public void setPrice(Integer price) {
+		super.setPrice(price);
+	}
 }

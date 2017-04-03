@@ -37,14 +37,6 @@ public class BookMapperTests {
 	}
 	
 	@Test
-	public void test01_selectAllWithMemberbook(){
-		List<Book> list = bookMapper.selectAllWithMemberbook();
-		
-		for(Book b : list)
-			System.out.println(b);
-	}
-	
-	@Test
 	public void test02_selectPage(){
 		Pagination paging = new Pagination();
 		paging.setTotalItem(bookMapper.selectTotalCount());
@@ -57,27 +49,8 @@ public class BookMapperTests {
 	}
 	
 	@Test
-	public void test02_selectPageWithMemberbook(){
-		Pagination paging = new Pagination();
-		paging.setTotalItem(bookMapper.selectTotalCount());
-		paging.setPageNo(1);
-		
-		List<Book> list = bookMapper.selectPageWithMemberbook(paging);
-		
-		for(Book b : list)
-			System.out.println(b);
-	}
-	
-	@Test
 	public void test03_selectByBookcode(){
 		Book book = bookMapper.selectByBookcode(11114260);
-		
-		System.out.println("book = " + book);
-	}
-	
-	@Test
-	public void test03_selectByBookcodeWithMemberbook(){
-		Book book = bookMapper.selectByBookcodeWithMemberbook(11114260);
 		
 		System.out.println("book = " + book);
 	}

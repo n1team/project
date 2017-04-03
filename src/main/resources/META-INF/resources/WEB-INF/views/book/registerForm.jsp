@@ -7,18 +7,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>item.jsp</title>
+<title>list.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../../code_assist/animate.css">
 	<link rel="stylesheet" href="../../code_assist/bootstrap.css">
 </c:if>
+
 </head>
 <body>
-<h1>Member Detail Info</h1> 
-${memberbook}
-<hr>
-
+<h1>책 현황</h1> 
+<ol>
+<c:forEach var="book" items="${books}">
+	<li>
+		${book.bookCode},
+		${book.bookName},
+		${book.writer},
+		${book.publishedDate},
+		${book.categorize},
+		${book.pageNumber},
+		${book.price}
+	</li>
+</c:forEach>
+</ol>
 </body>
 </html>
