@@ -59,7 +59,7 @@
 
 	<div class="col-xs-4" style="float: none; margin:0 auto;padding : 10px;">
 		<label for="productname" style="float:left; ">productname : </label>
-		<form:input path="productname" readonly="true" class="form-control"/>
+		<form:input path="productname" class="form-control"/>
 		<form:errors path="productname"/>
 	</div>
 	
