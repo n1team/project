@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerSuccess.jsp</title>
+<title>position_registerSuccess.jsp</title>
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
@@ -16,9 +16,10 @@
 
 </head>
 <body>
-<h1>선수 등록 성공</h1>
-${player}
+<h1>position 삭제 성공</h1>
+position pstno == ${pstno}
 
-
+<hr>
+<a class="btn btn-info" href="/position/page/${param.pageNo}">이전 페이지로</a>
 </body>
 </html>

@@ -20,6 +20,6 @@
 player playerno == ${playerno}
 
 <hr>
-<a class="btn btn-info" href="/player/page/${param.pageNo}">이전 페이지로</a>
+<a class="btn btn-warning" href="/player/page/${param.pageNo}">이전 페이지로</a>
 </body>
 </html>

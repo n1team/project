@@ -17,7 +17,7 @@
 </head>
 <body>
 <h2>선수 수정</h2>
-<form:form action="/player/modify" method="post" modelAttribute="playerForm">
+<form:form action="/player/modify?pageNo=${param.pageNo}" method="post" modelAttribute="playerForm">
 <form:errors></form:errors>
 <div>
 	<label for="playerno">순번 :</label>

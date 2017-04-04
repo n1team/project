@@ -20,7 +20,7 @@
 
 
 <a href="/position/register" class="btn btn-primary active">Position 등록</a>
-<button type="button" class="btn btn-primary disabled">Position Page <span class="badge">pageNo=${page.paging.pageNo}</button>
+<button type="button" class="btn btn-primary disabled">Position Page <span class="badge">pageNo=${page.paging.pageNo}</span></button>
 <div class="table-responsive">
 <table class="table">
 <thead>
@@ -59,6 +59,7 @@
 	<a href="/position/page/${i}">${i}</a>
 </c:forEach></li>
 <li><a href="/position/page/${page.paging.lastPage + 1}">Next</a></li>
+<li><a href="/position/page/${page.paging.totalPage}">Last</a></li>
 </ul>
 
 

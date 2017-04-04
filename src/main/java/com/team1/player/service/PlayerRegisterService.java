@@ -20,7 +20,7 @@ public class PlayerRegisterService {
 	
 	public void register(Player ply, BindingResult errors){
 		if(ply.getPname()!= null) {
-			Position pos = posMapper.selectByPstno(ply.getPlayerno());
+			Position pos = posMapper.selectByPstno(ply.getPstno());
 			if(pos == null)
 				errors.reject("invalidPstno","유효한 숫자가 아닙니다.");
 		}

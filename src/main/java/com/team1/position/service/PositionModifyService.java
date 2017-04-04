@@ -20,11 +20,7 @@ public class PositionModifyService {
 	 
 	 public void modify(Position pos, BindingResult errors){
 		
-		 Position position = posMapper.selectByPstno(pos.getPstno());
-		 if(position != null)
-			 errors.reject("invalidPstno","유효한 숫자가 아닙니다.");
-		 
-		 if (!errors.hasErrors())
-			 posMapper.updateByPstno(position);
+			 if (!errors.hasErrors())
+			 posMapper.updateByPstno(pos);
 	 }
 }

@@ -19,5 +19,8 @@
 <body>
 <h1>선수 수정 성공</h1>
 ${player}
+<hr>
+<a class="btn btn-warning" href="/player/page/${param.pageNo}">이전 페이지로</a>
+
 </body>
 </html>

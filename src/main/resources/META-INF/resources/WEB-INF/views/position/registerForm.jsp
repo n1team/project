@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerForm.jsp</title>
+<title>position_registerForm.jsp</title>
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
@@ -17,44 +17,28 @@
 </head>
 <body>
 <h2>선수 등록</h2>
-<form:form action="/player/register" method="post" modelAttribute="playerForm">
-<form:errors></form:errors>
+<form:form action="/position/register" method="post" modelAttribute="positionForm">
 <%-- <div>
 	<label for="playerno">순번 :</label>
 	<form:input path="playerno"/>
 	<form:errors path="playerno"/>
 </div> --%>
 <div>
-	<label for="pname">선수명 :</label>
-	<form:input path="pname" />
-	<form:errors path="pname" />
-</div>
-<div>
-	<label for="job">포지션 :</label>
-	<form:input path="job" />
-	<form:errors path="job" />
-</div>
-<div>
-	<label for="join">입단년도 :</label>
-	<form:input path="join" />
-	<form:errors path="join" />
-</div>
-<div>
-	<label for="heights">키 :</label>
-	<form:input path="heights" />
-	<form:errors path="heights" />
-</div>
-<div>
-	<label for="uniformNumber">등번호 :</label>
-	<form:input path="uniformNumber" />
-	<form:errors path="uniformNumber" />
-</div>
-<div>
-	<label for="pstno">pstno :</label>
+	<label for="pstno">No :</label>
 	<form:input path="pstno" />
 	<form:errors path="pstno" />
 </div>
-<input type="submit" value="선수 등록">
+<div>
+	<label for="pstname">포지션명 :</label>
+	<form:input path="pstname" />
+	<form:errors path="pstname" />
+</div>
+<div>
+	<label for="loc">지역 :</label>
+	<form:input path="loc" />
+	<form:errors path="loc" />
+</div>
+<input type="submit" value="포지션 등록">
 </form:form> 
 </body>
 </html>
