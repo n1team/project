@@ -93,8 +93,8 @@
 		<td>Product - Number</td>
 		<td>Product - Name</td>
 		<td>Category</td>
-		<td>Product Modify</td>
-		<td>Product Delete</td>
+<!-- 		<td>Product Modify</td> -->
+<!-- 		<td>Product Delete</td> -->
 	</tr>
 	
 	<c:forEach var="list" items="${cosmatic}">
@@ -102,8 +102,8 @@
 		<td>${list.productno}</td>
 		<td><a href="/cosmatic/item/${list.productno}?pageNo=${page.paging.pageNo}">${list.productname}</a></td>
 		<td>${list.category}</td>
-		<td><a href="/cosmatic/modify/${list.productno}?pageNo=${page.paging.pageNo}">수정</td>
-		<td><a href="/cosmatic/unregister/${list.productno}?pageNo=${page.paging.pageNo}">삭제</a></td>
+<%-- 		<td><a href="/cosmatic/modify/${list.productno}?pageNo=${page.paging.pageNo}">수정</td> --%>
+<%-- 		<td><a href="/cosmatic/unregister/${list.productno}?pageNo=${page.paging.pageNo}">삭제</a></td> --%>
 	</tr>
 	</c:forEach>
 </table>
