@@ -1,13 +1,11 @@
 package com.team1.domain;
 
-import java.sql.Date;
-
 public class Book extends ToString {
 
 	private Integer bookCode;
 	private String bookName;
 	private String writer;
-	private Date publishedDate;
+	private String publishedDate;
 	private String categorize;
 	private Integer pageNumber;
 	private Integer price;
@@ -36,11 +34,11 @@ public class Book extends ToString {
 		this.writer = writer;
 	}
 	
-	public Date getPublishedDate() {
+	public String getPublishedDate() {
 		return publishedDate;
 	}
 	
-	public void setPublishedDate(Date publishedDate) {
+	public void setPublishedDate(String publishedDate) {
 		this.publishedDate = publishedDate;
 	}
 	

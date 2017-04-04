@@ -1,7 +1,5 @@
 package com.team1.form;
 
-import java.sql.Date;
-
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -10,8 +8,18 @@ import com.team1.domain.Book;
 
 public class BookForm extends Book {
 
+	public void setBook(Book book){
+		super.setBookCode(book.getBookCode());
+		super.setBookName(book.getBookName());
+		super.setWriter(book.getWriter());
+		super.setPublishedDate(book.getPublishedDate());
+		super.setCategorize(book.getCategorize());
+		super.setPageNumber(book.getPageNumber());
+		super.setPrice(book.getPrice());
+	}
+	
 	@NotNull
-	@Digits(integer=8, fraction=0)
+	@Digits(integer=10, fraction=0)
 	@Override
 	public Integer getBookCode() {
 		return super.getBookCode();
@@ -45,13 +53,14 @@ public class BookForm extends Book {
 		super.setWriter(writer);
 	}
 
+	@Size(max=12)
 	@Override
-	public Date getPublishedDate() {
+	public String getPublishedDate() {
 		return super.getPublishedDate();
 	}
 
 	@Override
-	public void setPublishedDate(Date publishedDate) {
+	public void setPublishedDate(String publishedDate) {
 		super.setPublishedDate(publishedDate);
 	}
 

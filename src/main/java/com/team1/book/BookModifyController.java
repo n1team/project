@@ -11,49 +11,50 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.team1.book.service.BookRegisterService;
+import com.team1.book.service.BookModifyService;
 import com.team1.book.service.BookSearchService;
 import com.team1.domain.Book;
 import com.team1.form.BookForm;
 
 @Controller
 @RequestMapping("/book")
-public class BookRegisterController {
-	
+public class BookModifyController {
+
 	@Autowired
 	BookSearchService bookSearchService;
 	
 	@Autowired
-	BookRegisterService bookRegisterService;
+	BookModifyService bookModifyService;
 	
-	@GetMapping("/register")
-	public String registerForm(BookForm bookForm){
-		return "book/registerForm";
+	@GetMapping("/modify/{bookcode}")
+	public String modifyForm(BookForm bookForm, @PathVariable int bookcode){
+		Book book = bookSearchService.getBookByBookcode(bookcode);
+		bookForm.setBook(book);
+		
+		return "/book/modifyForm";
 	}
 	
-	@PostMapping("/register")
-	public String register(@Valid BookForm bookForm, BindingResult errors){
+	@PostMapping("/modify")
+	public String modify(@Valid BookForm bookForm, BindingResult errors, Integer pageNo){
 		System.out.println(bookForm);
-		
 		if(errors.hasErrors()){
 			System.out.println(errors);
-			return "book/registerForm";
+			return "book/modifyForm";
 		}
 		
-		bookRegisterService.register(bookForm, errors);
-		
+		bookModifyService.modify(bookForm, errors);
 		if(errors.hasErrors()){
 			System.out.println(errors);
-			return "book/registerForm";
+			return "book/modifyForm";
 		}
 		
-		return "redirect:/book/registerSuccess/" + bookForm.getBookCode();
+		return "redirect:/book/modifySuccess/" + bookForm.getBookCode() + "?pageNo=" + pageNo;
 	}
-
-	@GetMapping("/registerSuccess/{bookcode}")
-	public String registerSuccess(@PathVariable int bookcode, Model model){
+	
+	@GetMapping("/modifySuccess/{bookcode}")
+	public String modifySuccess(@PathVariable int bookcode, Model model){
 		Book book = bookSearchService.getBookByBookcode(bookcode);
 		model.addAttribute("book", book);
-		return "book/registerSuccess";
+		return "book/modifySuccess";
 	}
 }

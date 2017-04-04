@@ -7,29 +7,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>list.jsp</title>
+<title>registerSuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../../code_assist/animate.css">
 	<link rel="stylesheet" href="../../code_assist/bootstrap.css">
 </c:if>
-
 </head>
 <body>
-<h1>책 현황</h1> 
-<ol>
-<c:forEach var="book" items="${books}">
-	<li>
-		${book.bookCode},
-		${book.bookName},
-		${book.writer},
-		${book.publishedDate},
-		${book.categorize},
-		${book.pageNumber},
-		${book.price}
-	</li>
-</c:forEach>
-</ol>
+<h1>Book 삭제 성공입니다.</h1> 
+book book_code = ${bookcode}
+<hr>
+
+<a class="btn btn-success" href="/book/page/${param.pageNo}">이전 페이지로. . .</a>
 </body>
 </html>

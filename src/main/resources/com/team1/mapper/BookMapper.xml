@@ -25,4 +25,15 @@
 	)
 </insert>
 
+<update id="updateByBookcode">
+	update book
+	   set book_code		= #{bookCode},
+		   book_name		= #{bookName},
+		   writer			= #{writer},
+		   published_date	= #{publishedDate},
+		   categorize		= #{categorize},
+		   page_number		= #{pageNumber},
+		   price			= #{price}
+	 where book_code		= #{bookCode}
+</update>
 </mapper>

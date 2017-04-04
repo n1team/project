@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerForm.jsp</title>
+<title>modifyForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -18,8 +18,9 @@
 
 </head>
 <body>
-<h1>책 등록</h1> 
-<form:form action="/book/register" method="post" modelAttribute="bookForm">
+<h1>책 정보 수정</h1> 
+<form:form action="/book/modify?pageNo=${param.pageNo}" method="post" modelAttribute="bookForm">
+	<form:errors/>
 	<!-- bookCode -->
 	<div>
 		<label for="bookCode">책 코드 : </label>
@@ -63,7 +64,7 @@
 		<form:errors path="price"/>
 	</div>
 	
-	<input type="submit" value="Book 등록">
+	<input type="submit" value="Book 정보 수정">
 </form:form>
 </body>
 </html>

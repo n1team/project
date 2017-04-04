@@ -2,6 +2,7 @@ package com.team1.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -37,4 +38,14 @@ public interface BookMapper {
 	 */
 	int insert(Book book);
 	
+	/*
+	 * Update
+	 */
+	int updateByBookcode(Book book);
+	
+	/*
+	 * Delete
+	 */
+	@Delete("delete from book where book_code = #{book_code}")
+	int deleteByBookcode(int bookcode);
 }
