@@ -1,81 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.team1.mapper.PositionMapper">
+
 <resultMap type="com.team1.domain.Position" id="positionWithPlayer">
-<id	property="pstno" 				column="position_pstno"/>
-<result property="pstname" 			column="position_pstname"/>
-<result property="loc" 				column="position_loc"/>
+<id property="pstno" column="position_pstno"/>
+<result property="pstname" column="position_pstname"/>
+<result property="loc" column="position_loc"/>
+
 <collection property="player" ofType="com.team1.domain.Player">
-<id		property="pstno" 			column="player_pstno"/>   
-<result	property="playerno" 		column="player_playerno"/>
-<result property="pname" 			column="player_pname"/>
-<result property="job"				column="player_job"/>
-<result property="join"				column="player_join"/>
+<id property="playerno" column="player_playerno"/>
+<result property="pname" column="player_pname"/>
+<result property="job" column="player_job"/>
+<result property="join" column="player_join"/>
 <result property="heights" 			column="player_heights"/>
-<result property="uniformNumber" 	column="player_uniform_number"/>
-<result	property="pstno" 			column="player_pstno"/>
+<result property="uniformNumber" column="player_uniform_number"/>
+<result property="pstno" column="player_pstno"/>
+<result property="pname" column="player_pname"/>
 </collection>
 </resultMap>
+
 <select id="selectAllWithPlayer" resultMap="positionWithPlayer">
-select 	p1.pstno			as position_pstno,
-		p1.pstname			as position_pstname,
-		p1.loc				as position_loc,
-		p2.playerno 		as player_playerno,
-		p2.pname			as player_pname,
-		p2.job				as player_job,
-		p2.join				as player_join,
-		p2.heights			as player_heights,
-		p2.uniform_number 	as player_uniform_number,
-		p2.pstno			as player_pstno
-	from position p1 right outer join player p2
-	on p1.pstno = p2.pstno
-</select>
-
-
-
-<resultMap type="com.team1.domain.Position" id="positionWithPlayer2">
-<collection property="player" column="pstno" select="selectPlayerByPstno"/>
-</resultMap>
-<select id="selectPlayerByPstno" resultType="com.team1.domain.Player">
-select * 
-from player 
-where pstno = #{pstno} 
-</select>
-
-
-<select id="selectPageWithPlayer" resultMap="positionWithPlayer2">
-select 	p1.pstno			as position_pstno,
-		p1.pstname			as position_pstname,
-		p1.loc				as position_loc,
-		p2.playerno 		as player_playerno,
-		p2.pname			as player_pname,
-		p2.job				as player_job,
-		p2.join				as player_join,
-		p2.heights			as player_heights,
-		p2.uniform_number 	as player_uniform_number,
-		p2.pstno			as player_pstno
+select  p1.pstno 				as position_pstno,
+		p1.pstname 				as position_pstname,
+		p1.loc 					as position_loc,
+		p2.playerno 			as player_playerno,
+		p2.pname 				as player_pname,
+		p2.job 					as player_job,
+		p2.join 				as player_join,
+		p2.heights 				as player_heights,
+		p2.uniform_number 		as player_uniform_number,
+		p2.pstno 				as player_pstno
 	from position p1 left outer join player p2
-	  on p1.pstno = p2.pstno 
-  offset 	#{firstItem}-1 rows
-   fetch 	next #{itemsPerPage} rows only
+	  on p1.pstno = p2.pstno		
+</select>
+<select id="selectPageWithPlayer" resultMap="positionWithPlayer">
+select  p1.pstno 				as position_pstno,
+		p1.pstname 				as position_pstname,
+		p1.loc 					as position_loc,
+		p2.playerno 			as player_playerno,
+		p2.pname 				as player_pname,
+		p2.job 					as player_job,
+		p2.join 				as player_join,
+		p2.heights 				as player_heights,
+		p2.uniform_number 		as player_uniform_number,
+		p2.pstno 				as player_pstno
+	from position p1 left outer join player p2
+	  on p1.pstno = p2.pstno
+  offset #{firstItem} -1 rows
+   fetch next #{itemsPerPage} rows only
 </select>
 
 <select id="selectByPstnoWithPlayer" resultMap="positionWithPlayer">
-select 	p1.pstno			as position_pstno,
-		p1.pstname			as position_pstname,
-		p1.loc				as position_loc,
-		p2.playerno 		as player_playerno,
-		p2.pname			as player_pname,
-		p2.job				as player_job,
-		p2.join				as player_join,
-		p2.heights			as player_heights,
-		p2.uniform_number 	as player_uniform_number,
-		p2.pstno			as player_pstno
-	from 	position p1 left outer join player p2
-  	  on 	p1.pstno = p2.pstno
-   where	p1.pstno = #{pstno}
-
+select  p1.pstno 				as position_pstno,
+		p1.pstname 				as position_pstname,
+		p1.loc 					as position_loc,
+		p2.playerno 			as player_playerno,
+		p2.pname 				as player_pname,
+		p2.job 					as player_job,
+		p2.join 				as player_join,
+		p2.heights 				as player_heights,
+		p2.uniform_number 		as player_uniform_number,
+		p2.pstno 				as player_pstno
+	from position p1 left outer join player p2
+	  on p1.pstno = p2.pstno
+   where p1.pstno = #{pstno}
 </select>
+
 <insert id="insert">
 	insert into position
 	(
@@ -92,8 +82,7 @@ select 	p1.pstno			as position_pstno,
 </insert>
 <update id="updateByPstno">
  update position
-    set pstno			= #{pstno},
-    	pstname	 		= #{pstname},
+    set	pstname	 		= #{pstname},
 	 	loc			    = #{loc}
 where 	pstno 			= #{pstno}	 
  </update>

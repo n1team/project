@@ -63,7 +63,7 @@
 <hr class="animated bounce">
 <ul class="pagination">
 <li><a href="/player/page/1">First</a></li>
-<li><a href="/player/page/${page.paging.firstPage - 1}">Prev</a></li>
+<li><a href="/player/page/${page.paging.firstPage-1}">Prev</a></li>
 <li><c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage}">
 	<a href="/player/page/${i}">${i}</a>
 </c:forEach></li>

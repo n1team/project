@@ -11,12 +11,15 @@ public class Player extends ToString {
 	private int pstno;
 	private Position position;
 
+
 	public Position getPosition() {
 		return position;
 	}
+
 	public void setPosition(Position position) {
 		this.position = position;
 	}
+
 	public Player() {
 		// TODO Auto-generated constructor stub
 	}
@@ -31,6 +34,9 @@ public class Player extends ToString {
 		return pname;
 	}
 	public void setPname(String pname) {
+		if(pname != null){
+			pname = pname.trim();
+		}		
 		this.pname = pname;
 		
 	}
@@ -38,6 +44,9 @@ public class Player extends ToString {
 		return job;
 	}
 	public void setJob(String job) {
+		if(job != null){
+			job = job.trim();
+		}		
 		this.job = job;
 	}
 	public int getJoin() {

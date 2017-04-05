@@ -25,7 +25,7 @@ public interface PositionMapper {
 		"from position",
 		"order by pstno",
 		"offset #{firstItem}-1 rows",
-		" fetch next #{itemsPerPage} rows only"
+		"fetch next #{itemsPerPage} rows only"
 	})
 	List<Position> selectPage(Pagination paging);
 	List<Position> selectPageWithPlayer(Pagination paging);
@@ -33,6 +33,7 @@ public interface PositionMapper {
 	@Select("select * from position where pstno=#{pstno}")
 	Position selectByPstno(int pstno);
 	Position selectByPstnoWithPlayer(int pstno);
+	
 	
 	int insert(Position position);
 	int updateByPstno(Position position);

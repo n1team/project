@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,8 +18,6 @@
 
 </head>
 <body>
-
-
 <a href="/position/register" class="btn btn-primary active">Position 등록</a>
 <button type="button" class="btn btn-primary disabled">Position Page <span class="badge">pageNo=${page.paging.pageNo}</span></button>
 <div class="table-responsive">

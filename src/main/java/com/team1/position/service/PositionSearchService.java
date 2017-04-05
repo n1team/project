@@ -43,7 +43,7 @@ public class PositionSearchService {
 	}
 	public Map<String, Object> getPage(int pageNo, boolean withPlayer){
 		Pagination paging = new Pagination();
-		paging.setItemsPerPage(posMapper.selectTotalCount());
+		paging.setTotalItem(posMapper.selectTotalCount());
 		paging.setPageNo(pageNo);
 		List<Position> pos = null;
 		if(withPlayer)

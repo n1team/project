@@ -7,6 +7,7 @@
 <result property="pname" 			column="player_pname"/>
 <result property="job"				column="player_job"/>
 <result property="heights" 			column="player_heights"/>
+<result property="join"				column="player_join"/>
 <result property="uniformNumber" 	column="player_uniform_number"/>
 <result property="pstno" 			column="player_pstno"/>
 <association property="position" javaType="com.team1.domain.Position">

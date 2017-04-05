@@ -24,7 +24,6 @@ public class Country extends ToString {
 	private BigDecimal capital;
 	private String code2;
 	private List<City> cities;
-	
 
 	public List<City> getCities() {
 		return cities;
@@ -33,7 +32,7 @@ public class Country extends ToString {
 	public void setCities(List<City> cities) {
 		this.cities = cities;
 	}
-	
+
 	public String getCode() {
 		return code;
 	}
