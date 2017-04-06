@@ -2,7 +2,6 @@ package com.team1.domain;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-<<<<<<< HEAD
 import com.team1.util.ToString;
 
 public class Cosmatic extends ToString {
