@@ -56,13 +56,9 @@
 
 <update id="update">
 update note
-	   		set note_id 			= #{noteId},
-				note_no				= #{noteNo},
-				note_title			= #{noteTitle},
-				note_content		= #{noteContent},
-				note_date			= #{noteDate}
+	   		set note_title			= #{noteTitle},
+				note_content		= #{noteContent}
 	 		where note_no = #{noteNo}
-
 </update>
 
 <delete id="delete">

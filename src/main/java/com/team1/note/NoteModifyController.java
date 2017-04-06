@@ -33,37 +33,40 @@ public class NoteModifyController {
 	NoteModifyService modifyService;
 
 	@GetMapping("/modify/{noteNo}")
-	public String modifyForm(@PathVariable int noteNo,NoteForm noteForm,Integer pageNo) {
-		log.info("noteNo("+noteNo+")===noteForm==="+pageNo);
+	public String modifyForm(@PathVariable int noteNo,@Valid NoteForm noteForm,Integer pageNo,Model model,String cc) {
+		System.err.println("NoteForm="+noteForm);
+		Map<String, Object> page = noteSearchService.getPage(pageNo);
 		Note note = noteSearchService.getListAllNo(noteNo);
-		log.info("noteNo("+noteNo+")===noteForm2==="+pageNo);
+		model.addAttribute("page", page);
+		model.addAttribute("a", cc);
 		noteForm.setNote(note);
-		log.info("noteNo("+noteNo+")===noteForm3==="+pageNo);
-		return "note/list2";
+		return "note/list";
 	}
 	
-	@PostMapping("/modify/{pageNo}")
-	public String modify(@Valid NoteForm noteForm, BindingResult errors,@PathVariable Integer pageNo) {
-		log.info("noteNo("+pageNo+")===noteForm==="+pageNo);
+	@PostMapping("/modify")
+	public String modify(@Valid NoteForm noteForm, BindingResult errors,Integer pageNo) {
 		System.err.println(noteForm);
-		
+		System.err.println(pageNo);
 		if (errors.hasErrors()) {
 			System.out.println(errors);
 			return "note/list";
 		}
 		
 		modifyService.modify(noteForm, errors);
-
+		System.err.println("2========="+noteForm);
 		if (errors.hasErrors()) {
 			System.out.println(errors);
 			return "note/list";
 		}
+		System.err.println("============="+noteForm.getNoteNo()+"?pageNo="+pageNo);
 		return "redirect:/note/modifySuccess/"+noteForm.getNoteNo()+"?pageNo="+pageNo;
 	}
 	
 	@GetMapping("/modifySuccess/{noteNo}")
 	public String modifySuccess(@PathVariable int noteNo,Model model,Integer pageNo) {
 		Map<String, Object> page = noteSearchService.getPage(pageNo);
+		NoteForm form = new NoteForm();
+		model.addAttribute("noteForm", form);
 		model.addAttribute("page", page);
 		return "note/list";
 	}

@@ -1,6 +1,12 @@
 delete from note;
 
 delete from note where note_no=133;
+UPDATE  NOTE set note_id 			= 'ad',
+				note_title			= 222222222,
+				note_content		= 22222222,
+				note_date			= sysdate
+	 				where note_no = 174;
+
 drop table note;
 drop table name_se;
 CREATE TABLE note (
@@ -11,7 +17,7 @@ CREATE TABLE note (
 				note_date		date
 				);
 				drop SEQUENCE note_no_seq;
-			create sequence note_no_seq START WITH 20;
+			create sequence note_no_seq START WITH 1;
 			select note_no_seq.nextval from dual;
 			
 			

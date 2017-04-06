@@ -35,7 +35,9 @@ public class NoteSearchController {
 	}
 	
 	
-	@GetMapping("/summnote/{noteNo}")
+	
+	
+	@GetMapping("/summnote/{noteNo}") 
 	public String getItemById(@PathVariable int noteNo, Model model , int pageNo) {
 		log.info("getItem("+ noteNo + ")");
 		Map<String, Object> page = noteSearchService.getPage(pageNo);
@@ -44,9 +46,12 @@ public class NoteSearchController {
 		model.addAttribute("note", note);
 		return "note/list";
 	}
-	
-	
 
+	
+	@GetMapping("/vvv") 
+	public String ccc() {
+		return "note/vvv";
+	}
 	
 	
 
