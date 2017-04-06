@@ -4,8 +4,13 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Pagination {
+<<<<<<< HEAD
 	private final static int ITEMS_PER_PAGE = 10;
 	private final static int PAGES_PER_GROUP = 10;
+=======
+	final static int ITEMS_PER_PAGE = 10;
+	final static int PAGES_PER_GROUP = 10;
+>>>>>>> 9077cbbd410c64926eb8726db94c50bc67156a06
 	
 	private int totalItem;		// select count(*) from city
 	private int pageNo;			// currentPage, Request Query Parameter
