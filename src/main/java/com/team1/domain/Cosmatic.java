@@ -2,8 +2,9 @@ package com.team1.domain;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.team1.util.ToString;
 
-public class Cosmatic {
+public class Cosmatic extends ToString {
 
 	private int productno;
 	private String productname;
