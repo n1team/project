@@ -14,21 +14,6 @@ public class Cosmatic {
 	public Cosmatic() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	@Override
-	public String toString() {
-		
-		String str = null;
-		
-		ObjectMapper mapper = new ObjectMapper();
-		
-		try {
-			str = mapper.writeValueAsString(this);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-		return str;
-	}
 
 
 	public int getProductno() {
