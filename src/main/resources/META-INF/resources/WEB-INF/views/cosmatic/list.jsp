@@ -17,12 +17,6 @@
 <!-- 4. bootstrap.js -->
 <script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
-
 </head>
 <body>
 <h1>Cosmatic List</h1>

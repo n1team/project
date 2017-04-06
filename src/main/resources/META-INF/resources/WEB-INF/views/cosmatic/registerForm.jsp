@@ -18,43 +18,38 @@
 <!-- 4. bootstrap.js -->
 <script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
-
-</head>
 <style>
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css); 
-    body {
-	background-image: url("../../../img/y_dot.png");
-/* 	background-size: 150%; */
-    }
-    
-    h1 {
-         color : gray;
-         font-family: 'Space Mono';
-         text-align: center;
-         margin-top:70px;
-    }
-    .btn-default>a {
-    	color : #FF8C00;
-    	text-decoration: none;
-    } 
-    
-      .btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
-        background-color: rgba(255,255,255,0.7);
-        border-radius: 0;
-        font-family: 'Jeju Gothic';
-        color : #000080;
-    }
-    
-     .btn {
-		margin : 0 auto;
-		margin-top : 70px;
-	} 
-</style>
+		@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+		body {
+			background-image: url("../../../img/y_dot.png");
+			/* 	background-size: 150%; */
+		}
+
+		h1 {
+			color : gray;
+			font-family: 'Space Mono';
+			text-align: center;
+			margin-top:70px;
+		}
+		.btn-default>a {
+			color : #FF8C00;
+			text-decoration: none;
+		}
+
+		.btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
+			background-color: rgba(255,255,255,0.7);
+			border-radius: 0;
+			font-family: 'Jeju Gothic';
+			color : #000080;
+		}
+
+		.btn {
+			margin : 0 auto;
+			margin-top : 70px;
+		}
+	</style>
+</head>
+
 <body>
 <h1>Cosmatic Insert</h1>
 
