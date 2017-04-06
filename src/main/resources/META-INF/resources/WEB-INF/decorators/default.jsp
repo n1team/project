@@ -59,6 +59,7 @@
 				</li>
 				<li><a href="#">Q & A</a></li>
 				<li><a href="#">Documentation</a></li>
+				<li><a href="/note/page/1">Note</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<security:authorize access="isAnonymous()">

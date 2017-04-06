@@ -1,9 +1,9 @@
-package com.example.util;
+package com.team1.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class Pagination {
+public class NotePagination {
 	final static int ITEMS_PER_PAGE = 10;
 	final static int PAGES_PER_GROUP = 3;
 	
@@ -12,14 +12,14 @@ public class Pagination {
 	private int itemsPerPage;
 	private int pagesPerGroup;
 
-	public Pagination() {
+	public NotePagination() {
 		this.totalItem = 0;
 		this.pageNo = 1;
 		this.itemsPerPage = ITEMS_PER_PAGE;
 		this.pagesPerGroup = PAGES_PER_GROUP;
 	}
 	
-	public Pagination(int itemsPerPage, int pagesPerGroup) {
+	public NotePagination(int itemsPerPage, int pagesPerGroup) {
 		this();
 		
 		if (itemsPerPage < 1)

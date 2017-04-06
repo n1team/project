@@ -9,9 +9,9 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.util.Pagination;
 import com.team1.domain.Note;
 import com.team1.mapper.NoteMapper;
+import com.team1.util.NotePagination;
 
 
 @Service
@@ -29,7 +29,7 @@ public class NoteSearchService {
 	
 	
 	public Map<String, Object> getPage(int pageNo) {
-		Pagination paging = new Pagination();
+		NotePagination paging = new NotePagination();
 		paging.setTotalItem(noteMapper.selectTotalCount());
 		paging.setPageNo(pageNo);
 

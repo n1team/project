@@ -21,7 +21,9 @@ public class SiteMeshConfig {
 						.addDecoratorPath("/city/*", "/WEB-INF/decorators/default.jsp")
 						.addDecoratorPath("/dept/*", "/WEB-INF/decorators/default.jsp")
 						.addDecoratorPath("/emp/*", "/WEB-INF/decorators/default.jsp")
-						.addDecoratorPath("/*", "/WEB-INF/decorators/default.jsp");
+						.addDecoratorPath("/note/*", "/WEB-INF/decorators/default.jsp")
+						.addDecoratorPath("/*", "/WEB-INF/decorators/default.jsp")
+						;
 			}
 		});
 

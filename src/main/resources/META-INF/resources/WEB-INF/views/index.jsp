@@ -23,8 +23,7 @@
 
 <h1>main page</h1>
 
-<sec:authentication property="principal.username" /><br>
-<sec:authentication property="principal.authorities" />
+
 
 </body>
 </html>

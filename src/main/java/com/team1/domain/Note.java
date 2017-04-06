@@ -2,6 +2,8 @@ package com.team1.domain;
 
 import java.util.Date;
 
+import com.team1.util.ToString;
+
 public class Note extends ToString {
 
 	private String noteId;

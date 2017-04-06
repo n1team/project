@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import com.team1.domain.Note;
-import com.example.util.Pagination;
+import com.team1.util.NotePagination;
 
 
 @Mapper
@@ -17,7 +17,7 @@ public interface NoteMapper {
 	int selectTotalCount();
 	
 
-	List<Note> selectAll(Pagination paging);	
+	List<Note> selectAll(NotePagination paging);	
 	
 	Note selectAllNo(int noteNo);	
 	
