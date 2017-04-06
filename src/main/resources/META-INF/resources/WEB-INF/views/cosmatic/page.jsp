@@ -113,6 +113,7 @@
 				<td><a class="deco-none" href="/cosmatic/modify/${cosmatic.productno}?pageNo=${page.paging.pageNo}">수정</td>
 				<td><a class="deco-none" href="/cosmatic/unregister/${cosmatic.productno}?pageNo=${page.paging.pageNo}">삭제</a></td>
 			</tr>
+			<c:if test=""/>
 			</c:forEach>
             </tbody>
         </table>
