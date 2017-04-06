@@ -1,4 +1,4 @@
-package com.team1.domain;
+package com.team1.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

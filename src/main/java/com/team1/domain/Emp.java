@@ -1,5 +1,7 @@
 package com.team1.domain;
 
+import com.team1.util.ToString;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
