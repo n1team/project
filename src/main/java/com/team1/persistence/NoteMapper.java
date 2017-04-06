@@ -1,4 +1,4 @@
-package com.team1.mapper;
+package com.team1.persistence;
 
 import java.util.List;
 

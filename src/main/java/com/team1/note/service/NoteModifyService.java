@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import com.team1.domain.Note;
-import com.team1.mapper.NoteMapper;
+import com.team1.persistence.NoteMapper;
 
 @Service
 public class NoteModifyService {
