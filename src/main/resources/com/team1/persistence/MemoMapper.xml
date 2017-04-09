@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team1.mapper.MemoMapper">
+
+<!-- 	<select id="searchAll"> -->
+<!-- 		select * from memo where mname like '%#{mname}%' -->
+<!-- 		order by mno desc          -->
+<!-- 		offset #{firstItem} - 1 rows    -->
+<!-- 		fetch next #{itemsPerPage} rows only	 -->
+<!-- 	</select> -->
+	<insert id="insert">
+		<selectKey keyProperty="mno" keyColumn="mno" resultType="int"
+			order="BEFORE">
+			select memo_seq.nextval from dual
+		</selectKey>
+		insert into memo 
+		( 
+			mno, 
+			mname,
+			password, 
+			mcontent
+		) 
+		values 
+		(
+			#{mno}, 
+			#{mname}, 
+			#{password},
+			#{mcontent}
+		)
+	</insert>
+
+	<update id="updateByMno">
+		update memo set mname = #{mname}, mcontent = #{mcontent}, password = #{password}, mdate
+		= #{mdate} where mno = #{mno}
+	</update>
+
+
+
+
+
+</mapper>
