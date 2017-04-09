@@ -35,6 +35,10 @@ public class City extends ToString {
 	}
 
 	public void setName(String name) {
+		
+		if(name !=null){
+			 name = name.trim();
+		}
 		this.name = name;
 	}
 
@@ -43,6 +47,10 @@ public class City extends ToString {
 	}
 
 	public void setCountryCode(String countryCode) {
+		
+		if(countryCode != null){
+			countryCode = countryCode.trim();
+		}		
 		this.countryCode = countryCode;
 	}
 
@@ -51,6 +59,10 @@ public class City extends ToString {
 	}
 
 	public void setDistrict(String district) {
+		
+		if(district !=null){
+			district = district.trim();
+		}
 		this.district = district;
 	}
 

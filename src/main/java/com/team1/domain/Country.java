@@ -23,7 +23,6 @@ public class Country extends ToString {
 	private BigDecimal capital;
 	private String code2;
 	private List<City> cities;
-	
 
 	public List<City> getCities() {
 		return cities;
@@ -32,12 +31,15 @@ public class Country extends ToString {
 	public void setCities(List<City> cities) {
 		this.cities = cities;
 	}
-	
+
 	public String getCode() {
 		return code;
 	}
 
 	public void setCode(String code) {
+		if(code != null){
+			code = code.trim();
+		}
 		this.code = code;
 	}
 
@@ -46,6 +48,9 @@ public class Country extends ToString {
 	}
 
 	public void setName(String name) {
+		if(name !=null){
+			name = name.trim();
+		}
 		this.name = name;
 	}
 
@@ -54,6 +59,9 @@ public class Country extends ToString {
 	}
 
 	public void setContinent(String continent) {
+		if(continent != null){
+			continent = continent.trim();
+		}
 		this.continent = continent;
 	}
 
@@ -62,6 +70,9 @@ public class Country extends ToString {
 	}
 
 	public void setRegion(String region) {
+		if(region != null){
+			region = region.trim();
+		}
 		this.region = region;
 	}
 
@@ -118,6 +129,7 @@ public class Country extends ToString {
 	}
 
 	public void setLocalName(String localName) {
+		
 		this.localName = localName;
 	}
 

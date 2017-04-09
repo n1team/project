@@ -8,3 +8,5 @@ select * from cosmatic;
 delete from cosmatic where productno = '10028';
 
 commit;
+select * from player;
+select * from position;
