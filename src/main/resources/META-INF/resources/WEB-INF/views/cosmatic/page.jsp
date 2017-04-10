@@ -12,9 +12,9 @@
 	
 </head>
 
+
 <body class="container">
 <header>
-<%-- <h1>cosmatic Page pageno=${page.paging.pageNo}</h1> --%>
 <h1>Welcome Cosmatic</h1>
 </header>
 
