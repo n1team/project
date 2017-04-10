@@ -2,11 +2,9 @@ package com.team1.domain;
 
 import com.team1.util.ToString;
 
-import javax.persistence.Entity;
 import java.math.BigDecimal;
 
 public class City extends ToString {
-
 
 	private int id;
 	private String name;
