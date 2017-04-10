@@ -17,7 +17,7 @@
 
 <h1>Book in Library</h1>
 <a href="/book/register?pageNo=${page.paging.pageNo}" class="btn btn-primary">Book 등록</a>
-<table class="table">
+<table class="table table-striped">
 	<thead>
 		<tr>
 			<th>Book Code</th>
