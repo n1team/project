@@ -9,17 +9,13 @@
 <head>
 <meta charset="UTF-8">
 <title>position_modifySuccess.jsp</title>
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
-
 </head>
 <body>
-<h1>포지션 수정 성공</h1>
-${position}
-<hr>
-<a class="btn btn-info" href="/position/page/${param.pageNo}">이전 페이지로</a>
+<fieldset style="text-align: center;">
+<h2 class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plain">포지션수정성공</span></h2>
+<%-- ${position} --%>
+<br>
+<br>
+<a class="btn btn-default" href="/position/page/${param.pageNo}">이전 페이지로</a>
 </body>
 </html>

@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,79 +21,22 @@
 	src="/webjars/summernote/0.8.2/dist/summernote.min.js"></script>
 <script type="text/javascript"
 	src="/webjars/summernote/0.8.2/lang/summernote-ko-KR.js"></script>
-<style type="text/css">
-body {
-/* 	background-image: url("../../../img/bbb.jpg"); */
-}
-.row {
-	width: 100%;
-	margin: auto;
-}
-.col-lg-10 {
-	margin-top: 10px;
-}
-.col-lg-2 {	
-	padding: 0px;
-}
 
-.list1 {
-	width: 100%;
-}
-.list2 {
-	visibility: hidden;
-}
-.nav3 {
-	margin-bottom: 0px;
-	margin-right: 0px;
-}
-.container-fluid {
-	padding-left: 0px;
-}
-.btn-group {  
-	float: left; 
-	padding-bottom: 5px;
-}    
-.note-editing-area {
- 	clear: both; 
-}
-.note-editable {
-	border-top:1px solid gray; 
-	text-align: left;
-	white-space: pre-wrap;  
-	word-wrap:break-word;
-}
-.nav2>li>a {
-	padding-bottom: 5px;
-	padding-top: 5px;
-}
-.row {
-	border: 5px inset RGB(237,234,234);
-}
-.input-group {
-	padding-bottom: 10px; 
-}
-.view {
-	margin:auto; 
-	padding:20px;  
-	text-align: left; 
-	width: 100%;  
-	overflow:auto;
-	border: 3px groove white; 
-	min-height: 500px;
-	white-space: pre-wrap;  
-	word-wrap:break-word;
-}
-.pagination > li > a {
-	color: green;
-}
-
-</style>
-
+<link rel="stylesheet" href="/css/note/note.css">
 </head>
 <body>
 	<c:set var="no" value="${note.noteNo}"/>
 	<c:set var="tt" value="${a}"/>
+<%-- 	<sec:authorize access="isAuthenticated()"> --%>
+<%-- 		<sec:authentication property="principal.username"/> --%>
+<%-- 	</sec:authorize> --%>
+<%-- 	<sec:authorize access="isAnonymous()"> --%>
+		
+<%-- 	</sec:authorize> --%>
+
 	
+
+<%-- 	<c:out value="${ }"/> --%>
 	<div class="container">
 		<nav class="navbar nav3">
 			<div class="container-fluid">
@@ -177,7 +120,7 @@ body {
 								<form:textarea path="noteContent" id="summernote" />
 								<form:errors path="noteContent" />
 								<form:hidden path="noteNo" />
-															<input style="visibility: hidden;" id="mo2" type="submit" value="수정">
+								<input style="visibility: hidden;" id="mo2" type="submit" value="수정">
 						</form:form>
 					</c:when>
 
@@ -192,6 +135,7 @@ body {
 							<form:textarea path="noteContent" id="summernote" />
 							<form:errors path="noteContent" />
 							<input style="visibility: hidden;" type="submit" id="lis" value="추가">
+							<input>
 						</form:form>
 					</c:otherwise>
 				</c:choose>
@@ -237,46 +181,7 @@ body {
 
 
 
-	<script>
-		$(document).ready(function() {
-			$('#summernote').summernote({
-				height : 550,
-				lang : 'ko-KR',
-// 				airMode: true
-			});
-		});
-
-		$(document).ready(function() {
-			$('#clear').click(function() {
-				$('#summernote').summernote('reset');
-				$("#msg").val("");
-
-			});
-		});
-
-		$(document).ready(function() {
-			$('#list').click(function() {
-				$('.col-lg-10').toggleClass('list1');
-				$('.col-lg-2').toggleClass('list2');
-			});
-		});
-		$(document).ready(function() {
-			$('#save').click(function() {
-				$('#lis').click()
-			});
-		});
-		$(document).ready(function() {
-			$('#newnote4').click(function() {
-				$('#lis').click()
-			});
-		});
-		$(document).ready(function() {
-			$('#modify').click(function() {
-				$('#mo2').click()
-			});
-		});
-		
-	</script>
+	<script src="/js/note/note.js">	</script>
 
 </body>
 </html>

@@ -1,7 +1,8 @@
-$(document).ready(function() {
+	$(document).ready(function() {
 			$('#summernote').summernote({
 				height : 550,
-				lang : 'ko-KR'
+				lang : 'ko-KR',
+// 				airMode: true
 			});
 		});
 
@@ -20,7 +21,17 @@ $(document).ready(function() {
 			});
 		});
 		$(document).ready(function() {
-			$('#newnote2').click(function() {
+			$('#save').click(function() {
 				$('#lis').click()
+			});
+		});
+		$(document).ready(function() {
+			$('#newnote4').click(function() {
+				$('#lis').click()
+			});
+		});
+		$(document).ready(function() {
+			$('#modify').click(function() {
+				$('#mo2').click()
 			});
 		});

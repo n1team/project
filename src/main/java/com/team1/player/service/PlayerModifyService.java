@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import com.team1.domain.Player;
-import com.team1.domain.Position;
 import com.team1.mapper.PlayerMapper;
 import com.team1.mapper.PositionMapper;
 

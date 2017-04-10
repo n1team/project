@@ -107,22 +107,22 @@
 <div align="center">
 <ul class="pagination">
 	<c:if test="${page.paging.firstGroup==false}">
-		<li><a href="/memo/memo/1">&laquo맨앞</a></li>
-		<li><a href="/memo/memo/${page.paging.firstPage - 1}">&laquo이전</a></li>
+		<li><a href="/memo/1">&laquo맨앞</a></li>
+		<li><a href="/memo/${page.paging.firstPage - 1}">&laquo이전</a></li>
 	</c:if>
 <c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage }">
 
 	<c:if test="${page.paging.pageNo==i}">
-		<li class="active"><a href="/memo/memo/${i}">${i}</a></li>
+		<li class="active"><a href="/memo/${i}">${i}</a></li>
 	</c:if>
 	<c:if test="${page.paging.pageNo!=i}">
-		<li><a href="/memo/memo/${i}">${i}</a></li>
+		<li><a href="/memo/${i}">${i}</a></li>
 	</c:if>
 	
 </c:forEach>
 	<c:if test="${page.paging.lastGroup==false}">
-		<li><a href="/memo/memo/${page.paging.lastPage + 1}">다음&raquo</a></li>
-		<li><a href="/memo/memo/${page.paging.totalPage}">맨뒤&raquo</a></li>
+		<li><a href="/memo/${page.paging.lastPage + 1}">다음&raquo</a></li>
+		<li><a href="/memo/${page.paging.totalPage}">맨뒤&raquo</a></li>
 	</c:if>
 </ul>
 </div>

@@ -8,7 +8,7 @@
 		select cos_no_seq.nextval from dual
 	</selectKey>
 	
-	insert into cosmatic (
+	insert into cosmetic (
 	
 	productno,
 	productname,
@@ -30,7 +30,7 @@
 </insert>
 
 <update id="updateByProductno">
-	update cosmatic
+	update cosmetic
 	   set productname 		=#{productname},
 	   	   productno		=#{productno},
 	   	   price			=#{price},

@@ -8,20 +8,16 @@
 <head>
 <meta charset="UTF-8">
 <title>list.jsp</title>
-
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
-
 </head>
 <body>
-<h1>list</h1>
+<fieldset style="text-align: center;">
+<h2 class="btn btn-info btn-lg"><span class="glyphicon glyphicon-grain">List</span></h2>
+<br>
+<a class="btn btn-default" href="/player/page/1">Player 게시판으로</a>
 <ol>
 <c:forEach var="player" items="${player}">
-<li>${player.playerno},${player.pname},${player.job},${player.join}</li>
+<li>${player.playerno},${player.pname},${player.job},${player.join},${player.uniformNumber},${player.heights},${player.pstno}</li>
 </c:forEach>
-</ol>
+</ol> 
 </body>
 </html>

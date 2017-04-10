@@ -9,20 +9,16 @@
 <head>
 <meta charset="UTF-8">
 <title>position_list.jsp</title>
-
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
-
 </head>
 <body>
-<h1>list</h1>
+<fieldset style="text-align: center;">
+<h2 class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plain">List</span></h2>
+<br>
+<a class="btn btn-default" href="/position/page/1">Position 게시판으로</a>
 <ol>
 <c:forEach var="position" items="${list}">
 <li>${position.pstno},${position.pstname},${position.loc}</li>
 </c:forEach>
-</ol>
+</ol> 
 </body>
 </html>
