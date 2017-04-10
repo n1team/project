@@ -24,7 +24,9 @@ public class SiteMeshConfig {
 						.addDecoratorPath("/note/*", "/WEB-INF/decorators/default.jsp")
 						.addDecoratorPath("/player/*", "/WEB-INF/decorators/default.jsp")
 						.addDecoratorPath("/position/*", "/WEB-INF/decorators/default.jsp")
+						.addDecoratorPath("/cosmatic/*", "/WEB-INF/decorators/default.jsp")
 						.addDecoratorPath("/*", "/WEB-INF/decorators/default.jsp")
+						.addExcludedPath("/memo/unregister/*")
 						;
 			}
 		});

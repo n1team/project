@@ -30,7 +30,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Mosaic</a>
+			<a class="navbar-brand" href="#">1-TEAM</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
@@ -56,6 +56,7 @@
 				<li><a href="/book/page/1">Book</a></li>
 				<li><a href="/player/page/1">Player</a></li>
 				<li><a href="/position/page/1">Position</a></li>
+				<li><a href="/memo/1">Memo</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<security:authorize access="isAnonymous()">

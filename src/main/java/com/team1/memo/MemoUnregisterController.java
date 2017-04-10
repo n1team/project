@@ -16,7 +16,7 @@ import com.team1.memo.service.MemoSearchService;
 import com.team1.memo.service.MemoUnregisterService;
 
 @Controller
-@RequestMapping("/project")
+@RequestMapping("/memo")
 public class MemoUnregisterController {
 	@Autowired
 	MemoSearchService memoSearchService;
@@ -29,7 +29,7 @@ public class MemoUnregisterController {
 		Memo memo = memoSearchService.getItem(mno);
 		model.addAttribute("memo",memo);
 		
-		return "project/unregisterForm";
+		return "memo/unregisterForm";
 		
 	}
 	
@@ -38,12 +38,12 @@ public class MemoUnregisterController {
 		
 		memoUnregisterService.unregister(mno);
 		
-		return "redirect:/project/unregisterSuccess/" + mno + "?pageNo=" + pageNo;
+		return "redirect:/memo/unregisterSuccess/" + mno + "?pageNo=" + pageNo;
 		
 	}
 	@GetMapping("unregisterSuccess/{mno}")
 	public String unregisterSuccess(@PathVariable int mno, Model model){
 		model.addAttribute("mno",mno);
-		return "project/unregisterSuccess";
+		return "memo/unregisterSuccess";
 	}
 }

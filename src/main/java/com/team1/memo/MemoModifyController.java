@@ -19,7 +19,7 @@ import com.team1.memo.service.MemoModifyService;
 import com.team1.memo.service.MemoSearchService;
 
 @Controller
-@RequestMapping("/project")
+@RequestMapping("/memo")
 public class MemoModifyController {
 	@Autowired
 	MemoSearchService memoSearchService;
@@ -44,7 +44,7 @@ public class MemoModifyController {
 		////////////////////////////////////////////////////////////////////////////////////
 		memoForm.setMemo(memo);
 		
-		return "project/modifyForm";
+		return "memo/modifyForm";
 		
 	}
 	@PostMapping("/modify")
@@ -64,20 +64,20 @@ public class MemoModifyController {
 		memoForm.setMdate(d);
 		
 		if(errors.hasErrors()){
-			return "project/modifyForm";
+			return "memo/modifyForm";
 		}
 		
 		memoModifyService.modify(memoForm,errors);
 		if(errors.hasErrors()){
-			return "project/modifyForm";
+			return "memo/modifyForm";
 		}
-		return "redirect:/project/modifySuccess/" + memoForm.getMno() + "?pageNo=" + pageNo;
+		return "redirect:/memo/modifySuccess/" + memoForm.getMno() + "?pageNo=" + pageNo;
 		
 	}
 	@GetMapping("modifySuccess/{mno}")
 	public String modifySuccess(@PathVariable int mno, Model model){
 		Memo memo = memoSearchService.getItem(mno);
 		model.addAttribute("memo",memo);
-		return "project/modifySuccess";
+		return "memo/modifySuccess";
 	}
 }

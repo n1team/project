@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class memoPagination {
-	final static int ITEMS_PER_PAGE = 14;
+	final static int ITEMS_PER_PAGE = 12;
 	final static int PAGES_PER_GROUP = 10;
 	
 	private int totalItem;		// select count(*) from city
