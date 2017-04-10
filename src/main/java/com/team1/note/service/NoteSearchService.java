@@ -30,12 +30,15 @@ public class NoteSearchService {
 //	}
 	
 	
-	public Map<String, Object> getPage(int pageNo,String id) {
+	public Map<String, Object> getPage(int pageNo) {
 		NotePagination paging = new NotePagination();
-		UserDetails ud = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		System.out.println(ud.getUsername());
-		id = ud.getUsername();
-		System.err.println(id);
+		Object o = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (!(o instanceof String))
+		{
+			UserDetails ud = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			System.out.println(ud.getUsername());
+		}
+
 		paging.setTotalItem(noteMapper.selectTotalCount());
 		paging.setPageNo(pageNo);
 		List<Note> list = noteMapper.selectAll(paging);
