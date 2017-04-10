@@ -19,17 +19,17 @@ public class CosmeticSearchService {
 	static Log log = LogFactory.getLog(CosmeticSearchService.class);
 	
 	@Autowired
-	CosmeticMapper cosmaticmapper;
+	CosmeticMapper cosmeticmapper;
 	
 	public List<Cosmetic> getListName() {
 		log.info("getListName()");
-		List<Cosmetic> list = cosmaticmapper.selectName();
+		List<Cosmetic> list = cosmeticmapper.selectName();
 		return list;
 	}
 	
 	public List<Cosmetic> getListAll() {
 		log.info("getListAll()");
-		List<Cosmetic> list = cosmaticmapper.selectAll();
+		List<Cosmetic> list = cosmeticmapper.selectAll();
 		return list;
 	}
 	
@@ -38,30 +38,30 @@ public class CosmeticSearchService {
 	public Map<String, Object> getPage(int pageNo) {
 		
 		Pagination paging = new Pagination();
-		paging.setTotalItem(cosmaticmapper.selectTotalCount());
+		paging.setTotalItem(cosmeticmapper.selectTotalCount());
 		paging.setPageNo(pageNo);
 		
-		List<Cosmetic> list = cosmaticmapper.selectPage(paging);
+		List<Cosmetic> list = cosmeticmapper.selectPage(paging);
 		
 		Map<String, Object> map = new HashMap<>();
-		map.put("cosmatics", list);
+		map.put("cosmetics", list);
 		map.put("paging", paging);
 		
 		return map;
 	}
 	
-	public List<Cosmetic> getCosmaticByCategory(String category) {
-		log.info("getCosmaticByCategory("+category+")");
+	public List<Cosmetic> getCosmeticByCategory(String category) {
+		log.info("getcosmeticByCategory("+category+")");
 		
-		List<Cosmetic> list = cosmaticmapper.selectByCategory(category);
+		List<Cosmetic> list = cosmeticmapper.selectByCategory(category);
 		
 		return list;
 	}
 	
-	public Cosmetic getCosmaticByProductno(int productno) {
-		log.info("getCosmaticByProductno("+productno+")");
+	public Cosmetic getCosmeticByProductno(int productno) {
+		log.info("getcosmeticByProductno("+productno+")");
 		
-		Cosmetic cos = cosmaticmapper.selectByProductno(productno);
+		Cosmetic cos = cosmeticmapper.selectByProductno(productno);
 		
 		return cos;
 	}

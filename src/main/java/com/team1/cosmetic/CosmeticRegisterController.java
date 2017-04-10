@@ -19,7 +19,7 @@ import com.team1.domain.Cosmetic;
 import com.team1.form.CosmeticForm;
 
 @Controller
-@RequestMapping("/cosmatic")
+@RequestMapping("/cosmetic")
 public class CosmeticRegisterController {
 
 	static Log log = LogFactory.getLog(CosmeticRegisterController.class);
@@ -31,40 +31,40 @@ public class CosmeticRegisterController {
 	CosmeticRegisterService registerservice;
 	
 	@GetMapping("/register")
-	public String registerForm(CosmeticForm cosmaticform) {
+	public String registerForm(CosmeticForm cosmeticform) {
 		log.info("registerForm()");
-		return "cosmatic/registerForm";
+		return "cosmetic/registerForm";
 	}
 	
 	@PostMapping("/register")
-	public String register(@Valid CosmeticForm cosmaticform, BindingResult errors, Integer pageNo) {
-		log.info("register("+cosmaticform+")");
+	public String register(@Valid CosmeticForm cosmeticform, BindingResult errors, Integer pageNo) {
+		log.info("register("+cosmeticform+")");
 		log.info("register("+pageNo+")");
-		System.out.println(cosmaticform);
+		System.out.println(cosmeticform);
 		
 		if (errors.hasErrors()) {
 			System.out.println(errors);
 			
-			return "cosmatic/registerForm";
+			return "cosmetic/registerForm";
 		}
 		
-		registerservice.register(cosmaticform, errors);
+		registerservice.register(cosmeticform, errors);
 		
 		if (errors.hasErrors()) {
 			System.out.println(errors);
 			
-			return "cosmatic/registerForm";
+			return "cosmetic/registerForm";
 		}
 		
-		return "redirect:/cosmatic/registerSuccess/" + cosmaticform.getProductno() + "?pageNo=" + pageNo;
+		return "redirect:/cosmetic/registerSuccess/" + cosmeticform.getProductno() + "?pageNo=" + pageNo;
 	}
 	
 	@GetMapping("/registerSuccess/{productno}")
 	public String registerSuccess(@PathVariable int productno, Model model) {
 		
-		Cosmetic cosmatic = searchservice.getCosmaticByProductno(productno);
-		model.addAttribute("cosmatic", cosmatic);
+		Cosmetic cosmetic = searchservice.getCosmeticByProductno(productno);
+		model.addAttribute("cosmetic", cosmetic);
 		
-		return "cosmatic/registerSuccess";
+		return "cosmetic/registerSuccess";
 	}
 }

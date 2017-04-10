@@ -17,44 +17,44 @@ public interface CosmeticMapper {
 	 * select
 	 */
 	
-	@Select("select count(*) from cosmatic")
+	@Select("select count(*) from cosmetic")
 	int selectTotalCount();
 	
-	@Select("select * from cosmatic")
+	@Select("select * from cosmetic")
 	List<Cosmetic> selectAll();
 	
-	@Select("select productname from cosmatic")
+	@Select("select productname from cosmetic")
 	List<Cosmetic> selectName();
 	
 	@Select({
 		"select * ",
-		"  from cosmatic",
+		"  from cosmetic",
 		" order by productno",
 		"offset #{firstItem} -1 rows",
 		" fetch next #{itemsPerPage} rows only" 
 	})
 	List<Cosmetic> selectPage(Pagination paging);
 	
-	@Select("select * from cosmatic where category=#{category}")
+	@Select("select * from cosmetic where category=#{category}")
 	List<Cosmetic> selectByCategory(String category);
 	
-	@Select("select * from cosmatic where productno=#{productno}")
+	@Select("select * from cosmetic where productno=#{productno}")
 	Cosmetic selectByProductno(int productno);
 	
 	
 	/*
 	 * insert
 	 */
-	int insert(Cosmetic cosmatic);
+	int insert(Cosmetic cosmetic);
 	
 	/*
 	 * update
 	 */
-	int updateByProductno(Cosmetic cosmatic);
+	int updateByProductno(Cosmetic cosmetic);
 	
 	/*
 	 * delete
 	 */
-	@Delete("delete from cosmatic where productno=#{productno}")
+	@Delete("delete from cosmetic where productno=#{productno}")
 	int deleteByProductno(int productno);
 }

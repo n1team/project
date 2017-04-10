@@ -19,7 +19,7 @@ import com.team1.domain.Cosmetic;
 import com.team1.form.CosmeticForm;
 
 @Controller
-@RequestMapping("/cosmatic")
+@RequestMapping("/cosmetic")
 public class CosmeticModifyController {
 
 	static Log log = LogFactory.getLog(CosmeticModifyController.class);
@@ -31,42 +31,42 @@ public class CosmeticModifyController {
 	CosmeticModifyService modifyservice;
 	
 	@GetMapping("/modify/{productno}")
-	public String modifyForm(CosmeticForm cosmaticform,@PathVariable int productno) {
+	public String modifyForm(CosmeticForm cosmeticform,@PathVariable int productno) {
 		log.info("ModifyForm("+productno+")");
-		Cosmetic cosmatic = searchservice.getCosmaticByProductno(productno);
-		cosmaticform.setCosmatic(cosmatic);
+		Cosmetic cosmetic = searchservice.getCosmeticByProductno(productno);
+		cosmeticform.setCosmetic(cosmetic);
 		
-		return "cosmatic/modifyForm";
+		return "cosmetic/modifyForm";
 	}
 	
 	@PostMapping("/modify")
-	public String register(@Valid CosmeticForm cosmaticform, BindingResult errors, Integer pageNo) {
-		log.info("modify("+cosmaticform+")");
-		System.out.println(cosmaticform);
+	public String register(@Valid CosmeticForm cosmeticform, BindingResult errors, Integer pageNo) {
+		log.info("modify("+cosmeticform+")");
+		System.out.println(cosmeticform);
 		
 		if (errors.hasErrors()) {
 			System.out.println(errors);
 			
-			return "cosmatic/modifysForm";
+			return "cosmetic/modifysForm";
 		}
 		
-		modifyservice.modify(cosmaticform, errors);
+		modifyservice.modify(cosmeticform, errors);
 		
 		if (errors.hasErrors()) {
 			System.out.println(errors);
 			
-			return "cosmatic/modifysForm";
+			return "cosmetic/modifysForm";
 		}
 		
-		return "redirect:/cosmatic/modifySuccess/" + cosmaticform.getProductno() + "?pageNo=" + pageNo;
+		return "redirect:/cosmetic/modifySuccess/" + cosmeticform.getProductno() + "?pageNo=" + pageNo;
 	}
 	
 	@GetMapping("/modifySuccess/{productno}")
 	public String registerSuccess(@PathVariable int productno, Model model) {
 		
-		Cosmetic cosmatic = searchservice.getCosmaticByProductno(productno);
-		model.addAttribute("cosmatic", cosmatic);
+		Cosmetic cosmetic = searchservice.getCosmeticByProductno(productno);
+		model.addAttribute("cosmetic", cosmetic);
 		
-		return "cosmatic/modifySuccess";
+		return "cosmetic/modifySuccess";
 	}
 }

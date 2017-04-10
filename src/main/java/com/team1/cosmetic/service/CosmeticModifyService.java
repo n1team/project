@@ -11,11 +11,11 @@ import com.team1.mapper.CosmeticMapper;
 public class CosmeticModifyService {
 	
 	@Autowired
-	CosmeticMapper cosmaticmapper;
+	CosmeticMapper cosmeticmapper;
 	
-	public void modify(Cosmetic cosmatic, BindingResult errors) {
+	public void modify(Cosmetic cosmetic, BindingResult errors) {
 		
 		if(!errors.hasErrors())
-			cosmaticmapper.updateByProductno(cosmatic);
+			cosmeticmapper.updateByProductno(cosmetic);
 	}
 }

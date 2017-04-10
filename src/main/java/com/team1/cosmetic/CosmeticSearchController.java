@@ -16,22 +16,22 @@ import com.team1.cosmetic.service.CosmeticSearchService;
 import com.team1.domain.Cosmetic;
 
 @Controller
-@RequestMapping("/cosmatic")
+@RequestMapping("/cosmetic")
 public class CosmeticSearchController {
 
 	static Log log = LogFactory.getLog(CosmeticSearchController.class);
 	
 	@Autowired
-	CosmeticSearchService cosmaticsearchservice;
+	CosmeticSearchService cosmeticsearchservice;
 	
 	@GetMapping("/list")
 	public String getListAll(Model model) {
 		log.info("getListAll()");
 		
-		List<Cosmetic> list = cosmaticsearchservice.getListAll();
-		model.addAttribute("cosmatic", list);
+		List<Cosmetic> list = cosmeticsearchservice.getListAll();
+		model.addAttribute("cosmetic", list);
 		
-		return "cosmatic/list";
+		return "cosmetic/list";
 	}
 	
 	
@@ -39,10 +39,10 @@ public class CosmeticSearchController {
 	public String getPage(@PathVariable int pageNo, Model model) {
 		log.info("getPage("+pageNo+")");
 		
-		Map<String, Object> page = cosmaticsearchservice.getPage(pageNo);
+		Map<String, Object> page = cosmeticsearchservice.getPage(pageNo);
 		model.addAttribute("page", page);
 		
-		return "cosmatic/page";
+		return "cosmetic/page";
 	}
 	
 	
@@ -51,20 +51,20 @@ public class CosmeticSearchController {
 	public String getItemByProductno(@PathVariable int productno, Model model) {
 		log.info("getItem("+productno+")");
 		
-		Cosmetic cosmatic = cosmaticsearchservice.getCosmaticByProductno(productno);
-		model.addAttribute("cosmatic", cosmatic);
+		Cosmetic cosmetic = cosmeticsearchservice.getCosmeticByProductno(productno);
+		model.addAttribute("cosmetic", cosmetic);
 		
-		return "cosmatic/item";
+		return "cosmetic/item";
 	}
 	
 	@GetMapping("/category/{category}")
 	public String getItemByCategory(@PathVariable String category, Model model) {
 		log.info("getCategory("+category+")");
 		
-		List<Cosmetic> cosmatic = cosmaticsearchservice.getCosmaticByCategory(category);
-		model.addAttribute("cosmatic", cosmatic);
+		List<Cosmetic> cosmetic = cosmeticsearchservice.getCosmeticByCategory(category);
+		model.addAttribute("cosmetic", cosmetic);
 		
-		return "cosmatic/category";
+		return "cosmetic/category";
 	}
 	
 }

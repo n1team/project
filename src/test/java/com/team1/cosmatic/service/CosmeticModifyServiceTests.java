@@ -29,12 +29,12 @@ public class CosmeticModifyServiceTests {
 	Validator validator;
 	
 	@Test
-	public void test00_confirmCosmaticSearchService() {
+	public void test00_confirmCosmeticSearchService() {
 		System.out.println("SearchService=" + searchservice);
 		
 	}
 	@Test
-	public void test00_confirmCosmaticRegisterService() {
+	public void test00_confirmCosmeticRegisterService() {
 		System.out.println("ModifyService=" + modifyservice);
 		
 	}
@@ -45,27 +45,27 @@ public class CosmeticModifyServiceTests {
 	
 	@Test
 	public void test01_modify() {
-		CosmeticForm cosmaticform = new CosmeticForm();
-		BindingResult errors = new BeanPropertyBindingResult(cosmaticform, "cosmaticform");
+		CosmeticForm cosmeticform = new CosmeticForm();
+		BindingResult errors = new BeanPropertyBindingResult(cosmeticform, "cosmaticform");
 		
-		cosmaticform.setProductno(10026);
-		cosmaticform.setCapacity("490ml");
-		cosmaticform.setPrice(35000);
-		cosmaticform.setProductname("fdsklfjdlsjfds");
-		cosmaticform.setCategory("SKINCARE");
+		cosmeticform.setProductno(10026);
+		cosmeticform.setCapacity("490ml");
+		cosmeticform.setPrice(35000);
+		cosmeticform.setProductname("fdsklfjdlsjfds");
+		cosmeticform.setCategory("SKINCARE");
 		
-		validator.validate(cosmaticform, errors);
+		validator.validate(cosmeticform, errors);
 		if (errors.hasErrors()) {
 			System.out.println("errors = " + errors);
 			return;
 		}
 		
-		modifyservice.modify(cosmaticform, errors);
+		modifyservice.modify(cosmeticform, errors);
 		if (errors.hasErrors()) {
 			System.out.println("errors = " + errors);
 			return;
 		}
 		
-		System.out.println("cosmatic = " + searchservice.getCosmaticByProductno(cosmaticform.getProductno()));
+		System.out.println("cosmatic = " + searchservice.getCosmeticByProductno(cosmeticform.getProductno()));
 	}
 }

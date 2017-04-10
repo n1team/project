@@ -8,12 +8,12 @@ import com.team1.domain.Cosmetic;
 
 public class CosmeticForm extends Cosmetic{
 	
-	public void setCosmatic(Cosmetic cosmatic) {
-		super.setProductno(cosmatic.getProductno());
-		super.setProductname(cosmatic.getProductname());
-		super.setPrice(cosmatic.getPrice());
-		super.setCapacity(cosmatic.getCapacity());
-		super.setCategory(cosmatic.getCategory());
+	public void setCosmetic(Cosmetic cosmetic) {
+		super.setProductno(cosmetic.getProductno());
+		super.setProductname(cosmetic.getProductname());
+		super.setPrice(cosmetic.getPrice());
+		super.setCapacity(cosmetic.getCapacity());
+		super.setCategory(cosmetic.getCategory());
 	}
 	
 	@Digits(integer=5, fraction=0)

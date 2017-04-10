@@ -12,12 +12,12 @@ import com.team1.mapper.CosmeticMapper;
 public class CosmeticRegisterService {
 	
 	@Autowired
-	CosmeticMapper cosmaticmapper;
+	CosmeticMapper cosmeticmapper;
 	
-	public void register(Cosmetic cosmatic, BindingResult errors) {
+	public void register(Cosmetic cosmetic, BindingResult errors) {
 		
 		if(!errors.hasErrors()) {
-			cosmaticmapper.insert(cosmatic);
+			cosmeticmapper.insert(cosmetic);
 		}
 	}
 }

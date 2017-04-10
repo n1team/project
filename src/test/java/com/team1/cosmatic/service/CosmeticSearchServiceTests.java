@@ -40,14 +40,14 @@ public class CosmeticSearchServiceTests {
 	
 	@Test
 	public void test03_getCosmaticByCategory() {
-		List<Cosmetic> list = service.getCosmaticByCategory("LIP");
+		List<Cosmetic> list = service.getCosmeticByCategory("LIP");
 		for(Cosmetic cos : list)
 			System.out.println(cos);
 	}
 	
 	@Test
 	public void test04_getCosmaticByProductno() {
-		Cosmetic cos = service.getCosmaticByProductno(10001);
+		Cosmetic cos = service.getCosmeticByProductno(10001);
 		System.out.println("cosmatic = " + cos);
 	}
 }

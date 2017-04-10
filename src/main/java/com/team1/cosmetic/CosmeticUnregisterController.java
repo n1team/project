@@ -20,7 +20,7 @@ import com.team1.domain.Cosmetic;
 import com.team1.form.CosmeticForm;
 
 @Controller
-@RequestMapping("/cosmatic")
+@RequestMapping("/cosmetic")
 public class CosmeticUnregisterController {
 
 	static Log log = LogFactory.getLog(CosmeticUnregisterController.class);
@@ -34,10 +34,10 @@ public class CosmeticUnregisterController {
 	@GetMapping("/unregister/{productno}")
 	public String unregisterForm(@PathVariable int productno, Model model) {
 		log.info("unregisterForm("+productno+")");
-		Cosmetic cosmatic = searchservice.getCosmaticByProductno(productno);
-		model.addAttribute("cosmatic", cosmatic);
+		Cosmetic cosmetic = searchservice.getCosmeticByProductno(productno);
+		model.addAttribute("cosmetic", cosmetic);
 		
-		return "cosmatic/unregisterForm";
+		return "cosmetic/unregisterForm";
 	}
 	
 	@PostMapping("/unregister/{productno}")
@@ -46,7 +46,7 @@ public class CosmeticUnregisterController {
 		
 		unregisterservice.unregister(productno); 
 		
-		return "redirect:/cosmatic/unregisterSuccess/" + productno + "?pageNo=" + pageNo;
+		return "redirect:/cosmetic/unregisterSuccess/" + productno + "?pageNo=" + pageNo;
 	}
 	
 	
@@ -55,6 +55,6 @@ public class CosmeticUnregisterController {
 		
 		model.addAttribute("productno", productno);
 		
-		return "cosmatic/unregisterSuccess";
+		return "cosmetic/unregisterSuccess";
 	}
 }

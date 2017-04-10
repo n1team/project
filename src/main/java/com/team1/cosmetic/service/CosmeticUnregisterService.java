@@ -9,9 +9,9 @@ import com.team1.mapper.CosmeticMapper;
 public class CosmeticUnregisterService {
 	
 	@Autowired
-	CosmeticMapper cosmaticmapper;
+	CosmeticMapper cosmeticmapper;
 	
 	public void unregister(int productno) {
-		cosmaticmapper.deleteByProductno(productno);
+		cosmeticmapper.deleteByProductno(productno);
 	}
 }
