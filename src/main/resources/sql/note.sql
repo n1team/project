@@ -1,5 +1,5 @@
 delete from note;
-
+drop table note;
 delete from note where note_no=133;
 UPDATE  NOTE set note_id 			= 'ad',
 				note_title			= 222222222,
@@ -10,9 +10,9 @@ UPDATE  NOTE set note_id 			= 'ad',
 drop table note;
 drop table name_se;
 CREATE TABLE note (
-				note_id 		char(10 char),
+				note_id 		VARCHAR2(20 char),
 				note_no 		NUMBER,
-				note_title		char(30 char),
+				note_title		VARCHAR2(50 char),
 				note_content 	long,
 				note_date		date
 				);
