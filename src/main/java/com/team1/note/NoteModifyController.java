@@ -45,20 +45,16 @@ public class NoteModifyController {
 	
 	@PostMapping("/modify")
 	public String modify(@Valid NoteForm noteForm, BindingResult errors,Integer pageNo) {
-		System.err.println(noteForm);
-		System.err.println(pageNo);
 		if (errors.hasErrors()) {
 			System.out.println(errors);
 			return "note/list";
 		}
 		
 		modifyService.modify(noteForm, errors);
-		System.err.println("2========="+noteForm);
 		if (errors.hasErrors()) {
 			System.out.println(errors);
 			return "note/list";
 		}
-		System.err.println("============="+noteForm.getNoteNo()+"?pageNo="+pageNo);
 		return "redirect:/note/modifySuccess/"+noteForm.getNoteNo()+"?pageNo="+pageNo;
 	}
 	
