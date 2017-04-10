@@ -21,7 +21,7 @@
 <h1>city 삭제되었습니다.</h1>
 memo no = ${mno}
 <hr>
-<a class="btn btn-primary" href="/memo/memo/${param.pageNo}">이전 페이지로</a>
+<a class="btn btn-primary" href="/memo/${param.pageNo}">이전 페이지로</a>
 
 <!-- <div class="modal-header"> -->
 <!-- 	<button type="button" class="close" data-dismiss="modal">&times;</button> -->

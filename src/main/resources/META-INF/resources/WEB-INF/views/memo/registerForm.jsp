@@ -41,7 +41,7 @@
 	</tr>
 </table>
 <input type="submit" value="Memo 등록">
-<a class="btn btn-info" href="/memo/memo/1">목록</a>
+<a class="btn btn-info" href="/memo/1">목록</a>
 
 
 </form:form>

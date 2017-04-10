@@ -43,6 +43,7 @@
 			<input class="btn btn-danger" type="submit" value="삭제" id="removeMemo" 
 			<c:if test="${empty memo.password}"><c:out value='style="display:inline"' escapeXml="false"/></c:if>
 			<c:if test="${!empty memo.password}"><c:out value="style='display:none'" escapeXml="false"/></c:if>>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			<button type="button" class="btn btn-default" data-dismiss="modal" onclick="onReset()">Close</button>
 		</form>
 	</div>
