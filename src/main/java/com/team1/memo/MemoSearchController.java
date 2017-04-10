@@ -21,21 +21,19 @@ public class MemoSearchController {
 	MemoSearchService memoSearchService;
 	@Autowired
 	MemoRegisterService memoRegisterService;
+
 	
-	@GetMapping("/wireframe")
-	public String getwireframe(Model model) {
-		
-		return "memo/wireframe";
-	}
-	
-	@GetMapping("/memo/{pageNo}")
-	public String getmemo(@PathVariable int pageNo, Model model) {
+	@GetMapping("/{pageNo}")
+	public String getmemo(@PathVariable int pageNo, Model model) 
+	{
 		Map<String, Object> page = memoSearchService.getPage(pageNo); 
 		model.addAttribute("page",page);
 		return "memo/memo";
 	}
+	
 	@GetMapping("/item/{mno}")
-	public String getItem(@PathVariable int mno, Model model){
+	public String getItem(@PathVariable int mno, Model model)
+	{
 		Memo memo = memoSearchService.getItem(mno);
 		model.addAttribute("memo",memo);
 		
