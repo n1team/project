@@ -22,6 +22,7 @@ ${book}
 <hr>
 
 <form action="/book/unregister/${bookcode}?pageNo=${param.pageNo}" method="post">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	<input class="btn btn-primary" type="submit" value="Book 삭제">
 </form>
 </body>

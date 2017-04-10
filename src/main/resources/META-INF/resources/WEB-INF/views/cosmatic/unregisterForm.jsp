@@ -94,6 +94,7 @@
 
 <div style="text-align: center;">
 	<form action="/cosmatic/unregister/${productno}?pageNo=${param.pageNo}" method="post">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	<input type="submit" class="btn btn-default" value="삭제">
 	</form>
 </div>

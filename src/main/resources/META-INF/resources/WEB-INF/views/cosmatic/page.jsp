@@ -6,72 +6,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<!-- <meta charset="UTF-8"> -->
 <title>WELCOME*COSMATIC</title>
-<!-- 1. animate -->
-<link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.min.css">
-<!-- 2. bootstrap -->
-<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
-<!-- 3. jquery -->
-<script type="text/javascript" src="/webjars/jquery/1.11.1/jquery.min.js"></script>
-<!-- 4. bootstrap.js -->
-<script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+<!-- <!-- 1. animate --> 
+<!-- <link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.min.css"> -->
+<!-- <!-- 2. bootstrap --> 
+<!-- <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"> -->
+<!-- <!-- 3. jquery --> 
+<!-- <script type="text/javascript" src="/webjars/jquery/1.11.1/jquery.min.js"></script> -->
+<!-- <!-- 4. bootstrap.js --> 
+<!-- <script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script> -->
 
-<style>
-		@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-		body {
-			background-image: url("../../../img/y_dot.png");
-			/* 	background-size: 150%; */
-		}
-
-		h1 {
-			color : gray;
-			font-family: 'Space Mono';
-			text-align: center;
-			margin-top:70px;
-		}
-		.bg{
-			background-color: rgba(255,255,255,0.2);
-			padding : 20px;
-			margin: 20px;
-			text-align: center;
-			width : 100%;
-			color : DarkSlateGrey;
-		}
-		.table {
-			background-color: white;
-			padding : 20px;
-			margin: 20px;
-			text-align: center;
-			width : 100%;
-			color : DarkSlateGrey;
-		}
-		.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
-			background-color: rgba(255,165,05,0.3)
-		}
-		.btn-default, .btn-default:hover, .btn-default:active, .btn-default:visited {
-			background-color: rgba(255,255,255,0.7);
-			border-radius: 0;
-			font-family: 'Jeju Gothic';
-			color : orange;
-		}
-
-		.btn-default>a {
-			color : #FF8C00;
-			text-decoration: none;
-		}
-
-		.pagination {
-			display : block;
-			text-align: center;
-			margin-top : 100px;
-		}
-
-		.pagination > li > a {
-			float : none;
-			margin-left:  -5px;
-		}
-	</style>
+<link rel="stylesheet" href="/css/cosmetic/page.css">
+	
 </head>
 
 <body class="container">

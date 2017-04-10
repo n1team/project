@@ -21,6 +21,7 @@
 ${player}
 <hr>
 <form action="/player/unregister/${playerno}?pageNo=${param.pageNo}" method="post">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 <input class="btn btn-default" type="submit" value="선수 삭제">
 </form>
 </body>

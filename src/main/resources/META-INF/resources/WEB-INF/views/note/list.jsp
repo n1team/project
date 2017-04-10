@@ -118,6 +118,7 @@ body {
 											</div>
 											<div class="modal-body">
 												<form action="/note/unregister/${note.noteNo}?pageNo=${param.pageNo}" method="post">
+													<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 													<button class="btn " type="submit"	value="삭제" >삭제 <span class="glyphicon glyphicon-trash"/></button>
 												</form>
 											</div>

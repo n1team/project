@@ -21,6 +21,7 @@
 ${position}
 <hr>
 <form action="/position/unregister/${pstno}?pageNo=${param.pageNo}" method="post">
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 <input class="btn btn-default" type="submit" value="포지션 삭제">
 </form>
 </body>
