@@ -40,8 +40,8 @@
 <!-- 						password : <input type="password" name="pw" id="pw" oninput="onChange(event)"/> -->
 					</div>
 					<div style="float:right" align="left">
-						<a href="/project/modify/${memo.mno}?pageNo=${page.paging.pageNo}" class="btn btn-warning" style="display:none" id="modifyMemo">수정</a>
-						<a href="/project/memo/1" class="btn btn-info">목록</a>
+						<a href="/memo/modify/${memo.mno}?pageNo=${page.paging.pageNo}" class="btn btn-warning" style="display:none" id="modifyMemo">수정</a>
+						<a href="/memo/memo/1" class="btn btn-info">목록</a>
 					</div></td>
 				</tr>
 			</tbody>

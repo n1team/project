@@ -15,7 +15,7 @@ import com.team1.memo.service.MemoRegisterService;
 import com.team1.memo.service.MemoSearchService;
 
 @Controller
-@RequestMapping("/project")
+@RequestMapping("/memo")
 public class MemoSearchController {
 	@Autowired
 	MemoSearchService memoSearchService;
@@ -25,20 +25,20 @@ public class MemoSearchController {
 	@GetMapping("/wireframe")
 	public String getwireframe(Model model) {
 		
-		return "project/wireframe";
+		return "memo/wireframe";
 	}
 	
 	@GetMapping("/memo/{pageNo}")
 	public String getmemo(@PathVariable int pageNo, Model model) {
 		Map<String, Object> page = memoSearchService.getPage(pageNo); 
 		model.addAttribute("page",page);
-		return "project/memo";
+		return "memo/memo";
 	}
 	@GetMapping("/item/{mno}")
 	public String getItem(@PathVariable int mno, Model model){
 		Memo memo = memoSearchService.getItem(mno);
 		model.addAttribute("memo",memo);
 		
-		return "project/item";
+		return "memo/item";
 	}
 }

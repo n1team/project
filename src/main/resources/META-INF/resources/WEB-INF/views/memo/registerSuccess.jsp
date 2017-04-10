@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>unregisterSuccess.jsp</title>
+<title>registerSuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -18,19 +18,10 @@
 </head>
 <body>
 <div class="container">
-<h1>city 삭제되었습니다.</h1>
-memo no = ${mno}
-<hr>
-<a class="btn btn-primary" href="/project/memo/${param.pageNo}">이전 페이지로</a>
-
-<!-- <div class="modal-header"> -->
-<!-- 	<button type="button" class="close" data-dismiss="modal">&times;</button> -->
-<%-- 	<h3>no.${memo.mno}  삭제완료</h3> --%>
-<!-- </div> -->
-	
-<!-- <div class="modal-footer"> -->
-<!-- 		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-<!-- </div> -->
+<h1>등록 성공입니다.</h1>
+<a href="/memo/register" class="btn btn-primary">뒤로가기</a>
+<a href="/memo/item/${memo.mno}" class="btn btn-primary">글확인</a>
+<a href="/memo/memo/1" class="btn btn-info">목록</a>
 </div>
 </body>
 </html>

@@ -27,7 +27,7 @@
 	<div class="modal-body">
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 	<c:if test="${!empty memo.password}">
-         password : <input type="password" name="pw" id="pw" oninput="onChange(event)"/> <br> (password : ${memo.password})<br><br>
+         password : <input type="password" name="pw" id="pw" oninput="onChange(event)" autocomplete="off"/> <br> (password : ${memo.password})<br><br>
 		<p id="warn" style="display:none">${memo.mname} 을(를) 삭제하시겠습니까? </p>
 	</c:if>
 	<c:if test="${empty memo.password}">
@@ -39,7 +39,7 @@
 	</div>
 
 	<div class="modal-footer">
-		<form action="/project/unregister/${mno}?pageNo=${param.pageNo}" method="post" target="_parent">
+		<form action="/memo/unregister/${mno}?pageNo=${param.pageNo}" method="post" target="_parent">
 			<input class="btn btn-danger" type="submit" value="삭제" id="removeMemo" 
 			<c:if test="${empty memo.password}"><c:out value='style="display:inline"' escapeXml="false"/></c:if>
 			<c:if test="${!empty memo.password}"><c:out value="style='display:none'" escapeXml="false"/></c:if>>

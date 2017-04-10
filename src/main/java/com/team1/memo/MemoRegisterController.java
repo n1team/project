@@ -20,7 +20,7 @@ import com.team1.memo.service.MemoRegisterService;
 import com.team1.memo.service.MemoSearchService;
 
 @Controller
-@RequestMapping("/project")
+@RequestMapping("/memo")
 public class MemoRegisterController {
 	@Autowired
 	MemoSearchService memoSearchService;
@@ -30,7 +30,7 @@ public class MemoRegisterController {
 	@GetMapping("/register")
 	public String registerForm(MemoForm memoForm){
 
-		return "project/registerForm";
+		return "memo/registerForm";
 		
 	}
 	@PostMapping("/register")
@@ -46,20 +46,20 @@ public class MemoRegisterController {
 		memoForm.setMcontent(content);
 		
 		if(errors.hasErrors()){
-			return "project/registerForm";
+			return "memo/registerForm";
 		}
 		
 		memoRegisterService.register(memoForm,errors);
 		if(errors.hasErrors()){
-			return "project/registerForm";
+			return "memo/registerForm";
 		}
-		return "redirect:/project/registerSuccess/" + memoForm.getMno();
+		return "redirect:/memo/registerSuccess/" + memoForm.getMno();
 		
 	}
 	@GetMapping("registerSuccess/{mno}")
 	public String registerSuccess(@PathVariable int mno, Model model){
 		Memo memo = memoSearchService.getItem(mno);
 		model.addAttribute("memo",memo);
-		return "project/registerSuccess";
+		return "memo/registerSuccess";
 	}
 }

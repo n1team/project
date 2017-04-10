@@ -37,11 +37,11 @@
 				<fmt:formatDate value="${memo.mdate}" pattern="yyyy/MM/dd" var="mdate"/>
 				<tr>
 				<td width="150px">${memo.mno}</td> 
-				<td><a href="/project/item/${memo.mno}?pageNo=${page.paging.pageNo}">${memo.mname}</a>
+				<td><a href="/memo/item/${memo.mno}?pageNo=${page.paging.pageNo}">${memo.mname}</a>
 				
 				<c:if test="${mdate==now}"><span class="label label-warning">New</span></c:if></td>
 				<td width="200px">
-		<%-- 		  <a href="/project/modify/${memo.mno}?pageNo=${page.paging.pageNo}" 
+		<%-- 		  <a href="/memo/modify/${memo.mno}?pageNo=${page.paging.pageNo}" 
 				   				class="btn btn-info" id="modifyMemo" style="display:inline">수정</a> --%>
 
 	<!--	170404 수정 비밀번호 모달  -->
@@ -58,7 +58,7 @@
 					        </div>
 					        <div class="modal-body">
 					        	<c:if test="${!empty memo.password}">
-						          password : <input type="password" id="pw${status.index}" oninput="onChange(event,'${memo.password}',${status.index})"><br>
+						          password : <input type="password" id="pw${status.index}" oninput="onChange(event,'${memo.password}',${status.index})" autocomplete="off"><br>
 								  (password : ${memo.password})
 								</c:if>
 								<c:if test="${empty memo.password}">
@@ -66,7 +66,7 @@
 								</c:if>
 					        </div>
 					        <div class="modal-footer">
-					        	<a href="/project/modify/${memo.mno}?pageNo=${page.paging.pageNo}" 
+					        	<a href="/memo/modify/${memo.mno}?pageNo=${page.paging.pageNo}" 
 				   				class="btn btn-info" id="modifyMemo${status.index}" 
 				   				<c:if test="${empty memo.password}"><c:out value='style="display:inline"' escapeXml="false"/></c:if>
 				   				<c:if test="${!empty memo.password}"><c:out value="style='display:none'" escapeXml="false"/></c:if>>수정</a>
@@ -77,7 +77,7 @@
 				</div> 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 		<!--	삭제 모달    -->
-				<a data-toggle="modal" href="/project/unregister/${memo.mno}?pageNo=${page.paging.pageNo}" data-target="#modal-testNew" 
+				<a data-toggle="modal" href="/memo/unregister/${memo.mno}?pageNo=${page.paging.pageNo}" data-target="#modal-testNew" 
 					class="btn btn-default btn-sm ">
 				<span class="glyphicon glyphicon-remove"></span>삭제</a>
 				<c:if test="${!empty memo.password}"><span class="glyphicon glyphicon-lock"></span></c:if>
@@ -101,28 +101,28 @@
 </div>
 <hr>
 <div>
-<a href="/project/register" class="btn btn-primary">등록</a>
+<a href="/memo/register" class="btn btn-primary">등록</a>
 </div>
 
 <div align="center">
 <ul class="pagination">
 	<c:if test="${page.paging.firstGroup==false}">
-		<li><a href="/project/memo/1">&laquo맨앞</a></li>
-		<li><a href="/project/memo/${page.paging.firstPage - 1}">&laquo이전</a></li>
+		<li><a href="/memo/memo/1">&laquo맨앞</a></li>
+		<li><a href="/memo/memo/${page.paging.firstPage - 1}">&laquo이전</a></li>
 	</c:if>
 <c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage }">
 
 	<c:if test="${page.paging.pageNo==i}">
-		<li class="active"><a href="/project/memo/${i}">${i}</a></li>
+		<li class="active"><a href="/memo/memo/${i}">${i}</a></li>
 	</c:if>
 	<c:if test="${page.paging.pageNo!=i}">
-		<li><a href="/project/memo/${i}">${i}</a></li>
+		<li><a href="/memo/memo/${i}">${i}</a></li>
 	</c:if>
 	
 </c:forEach>
 	<c:if test="${page.paging.lastGroup==false}">
-		<li><a href="/project/memo/${page.paging.lastPage + 1}">다음&raquo</a></li>
-		<li><a href="/project/memo/${page.paging.totalPage}">맨뒤&raquo</a></li>
+		<li><a href="/memo/memo/${page.paging.lastPage + 1}">다음&raquo</a></li>
+		<li><a href="/memo/memo/${page.paging.totalPage}">맨뒤&raquo</a></li>
 	</c:if>
 </ul>
 </div>

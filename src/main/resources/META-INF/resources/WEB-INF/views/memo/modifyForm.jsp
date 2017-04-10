@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerForm.jsp</title>
+<title>modifyForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -19,31 +19,32 @@
 </head>
 <body>
 <div class="container">
-<h1>Memo</h1>
-<form:form action="/project/register" method="post" modelAttribute="memoForm">
-<table class="table table-bordered">
+<h1>memo 수정</h1>
+<form:form action="/memo/modify?pageNo=${param.pageNo}" method="post" modelAttribute="memoForm">
+<form:errors/>
+	<table class="table table-bordered">
 	<tr>
-	<td><label for="mname">제목</label></td>
-	<td><form:input path="mname" size="100"/>
-	<form:errors path="mname"/></td>
+		<td><label for="mno">no </label></td>
+		<td><form:input path="mno" size="100" readonly="true"/></td>
+	</tr>
+	<tr>
+		<td><label for="mname">제목 </label></td>
+		<td><form:input path="mname" size="100"/>
+		<form:errors path="mname"/></td>
 	</tr>
 	<tr>
 	<td><label for="password">비밀번호</label></td>
-	<td><form:input path="password" size="100" style="-webkit-text-security: circle;"/>
+	<td><form:input path="password" size="100" style="-webkit-text-security: circle;" autocomplete="off"/>
 	<form:errors path="password"/></td>
 	</tr>
-	
 	<tr>
-	<td valign="top"><label for="mcontent">내용 </label></td>
-	<td><form:textarea path="mcontent" cols="101" rows="25"/>
-	<form:errors path="mcontent"/></td>
-	
+		<td><label for="mcontent">내용 </label>
+		<td><form:textarea path="mcontent" cols="101" rows="25"/>
+		<form:errors path="mcontent"/></td>
 	</tr>
-</table>
-<input type="submit" value="Memo 등록">
-<a class="btn btn-info" href="/project/memo/1">목록</a>
-
-
+	</table>
+	<input type="submit" value="memo 수정">
+	<a class="btn btn-info" href="javascript:history.go(-1)">뒤로가기</a>
 </form:form>
 </div>
 </body>
