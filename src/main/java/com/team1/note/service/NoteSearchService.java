@@ -7,6 +7,8 @@ import java.util.Map;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import com.team1.domain.Note;
@@ -30,15 +32,21 @@ public class NoteSearchService {
 	
 	public Map<String, Object> getPage(int pageNo) {
 		NotePagination paging = new NotePagination();
+		Object o = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (!(o instanceof String))
+		{
+			UserDetails ud = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			System.out.println(ud.getUsername());
+		}
+
 		paging.setTotalItem(noteMapper.selectTotalCount());
 		paging.setPageNo(pageNo);
-
 		List<Note> list = noteMapper.selectAll(paging);
+		
 		log.info("44444444444444444444444("+list+")");	
 		Map<String, Object> map = new HashMap<>();
 		map.put("notes", list);
 		map.put("paging", paging);
-		
 		return map;
 	}
 

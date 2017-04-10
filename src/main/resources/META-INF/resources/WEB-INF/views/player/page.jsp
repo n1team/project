@@ -7,34 +7,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>page.jsp</title>
-
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
-
+<title>player_page.jsp</title>
+<link rel="stylesheet" href="/css/player/page.css">
 </head>
 <body>
-
-
-<a href="/player/register" class="btn btn-warning">player 등록</a>
-<button type="button" class="btn btn-success">Player Page <span class="badge">pageNo=${page.paging.pageNo}</button>
+<header>
+    <h1>Lotte Giants Player</h1>
+<img src="http://file.giantsclub.com/upload2014/FileContents/2017/01/31/02_1280_1024_300x200.jpg" class="img-rounded" alt="Cinque Terre" width="200" height="130">
+<img src="http://file.giantsclub.com/upload2014/FileContents/2017/01/31/03_1280_1024_300x200.jpg" class="img-rounded" alt="Cinque Terre" width="200" height="130">
+<img src="http://file.giantsclub.com/upload2014/FileContents/2017/01/31/01_1280_1024_300x200.jpg" class="img-rounded" alt="Cinque Terre" width="200" height="130">
+</header>
+<a href="/player/register" class="btn btn-warning">선수 등록</a>
+<%-- <button type="button" class="btn btn-success">Player Page <span class="badge">pageNo=${page.paging.pageNo}</button> --%>
 <div class="table-responsive">
 <table class="table">
 <thead>
-<tr class="success">
+<tr class="default">
 <th>수정</th>
 <th>삭제</th>
-<th>Playerno</th>
-<th>pname</th>
-<th>job</th>
-<th>join</th>
-<th>heights</th>
-<th>uniform_number</th>
-<th>pstno</th>
-
+<th>순서</th>
+<th>이름</th>
+<th>포지션</th>
+<th>입단년도</th>
+<th>신장</th>
+<th>등번호</th>
+<th>연결번호</th>
 <th></th>
 <th></th>
 </tr>
@@ -60,7 +57,7 @@
 </tr>
 </tbody>
 </table></div>
-<hr class="animated bounce">
+<footer>
 <ul class="pagination">
 <li><a href="/player/page/1">First</a></li>
 <li><a href="/player/page/${page.paging.firstPage-1}">Prev</a></li>
@@ -70,6 +67,7 @@
 <li><a href="/player/page/${page.paging.lastPage + 1}">Next</a></li>
 <li><a href="/player/page/${page.paging.totalPage}">Last</a></li>
 </ul>
+</footer>
 
 
 

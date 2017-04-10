@@ -9,26 +9,50 @@
 <head>
 <meta charset="UTF-8">
 <title>position_page.jsp</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Kreon');
+header {
+font-family: "Kreon";
+text-align: center;
 
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
+}
+h1{
+	font-size: 38px;
+}
 
+img{
+	margin-left: 40px;	
+	margin-right:40px;
+}
+
+.pagination {
+	display : block;
+	text-align: center;
+	margin-top : 20px;
+}
+
+.pagination > li > a {
+	float : none;
+	margin-left:  -5px;
+}
+</style>
 </head>
 <body>
+<header>
+    <h1>Lotte Giants Position</h1>
+<img src="http://file.giantsclub.com/upload2014/FileContents/2016/09/01/02_1280_1024_300x200.jpg" class="img-rounded" alt="Lee Jung Min" width="600" height="180">
+</header>
 <a href="/position/register" class="btn btn-primary active">Position 등록</a>
-<button type="button" class="btn btn-primary disabled">Position Page <span class="badge">pageNo=${page.paging.pageNo}</span></button>
+<%-- <button type="button" class="btn btn-primary disabled">Position Page <span class="badge">pageNo=${page.paging.pageNo}</span></button> --%>
 <div class="table-responsive">
 <table class="table">
 <thead>
-<tr class="info">
+<tr class="default">
 <th>수정</th>
 <th>삭제</th>
-<th>Pstno</th>
-<th>Pstname</th>
-<th>loc</th>
+<th>순서</th>
+<th>포지션 이름</th>
+<th>지역</th>
 <th></th>
 <th></th>
 </tr>
@@ -44,13 +68,13 @@
 		<td>${position.pstno}</td>
 		<td><a href="/position/item/${position.pstno}?pageNo=${page.paging.pageNo}"> ${position.pstname}</a></td> 
 		<td>${position.loc}</td>
-		 </li>
+</li>
 	</c:forEach>
 </ol>
 </tr>
 </tbody>
 </table></div>
-<hr class="animated bounce">
+<footer>
 <ul class="pagination">
 <li><a href="/position/page/1">First</a></li>
 <li><a href="/position/page/${page.paging.firstPage - 1}">Prev</a></li>
@@ -60,11 +84,6 @@
 <li><a href="/position/page/${page.paging.lastPage + 1}">Next</a></li>
 <li><a href="/position/page/${page.paging.totalPage}">Last</a></li>
 </ul>
-
-
-
-
-
-
+</footer>
 </body>
 </html>

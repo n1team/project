@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>modifyForm.jsp</title>
 
-<link rel="stylesheet" href="/css/book/modifyForm.css">
+<link rel="stylesheet" href="/css/book/form.css">
 
 </head>
 <body>

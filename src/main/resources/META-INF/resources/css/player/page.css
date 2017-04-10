@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css?family=Kreon');
+header {
+font-family: "Kreon";
+text-align: center;
+
+}
+h1{
+	font-size: 38px;
+}
+
+img{
+	margin-left: 40px;	
+	margin-right:40px;
+}
+
+.pagination {
+	display : block;
+	text-align: center;
+	margin-top : 20px;
+}
+
+.pagination > li > a {
+	float : none;
+	margin-left:  -5px;
+}

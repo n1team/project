@@ -9,22 +9,15 @@
 <head>
 <meta charset="UTF-8">
 <title>position_registerForm.jsp</title>
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
 </head>
 <body>
-<h2>선수 등록</h2>
+<fieldset style="text-align: center;">
+<h2 class="btn btn-info btn-md"><span class="glyphicon glyphicon-plane">포지션수정</span></h2>
 <form:form action="/position/register" method="post" modelAttribute="positionForm">
-<%-- <div>
-	<label for="playerno">순번 :</label>
-	<form:input path="playerno"/>
-	<form:errors path="playerno"/>
-</div> --%>
+<br>
+
 <div>
-	<label for="pstno">No :</label>
+	<label for="pstno">분&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;류 :</label>
 	<form:input path="pstno" />
 	<form:errors path="pstno" />
 </div>
@@ -34,11 +27,13 @@
 	<form:errors path="pstname" />
 </div>
 <div>
-	<label for="loc">지역 :</label>
+	<label for="loc">지&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 역 :</label>
 	<form:input path="loc" />
 	<form:errors path="loc" />
 </div>
-<input type="submit" value="포지션 등록">
+<br>
+<input class="btn btn-default" type="submit" value="포지션 등록">
 </form:form> 
+</fieldset>
 </body>
 </html>

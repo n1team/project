@@ -9,7 +9,6 @@
 <meta charset="UTF-8">
 <title>list.jsp</title>
 
-<link rel="stylesheet" href="/css/book/outline.css">
 <link rel="stylesheet" href="/css/book/list.css">
 
 </head>
