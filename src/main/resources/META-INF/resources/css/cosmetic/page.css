@@ -1,7 +1,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 body {
 	background-image: url("../../../img/y_dot.png");
-	/* 	background-size: 150%; */
 }
 
 h1 {
@@ -23,7 +22,7 @@ h1 {
 	padding : 20px;
 	margin: 20px;
 	text-align: center;
-	width : 100%;
+	width : 70%;
 	color : DarkSlateGrey;
 }
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
