@@ -14,7 +14,7 @@
 <body>
 <h1>Cosmetic List</h1>
 <ol>
-<c:forEach var="list" items="${cosmatic}">
+<c:forEach var="list" items="${cosmetic}">
 	<li>${list.productno}, ${list.productname}</li>
 </c:forEach>
 </ol>
