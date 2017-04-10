@@ -1,11 +1,12 @@
 package com.team1.note;
 
-import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,10 @@ public class NoteSearchController {
 	@GetMapping("/page/{pageNo}")
 	public String getPage(@PathVariable int pageNo, Model model,NoteForm noteForm) {
 		log.info("getPage(" + pageNo + ")");
-		
+//		UserDetails ud = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		System.out.println(ud.getUsername());
+//		id = ud.getUsername(); 
+//		System.err.println(id);
 		Map<String, Object> page = noteSearchService.getPage(pageNo);
 		model.addAttribute("page", page);
 		model.addAttribute("from", new NoteForm());

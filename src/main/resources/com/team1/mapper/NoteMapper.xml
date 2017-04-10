@@ -15,8 +15,9 @@
 				n.note_title	as	note_title,
 				n.note_content 	as	note_content,
 				n.note_date		as	note_date
-				from note n
-				ORDER BY n.note_no DESC
+			from note n
+			where n.note_id = #{Username}
+			ORDER BY n.note_no DESC
 		offset #{firstItem} - 1 rows
 	fetch next #{itemsPerPage} rows only 
 </select>

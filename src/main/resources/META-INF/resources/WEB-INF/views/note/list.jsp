@@ -3,6 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,16 @@
 <body>
 	<c:set var="no" value="${note.noteNo}"/>
 	<c:set var="tt" value="${a}"/>
+<%-- 	<sec:authorize access="isAuthenticated()"> --%>
+<%-- 		<sec:authentication property="principal.username"/> --%>
+<%-- 	</sec:authorize> --%>
+<%-- 	<sec:authorize access="isAnonymous()"> --%>
+		
+<%-- 	</sec:authorize> --%>
+
 	
+
+<%-- 	<c:out value="${ }"/> --%>
 	<div class="container">
 		<nav class="navbar nav3">
 			<div class="container-fluid">
@@ -125,6 +135,7 @@
 							<form:textarea path="noteContent" id="summernote" />
 							<form:errors path="noteContent" />
 							<input style="visibility: hidden;" type="submit" id="lis" value="추가">
+							<input>
 						</form:form>
 					</c:otherwise>
 				</c:choose>
