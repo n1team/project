@@ -9,11 +9,13 @@
 <meta charset="UTF-8">
 <title>registerSuccess.jsp</title>
 
-<link rel="stylesheet" href="/css/book/registerSuccess.css">
+<link rel="stylesheet" href="/css/book/success.css">
 
 </head>
 <body>
-<h1>Book 등록 성공 </h1> 
+<h1>Book 등록 성공 
+<span class="glyphicon glyphicon-thumbs-up"></span>
+ </h1>
 <table class="table">
 	<thead>
 		<tr>

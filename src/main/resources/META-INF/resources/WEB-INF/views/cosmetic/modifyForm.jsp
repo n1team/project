@@ -16,7 +16,7 @@
 
 
 <div style="text-align: center;">
-	<form:form action="/cosmatic/modify?pageNo=${param.pageNo}" method="post" modelAttribute="cosmaticForm">
+	<form:form action="/cosmetic/modify?pageNo=${param.pageNo}" method="post" modelAttribute="cosmeticForm">
 
 	<div class="col-xs-4" style="float: none; margin:0 auto;padding : 10px;">
 		<label for="productname" style="float:left; ">productname : </label>
@@ -56,7 +56,7 @@
 <!-- 		</select> -->
 	</div>
 	
-	<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
+	<button class="btn btn-default" style="text-align: center;"><a href="/cosmetic/page/${param.pageNo}">뒤로가기</a></button>
 	<input type="submit" value="등록" class="btn btn-default" style="text-align: center;" >
 </form:form>
 </div>

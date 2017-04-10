@@ -12,10 +12,10 @@
 </head>
 
 <body>
-<h1>Cosmatic Insert</h1>
+<h1>Cosmetic Insert</h1>
 
 <div style="text-align: center;">
-	<form:form action="/cosmatic/register?pageNo=${param.pageNo}" method="post" modelAttribute="cosmaticForm">
+	<form:form action="/cosmetic/register?pageNo=${param.pageNo}" method="post" modelAttribute="cosmeticForm">
 	
 	<div class="col-xs-4" style="float: none; margin:0 auto; padding : 10px;">
 		<label for="productname" style="float:left; ">productname : </label>
@@ -54,7 +54,7 @@
 <!-- 			<option value="LIP">LIP</option> -->
 <!-- 		</select> -->
 	</div>
-	<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
+	<button class="btn btn-default" style="text-align: center;"><a href="/cosmetic/page/${param.pageNo}">뒤로가기</a></button>
 	<input type="submit" class="btn btn-default" value="등록">
 </form:form>
 </div>
