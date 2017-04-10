@@ -21,7 +21,7 @@
 <h1>등록 성공입니다.</h1>
 <a href="/memo/register" class="btn btn-primary">뒤로가기</a>
 <a href="/memo/item/${memo.mno}" class="btn btn-primary">글확인</a>
-<a href="/memo/memo/1" class="btn btn-info">목록</a>
+<a href="/memo/1" class="btn btn-info">목록</a>
 </div>
 </body>
 </html>
