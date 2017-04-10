@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>modifySuccess.jsp</title>
 
-<link rel="stylesheet" href="/css/book/modifySuccess.css">
+<link rel="stylesheet" href="/css/book/success.css">
 
 </head>
 <body>
