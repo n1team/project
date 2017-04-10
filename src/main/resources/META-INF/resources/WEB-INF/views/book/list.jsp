@@ -9,27 +9,42 @@
 <meta charset="UTF-8">
 <title>list.jsp</title>
 
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../../code_assist/animate.css">
-	<link rel="stylesheet" href="../../code_assist/bootstrap.css">
-</c:if>
+<link rel="stylesheet" href="/css/book/list.css">
 
 </head>
 <body>
-<h1>책 현황</h1> 
-<ol>
-<c:forEach var="book" items="${books}">
-	<li>
-		${book.bookCode},
-		${book.bookName},
-		${book.writer},
-		${book.publishedDate},
-		${book.categorize},
-		${book.pageNumber},
-		${book.price}
-	</li>
-</c:forEach>
-</ol>
+<h1>Book List</h1> 
+<table class="table">
+	<thead>
+		<tr>
+			<th>Book Code</th>
+			<th>책 이름</th>
+			<th>작가</th>
+			<th>출판일</th>
+			<th>분류</th>
+			<th>페이지수</th>
+			<th>책 가격</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="book" items="${books}">
+		<tr>
+			<td>${book.bookCode}</td>
+			<td>${book.bookName}</td>
+			<td>${book.writer}</td>
+			<td>${book.publishedDate}</td>
+			<td>${book.categorize}</td>
+			<td>${book.pageNumber}</td>
+			<td>${book.price}</td>
+		</tr>
+		</c:forEach>
+	</tbody>
+</table>
+
+<hr>
+
+<div style="text-align: center;">
+	<a class="btn btn-success" href="/book/page/1"}>목록편집 페이지</a>
+</div>
 </body>
 </html>
