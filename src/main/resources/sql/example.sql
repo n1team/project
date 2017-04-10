@@ -3,9 +3,9 @@ create sequence cos_no_seq start with 10025;
 select cos_no_seq.nextval from dual;
 
 drop table cosmatic;
-select * from cosmatic;
+select * from cosmetic;
 
-delete from cosmatic where productno = '10028';
+delete from cosmetic where productno = '10028';
 
 commit;
 select * from player;

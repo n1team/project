@@ -11,9 +11,9 @@
 </head>
 
 <body>
-<h1>cosmatic modify complete :)</h1>
+<h1>cosmetic modify complete :)</h1>
 <div class="container">
-<button class="btn btn-default" style="text-align: center;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
+<button class="btn btn-default" style="text-align: center;"><a href="/cosmetic/page/${param.pageNo}">뒤로가기</a></button>
 <table class="table table-hover">
 	<tr>
 		<td>Product - Number</td>
@@ -24,11 +24,11 @@
 	</tr>
 	
 	<tr>
-		<td>${cosmatic.productno}</td>
-		<td>${cosmatic.productname}</td>
-		<td>${cosmatic.price}</td>
-		<td>${cosmatic.capacity}</td>
-		<td>${cosmatic.category}</td>
+		<td>${cosmetic.productno}</td>
+		<td>${cosmetic.productname}</td>
+		<td>${cosmetic.price}</td>
+		<td>${cosmetic.capacity}</td>
+		<td>${cosmetic.category}</td>
 	</tr>
 </table>
 </div>

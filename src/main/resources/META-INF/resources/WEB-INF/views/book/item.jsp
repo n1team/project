@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>item.jsp</title>
 
-<link rel="stylesheet" href="/css/book/item.css">
+<link rel="stylesheet" href="/css/book/list.css">
 
 </head>
 <body>

@@ -23,53 +23,168 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 <style type="text/css">
+
+
+.main > .container {
+	width: 600px;
+	height: 100px;
+	padding-top: 100px;
+	margin: 0 auto;
+	color:white;
+
+}
+
+.ball {
+	border-radius:10px;
+	text-align:center;
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin: 10px auto;
+	vertical-align:medium;
+
+}
+p {
+	font-size:7em;
+	font-weight:900;
+	}
+
+
+.ball:nth-child(1) {
+	background: #ff005d;
+	animation: right 1s infinite ease-in-out;
+}
+
+.ball:nth-child(2) {
+	background: #35ff99;
+
+	animation: left 1s infinite ease-in-out;
+}
+
+.ball:nth-child(3) {
+	background: #008597;
+
+	animation: right 1s infinite ease-in-out;
+}
+
+.ball:nth-child(4) {
+	background: #ffcc00;
+	animation: left 1s infinite ease-in-out;
+}
+
+.ball:nth-child(5) {
+	background: #2d3443;
+	animation: right 1s infinite ease-in-out;
+}
+
+
+@keyframes right {
+	0% {
+		transform: translate(0,-20px);
+	}
+	50% {
+		transform: translate(0,20px);
+	}
+	100% {
+		transform: translate(0,-20px);
+	}
+}
+
+@keyframes left {
+	0% {
+		transform: translate(0,20px);
+	}
+	50% {
+		transform: translate(0,-20px);
+	}
+	100% {
+		transform: translate(0,20px);
+	}
+}
+
+
+
+/* s */
 body {
-border: 1px solid red;
-
-}
-.aa {
-margin-top: 20%;
-
-}
-.de {
-border: 1px solid red;
-margin-top:50px;
-padding-left: 20%;
+	background-image: url("../../../img/w_str.png");
+/* 	padding : 270px 600px 0 600px; */
 }
 
-.row {
-border: 1px solid blue;
+.bg {
+	margin : 270px 600px 300px 600px;
+/* 	float: left; */
+}
+.img {
+	width : 200px;
+	height: 180px;
+	border : 1px solid rgba(0,0,0,0.2);
+	margin : 10px;
+	
 
 }
-.de > div {
-border: 1px solid black;
-display: block; 
-width: 100px;
-height: 100px;
-float: left;
- margin: 20px; 
+
+.img:hover {
+	box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+	opacity : 0.8;
+	
 }
- 
+.container {
+  position: relative;
+  width: 50%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 </style>
 </head>
 <body>
-
-<div class="aa"><h1>Goooooo</h1></div>
-<div class="container de">
-
-
-	<div>1</div>
-	<div>2</div>
-	<div>3</div>
-	<div>4</div>
-	<div>5</div>
-	<div style="clear: both;">6</div>
-	<div>7</div>
-	<div>8</div>
-	<div>9</div>
-	
+<div class="main">
+  <div class="container">
+  <div class="ball"><P>1</p></div>
+  <div class="ball"><P>T</p></div>
+  <div class="ball"><P>E</p></div>
+  <div class="ball"><P>A</p></div>
+		<div class="ball"><P>M</p></div>
 </div>
+</div>
+
+<div style="text-align: center;" class="bg">
+		<div style="margin: 0 auto;" >
+		<a href="#" data-toggle="tooltip" title="팀장 : "><img class="img" src="##"></a>
+		<a href="#" data-toggle="tooltip" title="조원 : "><img class="img" src="##"></a>
+		<a href="#" data-toggle="tooltip" title="조원 : "><img class="img" src="##"></a>
+		<a href="#" data-toggle="tooltip" title="조원 : "><img class="img" src="##"></a>
+		<a href="#" data-toggle="tooltip" title="조원 : "><img class="img" src="##"></a>
+		<a href="#" data-toggle="tooltip" title="조원 : "><img class="img" src="##"></a>
+		<a href="#" data-toggle="tooltip" title="조원 : "><img class="img" src="##"></a>
+		<a href="#" data-toggle="tooltip" title="조원 : "><img class="img" src="##"></a>
+		<a href="#" data-toggle="tooltip" title="조원 : "><img class="img" src="##"></a>
+		</div>
+	</div>
 </body>
 </html>
 

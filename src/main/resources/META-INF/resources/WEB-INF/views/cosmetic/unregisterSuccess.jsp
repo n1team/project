@@ -12,11 +12,11 @@
 </head>
 
 <body>
-<h1>Cosmatic Delete Complete!</h1>
+<h1>Cosmetic Delete Complete!</h1>
 
 <div class="container" style="text-align: center;">
 <label for="deletenumber" style="margin-top:50px;">DELETE NUMBER : ${productno }</label><br>
-<button class="btn btn-default" style="text-align: center;float: none;"><a href="/cosmatic/page/${param.pageNo}">뒤로가기</a></button>
+<button class="btn btn-default" style="text-align: center;float: none;"><a href="/cosmetic/page/${param.pageNo}">뒤로가기</a></button>
 	
 
 </div>
