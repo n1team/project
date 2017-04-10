@@ -14,9 +14,6 @@ import java.util.List;
 @Entity
 public class Account {
 
-	@GeneratedValue()
-	private Long pid;
-
 	@Id
 	@Column(length = 32)
 	private String id;
@@ -28,16 +25,6 @@ public class Account {
 				joinColumns = @JoinColumn(name = "account_id"),
 				inverseJoinColumns = @JoinColumn(name = "authority_name"))
 	private List<Authority> authorities;
-
-	public Long getPid()
-	{
-		return pid;
-	}
-
-	public void setPid(Long pid)
-	{
-		this.pid = pid;
-	}
 
 	public String getId()
 	{

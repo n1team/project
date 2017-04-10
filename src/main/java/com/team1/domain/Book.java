@@ -1,5 +1,7 @@
 package com.team1.domain;
 
+import com.team1.util.ToString;
+
 public class Book extends ToString {
 
 	private Integer bookCode;
@@ -9,7 +11,7 @@ public class Book extends ToString {
 	private String categorize;
 	private Integer pageNumber;
 	private Integer price;
-	
+
 	public Integer getBookCode() {
 		return bookCode;
 	}
@@ -21,7 +23,7 @@ public class Book extends ToString {
 	public String getBookName() {
 		return bookName;
 	}
-	
+
 	public void setBookName(String bookName) {
 		this.bookName = bookName;
 	}

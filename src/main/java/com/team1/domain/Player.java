@@ -1,5 +1,7 @@
 package com.team1.domain;
 
+import com.team1.util.ToString;
+
 public class Player extends ToString {
 
 	private int playerno;

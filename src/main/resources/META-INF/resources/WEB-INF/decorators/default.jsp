@@ -40,7 +40,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
+				<li class="active"><a href="/">Home</a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -57,7 +57,6 @@
 						<li><a href="/language/page/1">Language</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Q & A</a></li>
 				<li><a href="/note/page/1">Note</a></li>
 				<li><a href="/cosmatic/page/1">Cosmetic</a></li>
 			</ul>

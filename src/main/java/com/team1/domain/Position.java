@@ -1,8 +1,10 @@
 package com.team1.domain;
 
+import com.team1.util.ToString;
+
 import java.util.List;
 
-public class Position extends ToString{
+public class Position extends ToString {
 	private int pstno;
 	private String pstname;
 	private String loc;
