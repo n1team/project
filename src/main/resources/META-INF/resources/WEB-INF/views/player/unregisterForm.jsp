@@ -9,20 +9,18 @@
 <head>
 <meta charset="UTF-8">
 <title>unregisterForm.jsp</title>
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
 </head>
 <body>
-<h1>선수 삭제</h1>
-<h3>정말 삭제할거야? 이게 최선이야?</h3>
+<fieldset style="text-align: center;">
+<h2 class="btn btn-info btn-md"><span class="glyphicon glyphicon-grain">선수삭제</span></h2>
+<br>
+<h3>삭제하시겠습니까?</h3>
 ${player}
 <hr>
 <form action="/player/unregister/${playerno}?pageNo=${param.pageNo}" method="post">
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-<input class="btn btn-default" type="submit" value="선수 삭제">
+<input class="btn btn-primary" type="submit" value="선수 삭제">
 </form>
+</fieldset>
 </body>
 </html>

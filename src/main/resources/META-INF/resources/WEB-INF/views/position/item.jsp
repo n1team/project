@@ -9,20 +9,24 @@
 <head>
 <meta charset="UTF-8">
 <title>position_item.jsp</title>
-
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
-
 </head>
 <body>
-<h1>Player Detail Info</h1>
-${position}
-<hr>
-${position.pstno}
-<hr>
-<a href="/position/page/${param.pageNo}">이전 Page List로....</a>
+<fieldset style="text-align: center;">
+<div class="dropdown">
+<button class="btn btn-success btn-lg dropdown-toggle" type="button" id="menu2" data-toggle="dropdown"><span class="glyphicon glyphicon-grain">Position Detail Info</span><span class="caret"></span></button>
+ <div class="dropdown-menu" role="menu" aria-labelledby="menu2">
+<li>${position}
+
+<br>
+<br>
+<br>
+
+</li>
+</div>
+</div>
+<br>
+<a class="btn btn-default" href="/position/page/1">Position 게시판으로</a>
+</fieldset>
+
 </body>
 </html>

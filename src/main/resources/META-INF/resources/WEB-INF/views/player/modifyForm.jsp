@@ -9,51 +9,49 @@
 <head>
 <meta charset="UTF-8">
 <title>modifyForm.jsp</title>
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
 </head>
 <body>
-<h2>선수 수정</h2>
+<fieldset style="text-align: center;">
+<h2 class="btn btn-info btn-md"><span class="glyphicon glyphicon-grain">선수수정</span></h2>
 <form:form action="/player/modify?pageNo=${param.pageNo}" method="post" modelAttribute="playerForm">
 <form:errors></form:errors>
-<div>
-	<label for="playerno">순번 :</label>
+<br>
+<div class="form-group">
+	<label for="playerno">순&nbsp; &nbsp;&nbsp; 번 :</label>
 	<form:input path="playerno" readonly="true"/>
-</div> 
-<div>
-	<label for="pname">선수명 :</label>
+</div>
+<div class="form-group">
+	<label for="pname">선 수 명 :</label>
 	<form:input path="pname" />
 	<form:errors path="pname" />
 </div>
-<div>
-	<label for="job">포지션 :</label>
+<div class="form-group">
+	<label for="job">포 지 션 :</label>
 	<form:input path="job" />
 	<form:errors path="job" />
 </div>
-<div>
+<div class="form-group">
 	<label for="join">입단년도 :</label>
 	<form:input path="join" />
 	<form:errors path="join" />
 </div>
-<div>
-	<label for="heights">키 :</label>
+<div class="form-group">
+	<label for="heights">신&nbsp; &nbsp;&nbsp; 장 :</label>
 	<form:input path="heights" />
 	<form:errors path="heights" />
 </div>
-<div>
-	<label for="uniformNumber">등번호 :</label>
+<div class="form-group">
+	<label for="uniformNumber">등 번 호 :</label>
 	<form:input path="uniformNumber" />
 	<form:errors path="uniformNumber" />
 </div>
-<div>
-	<label for="pstno">pstno :</label>
+<div class="form-group">
+	<label for="pstno">분&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;류 :</label>
 	<form:input path="pstno" />
 	<form:errors path="pstno" />
 </div>
-<input type="submit" value="선수 수정">
+<input class="btn btn-primary btn-md" type="submit" value="선수 수정">
 </form:form> 
+</fieldset>
 </body>
 </html>

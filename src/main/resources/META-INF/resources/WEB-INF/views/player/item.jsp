@@ -8,20 +8,19 @@
 <head>
 <meta charset="UTF-8">
 <title>item.jsp</title>
-
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
-
 </head>
 <body>
-<h1>Player Detail Info</h1>
-${player}
-<hr>
-${player.playerno}
-<hr>
-<a href="/player/page/${param.pageNo}">이전 Page List로....</a>
+<fieldset style="text-align: center;">
+<div class="dropdown">
+<button class="btn btn-info btn-lg dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><span class="glyphicon glyphicon-grain">Player Detail Info</span><span class="caret"></span></button>
+ <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+<li role="presentation"><a role="menuitem" tabindex="-1">${player}</a></li>
+</div>
+<br>
+<br>
+<br>
+<br>
+<a class="btn btn-primary" href="/player/page/1">Player 게시판으로</a>
+</fieldset>
 </body>
 </html>

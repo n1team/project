@@ -9,15 +9,13 @@
 <head>
 <meta charset="UTF-8">
 <title>position_unregisterForm.jsp</title>
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
+
 </head>
 <body>
-<h1>포지션 삭제</h1>
-<h3>정말 삭제할거야? 이게 최선이야?</h3>
+<fieldset style="text-align: center;">
+<h2 class="btn btn-info btn-md"><span class="glyphicon glyphicon-plane">포지션삭제</span></h2>
+
+<h3>삭제하시겠습니까?</h3>
 ${position}
 <hr>
 <form action="/position/unregister/${pstno}?pageNo=${param.pageNo}" method="post">
