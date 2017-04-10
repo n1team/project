@@ -1,0 +1,32 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url('https://fonts.googleapis.com/css?family=Abel|Nunito+Sans|Timmana');
+
+body {
+	background-color: #ffefd5;
+}
+
+h1{
+	margin-top: 40px;
+	font-family: 'Abel';
+	font-size: 30px;
+	text-align: center;
+}
+
+.table {
+	margin-top: 45px;
+}
+
+.btn-danger .btn-warning {
+	text-align: center;
+	margin: 0 auto;
+	font-family: 'Abel';
+	font-color: #fffae6;
+}
+
+.btn-warning {
+	margin-right: 25px;
+}
+
+.btn {
+	margin-top: 40px;
+}

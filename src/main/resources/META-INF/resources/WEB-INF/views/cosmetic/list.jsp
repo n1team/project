@@ -7,21 +7,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>unregisterSuccess.jsp</title>
+<title>cosmetic_list.jsp</title>
 
-<link rel="stylesheet" href="/css/book/unregisterSuccess.css">
 
 </head>
 <body>
-<h1>Book 삭제 성공</h1>
-<div style="text-align: center;">
-	<label for="deletecode" id="deletecode">Delete Code : ${bookcode}</label>
-</div>
-
-<hr>
-
-<div style="text-align: center;">
-	<a class="btn btn-success" href="/book/page/${param.pageNo}">책 페이지로. . .</a>
-</div>
+<h1>Cosmetic List</h1>
+<ol>
+<c:forEach var="list" items="${cosmatic}">
+	<li>${list.productno}, ${list.productname}</li>
+</c:forEach>
+</ol>
 </body>
 </html>
