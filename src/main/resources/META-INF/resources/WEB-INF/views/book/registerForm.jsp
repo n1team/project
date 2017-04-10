@@ -10,60 +10,74 @@
 <meta charset="UTF-8">
 <title>registerForm.jsp</title>
 
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../../code_assist/animate.css">
-	<link rel="stylesheet" href="../../code_assist/bootstrap.css">
-</c:if>
+<link rel="stylesheet" href="/css/book/registerForm.css">
 
 </head>
 <body>
-<h1>책 등록</h1> 
-<form:form action="/book/register" method="post" modelAttribute="bookForm">
+<h1>책 등록</h1>
+<div class="container" style="text-align:center; margin-top: 50px;">
+<form:form action="/book/register" method="post" modelAttribute="bookForm" class="form-horizontal">
 	<!-- bookCode -->
-	<div>
-		<label for="bookCode">책 코드 : </label>
-		<form:input path="bookCode"/>
+	<div class="rginput col-xs-4">
+		<label for="bookCode">책 코드 : 
+		<form:input path="bookCode" class="form-control"/></label>
 		<form:errors path="bookCode"/>
 	</div>
 	<!-- bookName -->
-	<div>
-		<label for="bookName">책 이름 : </label>
-		<form:input path="bookName"/>
+	<div class="rginput col-xs-4">
+		<label for="bookName">책 이름 : 
+		<form:input path="bookName" class="form-control"/></label>
 		<form:errors path="bookName"/>
 	</div>
 	<!-- writer -->
-	<div>
-		<label for="writer">작가 : </label>
-		<form:input path="writer"/>
+	<div class="rginput col-xs-4">
+		<label for="writer">작가 : 
+		<form:input path="writer" class="form-control"/></label>
 		<form:errors path="writer"/>
 	</div>
 	<!-- publishedDate -->
-	<div>
-		<label for="publishedDate">출간일 : </label>
-		<form:input path="publishedDate"/>
+	<div class="rginput col-xs-4">
+		<label for="publishedDate">출간일 : 
+		<form:input path="publishedDate" class="form-control"/></label>
 		<form:errors path="publishedDate"/>
 	</div>
 	<!-- categorize -->
-	<div>
-		<label for="categorize">분류 : </label>
-		<form:input path="categorize"/>
+	<div class="rginput col-xs-10">
+		<label for="categorize">분류 :
+		<form:select path="categorize"  class="form-control">
+			<form:option value=""> </form:option>
+			<form:option value="소설">소설</form:option>
+			<form:option value="시/에세이">시/에세이</form:option>
+			<form:option value="경제/경영">경제/경영</form:option>
+			<form:option value="자기계발">자기계발</form:option>
+			<form:option value="인문">인문</form:option>
+			<form:option value="역사/문화">역사/문화</form:option>
+			<form:option value="종교">종교</form:option>
+			<form:option value="정치/사회">정치/사회</form:option>
+			<form:option value="예술/대중문화">예술/대중문화</form:option>
+			<form:option value="과학">과학</form:option>
+			<form:option value="기술/공학">기술/공학</form:option>
+			<form:option value="컴퓨터/IT">컴퓨터/IT</form:option>
+			<form:option value="기타">기타</form:option>
+		</form:select>
+		</label>
 		<form:errors path="categorize"/>
 	</div>
 	<!-- pageNumber -->
-	<div>
-		<label for="pageNumber">페이지 : </label>
-		<form:input path="pageNumber"/>
+	<div class="rginput col-xs-4">
+		<label for="pageNumber">페이지 : 
+		<form:input path="pageNumber" class="form-control"/></label>
 		<form:errors path="pageNumber"/>
 	</div>
 	<!-- price -->
-	<div>
-		<label for="price">가격 : </label>
-		<form:input path="price"/>
+	<div class="rginput col-xs-4">
+		<label for="price">가격 :
+		<form:input path="price" class="form-control"/></label>
 		<form:errors path="price"/>
 	</div>
-	
-	<input type="submit" value="Book 등록">
+	<a class="btn btn-warning" href="/book/page/${param.pageNo}">Back</a>
+	<input type="submit" class="btn btn-default" value="Book 등록">
 </form:form>
+</div>
 </body>
 </html>

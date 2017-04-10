@@ -7,19 +7,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerSuccess.jsp</title>
+<title>unregisterSuccess.jsp</title>
 
-<!-- Code Assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../../code_assist/animate.css">
-	<link rel="stylesheet" href="../../code_assist/bootstrap.css">
-</c:if>
+<link rel="stylesheet" href="/css/book/unregisterSuccess.css">
+
 </head>
 <body>
-<h1>Book 삭제 성공입니다.</h1> 
-book book_code = ${bookcode}
+<h1>Book 삭제 성공</h1>
+<div style="text-align: center;">
+	<label for="deletecode" id="deletecode">Delete Code : ${bookcode}</label>
+</div>
+
 <hr>
 
-<a class="btn btn-success" href="/book/page/${param.pageNo}">이전 페이지로. . .</a>
+<div style="text-align: center;">
+	<a class="btn btn-success" href="/book/page/${param.pageNo}">책 페이지로. . .</a>
+</div>
 </body>
 </html>
