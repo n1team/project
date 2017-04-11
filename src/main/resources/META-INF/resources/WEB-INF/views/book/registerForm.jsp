@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title>registerForm.jsp</title>
 
-<link rel="stylesheet" href="/css/book/registerForm.css">
+<link rel="stylesheet" href="/css/book/form.css">
 
 </head>
 <body>
