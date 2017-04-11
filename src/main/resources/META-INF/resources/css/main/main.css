@@ -1,9 +1,9 @@
 
 
 .main > .container {
-	width: 600px;
+	width: 550px;
 	height: 100px;
-	padding-top: 100px;
+	padding-top: 50px;
 	margin: 0 auto;
 	color:white;
 
@@ -26,31 +26,32 @@ p {
 
 
 .ball:nth-child(1) {
-	background: #ff005d;
+	background: #0085C7;
 	animation: right 1s infinite ease-in-out;
 }
 
 .ball:nth-child(2) {
-	background: #35ff99;
+	background: #F4C300;
 
 	animation: left 1s infinite ease-in-out;
 }
 
 .ball:nth-child(3) {
-	background: #008597;
+	background: #000000;
 
 	animation: right 1s infinite ease-in-out;
 }
 
 .ball:nth-child(4) {
-	background: #ffcc00;
+	background: #009F3D;
 	animation: left 1s infinite ease-in-out;
 }
 
 .ball:nth-child(5) {
-	background: #2d3443;
+	background: #DF0024;
 	animation: right 1s infinite ease-in-out;
 }
+
 
 
 @keyframes right {
@@ -84,11 +85,13 @@ body {
 	background-image: url("../../../img/w_str.png");
 /* 	padding : 270px 600px 0 600px; */
 }
-
 .bg {
-	margin : 200px 600px 200px 600px;
-/* 	float: left; */
+	padding: 50px 150px 0 150px;
+	margin :auto;
+	float: left;
+	
 }
+
 .img {
 	width : 200px;
 	height: 180px;
@@ -103,10 +106,7 @@ body {
 	opacity : 0.8;
 	
 }
-/* .container { */
-/*   position: relative; */
-/*   width: 50%; */
-/* } */
+
 .overlay {
   position: absolute;
   top: 0;

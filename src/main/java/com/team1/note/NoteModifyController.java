@@ -45,6 +45,7 @@ public class NoteModifyController {
 	
 	@PostMapping("/modify")
 	public String modify(@Valid NoteForm noteForm, BindingResult errors,Integer pageNo) {
+		
 		if (errors.hasErrors()) {
 			System.out.println(errors);
 			return "note/list";

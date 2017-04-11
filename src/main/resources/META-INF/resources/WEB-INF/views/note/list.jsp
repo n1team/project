@@ -27,31 +27,24 @@
 <body>
 	<c:set var="no" value="${note.noteNo}"/>
 	<c:set var="tt" value="${a}"/>
-<%-- 	<sec:authorize access="isAuthenticated()"> --%>
-<%-- 		<sec:authentication property="principal.username"/> --%>
-<%-- 	</sec:authorize> --%>
-<%-- 	<sec:authorize access="isAnonymous()"> --%>
-		
-<%-- 	</sec:authorize> --%>
 
-	
-
-<%-- 	<c:out value="${ }"/> --%>
 	<div class="container">
 		<nav class="navbar nav3">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav nav2">
-					<li><a href="/note/reg?pageNo=${page.paging.pageNo}" id="newnote" class="btn btn-default btn-sm">Note <span class="glyphicon glyphicon-pencil"></span></a></li>
+					<li><a href="/note/reg?pageNo=${page.paging.pageNo}" id="newnote" class="btn btn-default btn-sm font">Note <span class="glyphicon glyphicon-pencil"></span></a></li>
+				
+					
 					<c:choose>
 				
 					<c:when test="${!empty tt}">
-						<li><a href="/note/summnote/${noteForm.noteNo}?pageNo=${page.paging.pageNo}" id="modify" class="btn btn-default btn-sm">수정 &nbsp; <span class="glyphicon glyphicon-edit"></span>	</a></li>
-						<li><a href="/note/summnote/${noteForm.noteNo}?pageNo=${page.paging.pageNo}" class="btn btn-default btn-sm">취소&nbsp;<span class="	glyphicon glyphicon-share"></span>	</a></li>
+						<li><a href="/note/summnote/${noteForm.noteNo}?pageNo=${page.paging.pageNo}" id="modify" class="btn btn-default btn-sm font">수정 &nbsp; <span class="glyphicon glyphicon-edit"></span>	</a></li>
+						<li><a href="/note/summnote/${noteForm.noteNo}?pageNo=${page.paging.pageNo}" class="btn btn-default btn-sm font">취소&nbsp;<span class="	glyphicon glyphicon-share"></span>	</a></li>
 					</c:when>
 						
 						<c:when test="${!empty no}">
-							<li><a href="/note/modify/${note.noteNo}?pageNo=${page.paging.pageNo}&cc=a" id="mof" class="btn btn-default btn-sm">수정 &nbsp; <span class="glyphicon glyphicon-edit"></span>	</a></li>
-							<li><a href="#" id="newnote4" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">삭제&nbsp;  <span class="glyphicon glyphicon-trash"/></a></li>
+							<li><a href="/note/modify/${note.noteNo}?pageNo=${page.paging.pageNo}&cc=a" id="mof" class="btn btn-default btn-sm font">수정 &nbsp; <span class="glyphicon glyphicon-edit"></span>	</a></li>
+							<li><a href="#" id="newnote4" class="btn btn-default btn-sm   font" data-toggle="modal" data-target="#myModal">삭제&nbsp;  <span class="glyphicon glyphicon-trash"/></a></li>
 								<div class="modal fade" id="myModal" role="dialog">
 									<div class="modal-dialog">
 										<div class="modal-content">
@@ -62,7 +55,7 @@
 											<div class="modal-body">
 												<form action="/note/unregister/${note.noteNo}?pageNo=${param.pageNo}" method="post">
 													<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-													<button class="btn " type="submit"	value="삭제" >삭제 <span class="glyphicon glyphicon-trash"/></button>
+													<button class="btn font1" type="submit" style="text-align: center;"	value="삭제" >삭제 <span class="glyphicon glyphicon-trash"/></button>
 												</form>
 											</div>
 	
@@ -75,16 +68,15 @@
 						</c:when>
 						
 						<c:otherwise>
-						<li><a href="#" id="clear" class="btn btn-default btn-sm">Reset <span class="glyphicon glyphicon-refresh"></span></a></li>
-							<li><a href="#" id="save" class="btn btn-default btn-sm">저장 &nbsp; <span class="glyphicon glyphicon-send"></span></a></li>
+						<li><a href="#" id="clear" class="btn btn-default btn-sm font">Reset <span class="glyphicon glyphicon-refresh"></span></a></li>
+						<li><a href="#" id="save" class="btn btn-default btn-sm font">저장 &nbsp; <span class="glyphicon glyphicon-send"></span></a></li>
 						</c:otherwise>
 					
 					</c:choose>
 				
 				</ul>
 				<ul class="nav  nav2 navbar-right">
-					<li><a href="#" id="list" class="btn btn-default btn-sm">List <span class="glyphicon glyphicon-th-list"></span>
-					</a></li>
+					<li><a href="#" id="list" class="btn btn-default btn-sm font">List <span class="glyphicon glyphicon-th-list"></span></a></li>
 				</ul>
 			</div>
 		</nav>
@@ -123,6 +115,7 @@
 								<input style="visibility: hidden;" id="mo2" type="submit" value="수정">
 						</form:form>
 					</c:when>
+					
 
 					<c:otherwise>
 					
@@ -134,8 +127,8 @@
 							</div>
 							<form:textarea path="noteContent" id="summernote" />
 							<form:errors path="noteContent" />
+							<form:hidden path="noteId" />
 							<input style="visibility: hidden;" type="submit" id="lis" value="추가">
-							<input>
 						</form:form>
 					</c:otherwise>
 				</c:choose>
@@ -143,14 +136,15 @@
 
 				
 			</div>
-			<div class="col-lg-2 list2">
+			<div class="col-lg-2 list2" >
 				<table id="panel" class="table table-striped">
 					<c:forEach var="n" items="${page.notes}">
-						<fmt:formatDate value="${n.noteDate}" pattern="yyyy-MM-dd"	var="date" />
+						<fmt:formatDate value="${n.noteDate}" pattern="yyyy-MM-dd hh:mm:ss "	var="date" />
 						<tr>
 							<td colspan="3">${date}</td>
 						</tr>
-						<tr onclick="location.href='/note/summnote/${n.noteNo}?pageNo=${page.paging.pageNo}'" STYLE="CURSOR: POINTER; background-color:#b3ffb3;">
+<%-- 						<tr onclick="location.href='/note/summnote/${n.noteNo}?pageNo=${page.paging.pageNo}'" STYLE="CURSOR: POINTER; background-color:#e6ffe6;"> --%>
+							<tr onclick="location.href='/note/summnote/${n.noteNo}?pageNo=${page.paging.pageNo}'" class="tr" >
 							<td>${n.noteNo}</td>
 							<td>${n.noteTitle}</td>
 							<td>${n.noteId}</td>
@@ -170,14 +164,13 @@
 					
 					
 					<c:if test="${page.paging.lastPage > page.paging.pageNo}">
-						<li class="next"><a	href="note/page/${page.paging.lastPage + 1}" >&gt;</a></li>
+						<li class="next"><a	href="/note/page/${page.paging.lastPage + 1}" >&gt;</a></li>
 						<li><a href="/note/page/${page.paging.totalPage}">&gt;&gt;</a></li>
 					</c:if>
 				</ul>
 			</div>
 		</div>
 	</div>
-
 
 
 

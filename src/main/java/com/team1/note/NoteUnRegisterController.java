@@ -7,6 +7,8 @@ import javax.validation.Valid;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -38,6 +40,17 @@ public class NoteUnRegisterController {
 	@GetMapping("/unregister/{noteNo}")
 	public String unregisterForm(@PathVariable int noteNo , Model model) {
 		log.info("unregisterForm("+noteNo+")");
+		Object o = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String a = null;
+		if (!(o instanceof String)) {
+			UserDetails ud = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			System.out.println("++++++++reg" + ud.getUsername());
+			a = ud.getUsername();
+		}
+		if(a==null){
+			System.out.println("++++++++reg" + a);
+			return "/index";
+		}
 		Note note = noteSearchService.getListAllNo(noteNo);
 		model.addAttribute("note",note);
 		return "note/list4";
@@ -46,7 +59,8 @@ public class NoteUnRegisterController {
 	@PostMapping("/unregister/{noteNo}")
 	public String unregister(@PathVariable int noteNo, int pageNo) {
 		log.info("unregisterN(" + noteNo + ")");
-		noteUnRegisterService.unregister(noteNo);
+		noteUnRegisterService.unregister(noteNo)
+		;
 		return "redirect:/note/unregisterSuccess/"+noteNo+"?pageNo="+pageNo;
 	}
 	

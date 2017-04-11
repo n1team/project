@@ -1,6 +1,5 @@
 package com.team1.form;
 
-import javax.validation.constraints.NotNull;
 
 import com.team1.domain.Note;
 

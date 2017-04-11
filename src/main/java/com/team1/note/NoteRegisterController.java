@@ -2,7 +2,6 @@ package com.team1.note;
 
 
 
-import java.util.Date;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -10,6 +9,8 @@ import javax.validation.Valid;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,6 +36,7 @@ public class NoteRegisterController {
 	@GetMapping("/reg")
 	public String getList(Model model,NoteForm noteForm,Integer pageNo) {
 		log.info("getList()");
+	
 		NoteForm form = new NoteForm();
 		Map<String, Object> page = noteSearchService.getPage(pageNo);
 		model.addAttribute("page", page);
@@ -45,7 +47,19 @@ public class NoteRegisterController {
 	
 	@PostMapping("/reg/{pageNo}")
 	public String register(@Valid NoteForm noteForm, BindingResult errors,@PathVariable Integer pageNo) {
-		log.info("register(" + noteForm + ")");
+		log.info("registerString(" + noteForm + ")");
+		Object o = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String a = null;
+		if (!(o instanceof String)) {
+			UserDetails ud = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+			System.out.println("++++++++reg" + ud.getUsername());
+			a = ud.getUsername();
+		}
+		if(a==null){
+			System.out.println("++++++++reg" + a);
+			return "/index";
+		}
+		System.out.println("++++++++reg===" + a);
 		if (errors.hasErrors()) {
 			return "note/list";
 		}
@@ -56,19 +70,7 @@ public class NoteRegisterController {
 		return "redirect:/note/list/"+noteForm.getNoteNo()+"?pageNo="+pageNo;
 	}
 	
-//	@GetMapping("/list/{noteNo}")
-//	public String registerSucess(@PathVariable int noteNo,Model model, HttpServletRequest request  ) {
-//System.err.println(noteSearchService);
-//		String pageNo = request.getParameter("pageNo");
-//		Map<String, Object> page = noteSearchService.getPage(Integer.parseInt(pageNo));
-//		System.err.println("ㅎㄱ=ㄱㄱ====================================");
-//		NoteForm form = new NoteForm();
-//		model.addAttribute("page", page);
-//		model.addAttribute("noteForm", form);
-//		System.err.println("22222222222222222222222222222222222=========");
-//		return "note/list";
-//	}
-	
+
 	@GetMapping("/list/{noteNo}")
 	public String registerSucess(@PathVariable int noteNo,Model model, int pageNo  ) {
 		Map<String, Object> page = noteSearchService.getPage(pageNo);
