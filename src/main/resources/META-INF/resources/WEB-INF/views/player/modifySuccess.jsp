@@ -15,7 +15,7 @@
 <br>
 <fieldset style="text-align: center;">
 
-<button class="btn btn-success btn-lg" type="button"><span class="glyphicon glyphicon-grain">선수수정성공</span>
+<button class="btn btn-success btn-lg" type="button"><span class="glyphicon glyphicon-grain">선수수정성공</span></button>
 <%-- <li>${player}</li> --%>
 <br><br><br>
 <a class="btn btn-warning" href="/player/page/${param.pageNo}">이전 페이지로</a>

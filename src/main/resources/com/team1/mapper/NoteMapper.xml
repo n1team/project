@@ -7,6 +7,9 @@
 	<result property="noteTitle"		column="note_title"/>
 	<result property="noteContent"		column="note_content"/>
 	<result property="noteDate"			column="note_date"/>
+	
+	
+	
 </resultMap>
 
 <select id="selectAll" resultMap="sel">
@@ -16,9 +19,10 @@
 				n.note_content 	as	note_content,
 				n.note_date		as	note_date
 			from note n
+			where n.note_id = #{userName}
 		ORDER BY n.note_no DESC
-		offset #{firstItem} - 1 rows
-	fetch next #{itemsPerPage} rows only 
+		offset #{paging.firstItem} - 1 rows
+	fetch next #{paging.itemsPerPage} rows only 
 </select>
 
 <select id="selectAllNo" resultMap="sel">
@@ -46,10 +50,10 @@
 				)
 		values
 				(
-					#{noteId},
+					#{userName},
 					#{noteNo},
-					#{noteTitle},
-					#{noteContent},
+					#{note.noteTitle},
+					#{note.noteContent},
 					sysdate
 				)
 </insert>
