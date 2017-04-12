@@ -19,17 +19,17 @@
 </head>
 <body>
 <div class="container">
-<h1>Memo</h1>
+<h1>등록</h1>
 <form:form action="/memo/register" method="post" modelAttribute="memoForm">
 <table class="table table-bordered">
 	<tr>
 	<td><label for="mname">제목</label></td>
-	<td><form:input path="mname" size="100"/>
+	<td><form:input path="mname" size="100" autocomplete="off"/>
 	<form:errors path="mname"/></td>
 	</tr>
 	<tr>
 	<td><label for="password">비밀번호</label></td>
-	<td><form:input path="password" size="100" style="-webkit-text-security: circle;" autocomplete="off"/>
+	<td><form:input path="password" size="100" type="password" style="ime-mode:disabled" autocomplete="off"/>
 	<form:errors path="password"/></td>
 	</tr>
 	

@@ -27,7 +27,7 @@
 	<div class="modal-body">
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 	<c:if test="${!empty memo.password}">
-         password : <input type="password" name="pw" id="pw" oninput="onChange(event)" autocomplete="off"/> <br> (password : ${memo.password})<br><br>
+         password : <input type="password" name="pw" id="pw" oninput="onChange(event)" autocomplete="off" style="ime-mode:disabled"/> <br> (password : ${memo.password})<br><br>
 		<p id="warn" style="display:none">${memo.mname} 을(를) 삭제하시겠습니까? </p>
 	</c:if>
 	<c:if test="${empty memo.password}">

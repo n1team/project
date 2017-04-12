@@ -19,7 +19,7 @@
 <body>
 <div class="container">
 	<div>
-		<h1>Memo Content</h1>
+		<h1>Board</h1>
 		<div>
 		<table class="table table-bordered">
 			<tbody>
@@ -35,7 +35,7 @@
 				<tr>
 					<td>
 					<div style="float:left">
-					<c:if test="${!empty memo.password}">password : <input type="password" name="pw" id="pw" oninput="onChange(event)"/></c:if>
+					<c:if test="${!empty memo.password}">password : <input type="password" name="pw" id="pw" oninput="onChange(event)" style="ime-mode:disabled"/></c:if>
 					<c:if test="${empty memo.password}"></c:if>
 <!-- 						password : <input type="password" name="pw" id="pw" oninput="onChange(event)"/> -->
 					</div>

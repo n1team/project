@@ -57,8 +57,7 @@ public class MemoModifyController {
 //		String name = memoForm.getMname();
 //		name=name.replace("\u0020","&nbsp");
 //		memoForm.setMname(name);
-		
-		//util.date => sql.dqte 현재시간을 sql.date로
+
 		Date date = new Date();
 		java.sql.Date d = new java.sql.Date(date.getTime());
 		memoForm.setMdate(d);

@@ -12,6 +12,7 @@ public class Memo {
 	private String mcontent;
 	private String password;
 	private Date mdate;
+//	private Integer count;
 
 	public Memo() {
 		// TODO Auto-generated constructor stub
@@ -103,5 +104,19 @@ public class Memo {
 		mdate = value;
 		return this;
 	}
+	/*
+	*//**
+	 * @return the count
+	 *//*
+	public Integer getCount() {
+		return count;
+	}
 
+	*//**
+	 * @param value the count to set
+	 *//*
+	public Memo setCount(final Integer value) {
+		count = value;
+		return this;
+	}*/
 }
