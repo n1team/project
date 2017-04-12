@@ -11,12 +11,13 @@
 </head>
 <body>
 <fieldset style="text-align: center;">
-<h2 class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plain">포지션삭제성공</span></h2>
+<h2 class="btn btn-default btn-lg"><span class="glyphicon glyphicon-plain">포지션삭제성공</span></h2>
 <br>
 <br>
-<%-- position pstno == ${pstno} --%>
 
 <hr>
-<a class="btn btn-default" href="/position/page/${param.pageNo}">이전 페이지로</a>
+<a class="btn btn-primary" href="/position/page/${param.pageNo}">이전 페이지로</a>
+</fieldset>
+
 </body>
 </html>

@@ -9,13 +9,39 @@
 <head>
 <meta charset="UTF-8">
 <title>position_modifySuccess.jsp</title>
+
 </head>
 <body>
-<fieldset style="text-align: center;">
-<h2 class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plain">포지션수정성공</span></h2>
-<%-- ${position} --%>
+<fieldset style="text-align: center; width:50%; margin-left: 450px;">
+<h2 class="btn btn-default btn-lg"><span class="glyphicon glyphicon-plain">포지션수정성공</span></h2>
 <br>
 <br>
-<a class="btn btn-default" href="/position/page/${param.pageNo}">이전 페이지로</a>
+<br>
+<br>
+<div class="table-responsive" style="text-align: center;">
+<table class="table">
+<thead>
+<tr class="success" >
+<th>연결번호</th>
+<th>포지션이름</th>
+<th>지역</th>
+</tr>
+</thead>
+
+<tbody>
+	<tr>
+		<td>${position.pstno}</td>
+		<td>${position.pstname}</td>
+		<td>${position.loc}</td>
+		</tr>
+		</tbody>
+		</table>
+		</div>
+<br>
+<br>
+<br>
+<br>
+<a class="btn btn-primary" href="/position/page/${param.pageNo}">이전 페이지로</a>
+</fieldset>
 </body>
 </html>

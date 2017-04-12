@@ -52,6 +52,7 @@ public class PositionSearchService {
 			pos = posMapper.selectPage(paging);
 		Map<String, Object> map = new HashMap<>();
 		map.put("position", pos);
+		
 		map.put("paging", paging);		
 		return map;
 	}

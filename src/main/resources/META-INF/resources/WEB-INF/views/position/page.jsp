@@ -12,8 +12,8 @@
 <style>
 @import url('https://fonts.googleapis.com/css?family=Kreon');
 header {
-font-family: "Kreon";
-text-align: center;
+	font-family: "Kreon";
+	text-align: center;
 
 }
 h1{
@@ -50,7 +50,7 @@ img{
 <tr class="default">
 <th>수정</th>
 <th>삭제</th>
-<th>순서</th>
+<th>연결번호</th>
 <th>포지션 이름</th>
 <th>지역</th>
 <th></th>

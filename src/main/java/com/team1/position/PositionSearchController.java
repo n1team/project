@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.team1.domain.Player;
 import com.team1.domain.Position;
+import com.team1.player.service.PlayerSearchService;
 import com.team1.position.service.PositionSearchService;
 
 @RequestMapping("/position")
@@ -23,6 +25,9 @@ public class PositionSearchController {
 	
 	@Autowired
 	PositionSearchService posService;
+	
+	@Autowired
+	PlayerSearchService plyService;
 	
 	@GetMapping("/list")
 	public String getListAll(Model model){
@@ -43,6 +48,8 @@ public class PositionSearchController {
 		public String getItemByPstno(@PathVariable int pstno, Model model){
 		log.info("getItem("+pstno+")");
 		Position position = posService.getPositionByPstno(pstno, true);
+		
+		model.addAttribute("player", pstno);
 		model.addAttribute("position", position);
 		return "position/item";
 	}

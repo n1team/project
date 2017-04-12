@@ -12,9 +12,40 @@
 <body>
 <fieldset style="text-align: center;">
 <div class="dropdown">
-<button class="btn btn-info btn-lg dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"><span class="glyphicon glyphicon-grain">Player Detail Info</span><span class="caret"></span></button>
- <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-<li role="presentation"><a role="menuitem" tabindex="-1">${player}</a></li>
+<a class="btn btn-default btn-lg" type="button"><span class="glyphicon glyphicon-grain">Player Detail Info</span></a>
+
+<br>
+<br>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr class="info" style="text-align: center;">
+<th>순서</th>
+<th>이름</th>
+<th>포지션</th>
+<th>입단년도</th>
+<th>신장</th>
+<th>등번호</th>
+<th>연결번호</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>${player.playerno}</td>
+		<td>${player.pname}</td> 
+		<td>${player.job}</td>
+		<td>${player.join}</td>
+		<td>${player.heights}</td>
+		<td>${player.uniformNumber}</td>
+		<td>${player.pstno}</td>
+		</tr>
+		</tbody>
+		</table>
+		</div>
+<br>
+<br>
 </div>
 <br>
 <br>
