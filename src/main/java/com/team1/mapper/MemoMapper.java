@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.team1.domain.Memo;
 import com.team1.util.memoPagination;
@@ -32,6 +33,9 @@ public interface MemoMapper {
 	int insert(Memo memo);
 	
 	int updateByMno(Memo memo);
+	
+//	@Update("update memo set count=count+1 where mno = #{mno}")
+//	Memo addCount(int mno);
 	
 	@Delete("delete from memo where mno=#{mno}")
 	int deleteByMno(int mno);

@@ -1,4 +1,4 @@
-package com.team1.persistence;
+package com.team1.mapper;
 
 import com.team1.domain.City;
 import com.team1.util.Pagination;

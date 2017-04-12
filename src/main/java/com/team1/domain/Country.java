@@ -2,15 +2,29 @@ package com.team1.domain;
 
 import com.team1.util.ToString;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Entity
 public class Country extends ToString {
 
+	@Id
+	@Column(length = 3)
 	private String code;
+
+	@NotNull
+	@Column(length = 52)
 	private String name;
+
+	@Column(length = 20)
 	private String continent;
+
+	@Column(length = 26)
 	private String region;
+
+
 	private BigDecimal surfaceArea;
 	private BigDecimal indepYear;
 	private BigDecimal population;
@@ -22,7 +36,14 @@ public class Country extends ToString {
 	private String headOfState;
 	private BigDecimal capital;
 	private String code2;
+
+	@OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
 	private List<City> cities;
+
+	public boolean addCity(City city)
+	{
+		return cities.add(city);
+	}
 
 	public List<City> getCities() {
 		return cities;

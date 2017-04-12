@@ -28,10 +28,6 @@ public class NoteSearchController {
 	@GetMapping("/page/{pageNo}")
 	public String getPage(@PathVariable int pageNo, Model model,NoteForm noteForm) {
 		log.info("getPage(" + pageNo + ")");
-//		UserDetails ud = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//		System.out.println(ud.getUsername());
-//		id = ud.getUsername(); 
-//		System.err.println(id);
 		Map<String, Object> page = noteSearchService.getPage(pageNo);
 		model.addAttribute("page", page);
 		model.addAttribute("from", new NoteForm());
@@ -51,12 +47,7 @@ public class NoteSearchController {
 		return "note/list";
 	}
 
-	
-	@GetMapping("/vvv") 
-	public String ccc() {
-		return "note/vvv";
-	}
-	
+
 	
 
 }

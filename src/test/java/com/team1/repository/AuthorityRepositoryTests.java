@@ -23,7 +23,11 @@ public class AuthorityRepositoryTests {
 	@Test
 	public void getSome()
 	{
-		accounts.delete("test");
+//		accounts.deleteAll();
+		authorities.save(new Authority("CNT_ADMIN", "country crud permission", null));
+		authorities.save(new Authority("CITY_ADMIN", "city crud permission", null));
+
+//		authorities.save(new Authority("BASIC", "default", null));
 //		authorities.delete("GUEST");
 //		Authority a = new Authority();
 //		a.setAuthName("BASIC");

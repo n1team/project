@@ -20,7 +20,7 @@
 <jsp:useBean id="now" class="java.util.Date" />
 <fmt:formatDate value="${now}" pattern="yyyy/MM/dd" var="now"/>
 <div class="container">
-<h1>게시판</h1>
+<h1>Board</h1>
 <div style="height: 100%">
 
 	<table class="table table-hover">
@@ -29,6 +29,7 @@
 			<th>번호</th>
 			<th>제목</th>
 			<th></th>
+<!-- 			<th>조회</th> -->
 			<th>작성일</th>
 		</tr>
 		</thead>
@@ -58,7 +59,7 @@
 					        </div>
 					        <div class="modal-body">
 					        	<c:if test="${!empty memo.password}">
-						          password : <input type="password" id="pw${status.index}" oninput="onChange(event,'${memo.password}',${status.index})" autocomplete="off"><br>
+						          password : <input type="password" style="ime-mode:disabled" id="pw${status.index}" oninput="onChange(event,'${memo.password}',${status.index})" autocomplete="off"><br>
 								  (password : ${memo.password})
 								</c:if>
 								<c:if test="${empty memo.password}">
@@ -91,6 +92,7 @@
 	
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////				    -->
 				</td>
+<%-- 				<td>${memo.count}</td> --%>
 				<td width="250px"><fmt:formatDate value="${memo.mdate}" pattern="yyyy/MM/dd HH:mm"/>  
 			
 				</td>

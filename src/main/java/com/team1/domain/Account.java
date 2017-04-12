@@ -1,5 +1,6 @@
 package com.team1.domain;
 
+import com.team1.util.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
@@ -12,7 +13,7 @@ import java.util.List;
  */
 
 @Entity
-public class Account {
+public class Account extends ToString {
 
 	@Id
 	@Column(length = 32)
@@ -75,4 +76,21 @@ public class Account {
 		return rst;
 	}
 
+	public void set(Account other)
+	{
+		this.id = other.id;
+		this.password = other.password;
+		this.authorities = other.authorities;
+		this.email = other.email;
+	}
+
+	public boolean hasAuth(String authName)
+	{
+		return authorities.stream().anyMatch(a -> a.getAuthName().equals(authName));
+	}
+
+	public void setAuthList(List<Authority> list)
+	{
+		this.authorities = list;
+	}
 }

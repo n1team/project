@@ -35,6 +35,10 @@ public class MemoSearchController {
 	public String getItem(@PathVariable int mno, Model model)
 	{
 		Memo memo = memoSearchService.getItem(mno);
+//		Integer cnt = memo.getCount();
+//		cnt = cnt++;
+//		memo.setCount(cnt);
+
 		model.addAttribute("memo",memo);
 		
 		return "memo/item";

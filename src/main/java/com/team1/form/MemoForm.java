@@ -2,6 +2,7 @@ package com.team1.form;
 
 import java.sql.Date;
 
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -16,6 +17,7 @@ public class MemoForm extends Memo{
 		super.setMname(memo.getMname());
 		super.setMcontent(memo.getMcontent());
 		super.setPassword(memo.getPassword());
+//		super.setCount(memo.getCount());
 	}
 	
 	@NotNull
@@ -51,6 +53,18 @@ public class MemoForm extends Memo{
 		// TODO Auto-generated method stub
 		return super.getPassword();
 	}
+	/*@Digits(integer=4,fraction=0)
+	@Override
+	public Integer getCount() {
+		// TODO Auto-generated method stub
+		return super.getCount();
+	}
+
+	@Override
+	public Memo setCount(Integer value) {
+		// TODO Auto-generated method stub
+		return super.setCount(value);
+	}*/
 
 	@Override
 	public Memo setPassword(String value) {
@@ -70,5 +84,5 @@ public class MemoForm extends Memo{
 		// TODO Auto-generated method stub
 		return super.setMdate(value);
 	}
-
+	
 }
