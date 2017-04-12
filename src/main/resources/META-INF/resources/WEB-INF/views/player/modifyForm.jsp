@@ -18,7 +18,7 @@
 <br>
 <div class="form-group">
 	<label for="playerno">순&nbsp; &nbsp;&nbsp; 번 :</label>
-	<form:input path="playerno" readonly="true"/>
+	<form:input path="playerno" readonly="true" style="background-color: lightgray;"/>
 </div>
 <div class="form-group">
 	<label for="pname">선 수 명 :</label>

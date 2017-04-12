@@ -12,12 +12,12 @@
 </head>
 <body>
 <fieldset style="text-align: center;">
-<h2 class="btn btn-info btn-md"><span class="glyphicon glyphicon-plane">포지션수정</span></h2>
+<button class="btn btn-defalut btn-md"><span class="glyphicon glyphicon-plane">포지션수정</span></button>
 <form:form action="/position/register" method="post" modelAttribute="positionForm">
 <br>
 
 <div>
-	<label for="pstno">분&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;류 :</label>
+	<label for="pstno">연결번호 :</label>
 	<form:input path="pstno" />
 	<form:errors path="pstno" />
 </div>
@@ -32,7 +32,7 @@
 	<form:errors path="loc" />
 </div>
 <br>
-<input class="btn btn-default" type="submit" value="포지션 등록">
+<input class="btn btn-info" type="submit" value="포지션 등록">
 </form:form> 
 </fieldset>
 </body>

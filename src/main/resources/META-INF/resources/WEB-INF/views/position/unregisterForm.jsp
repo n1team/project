@@ -13,14 +13,14 @@
 </head>
 <body>
 <fieldset style="text-align: center;">
-<h2 class="btn btn-info btn-md"><span class="glyphicon glyphicon-plane">포지션삭제</span></h2>
+<h2 class="btn btn-default btn-md"><span class="glyphicon glyphicon-plane">포지션삭제</span></h2>
 
 <h3>삭제하시겠습니까?</h3>
 ${position}
 <hr>
 <form action="/position/unregister/${pstno}?pageNo=${param.pageNo}" method="post">
 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-<input class="btn btn-default" type="submit" value="포지션 삭제">
+<input class="btn btn-info" type="submit" value="포지션 삭제">
 </form>
 </body>
 </html>

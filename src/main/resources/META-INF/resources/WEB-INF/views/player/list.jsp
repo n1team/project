@@ -11,9 +11,9 @@
 </head>
 <body>
 <fieldset style="text-align: center;">
-<h2 class="btn btn-info btn-lg"><span class="glyphicon glyphicon-grain">List</span></h2>
+<h2 class="btn btn-default btn-lg"><span class="glyphicon glyphicon-grain">List</span></h2>
 <br>
-<a class="btn btn-default" href="/player/page/1">Player 게시판으로</a>
+<a class="btn btn-info" href="/player/page/1">Player 게시판으로</a>
 <ol>
 <c:forEach var="player" items="${player}">
 <li>${player.playerno},${player.pname},${player.job},${player.join},${player.uniformNumber},${player.heights},${player.pstno}</li>

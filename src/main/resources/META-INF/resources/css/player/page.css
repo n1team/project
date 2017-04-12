@@ -24,3 +24,6 @@ img{
 	float : none;
 	margin-left:  -5px;
 }
+table, td, th{
+	text-align: center;
+}
