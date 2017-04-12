@@ -2,20 +2,40 @@ package com.team1.domain;
 
 import com.team1.util.ToString;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
+
+@Entity
 public class Emp extends ToString {
 
+	@Id
+	@Column(length = 4)
 	private int empno;
-	private String ename;
-	private String job;
-	private Integer mgr;
-	private Date hiredate;
-	private BigDecimal sal;
-	private BigDecimal comm;
-	private Integer deptno;
 
+	@NotNull
+	@Column(length = 10)
+	private String ename;
+
+	@Column(length = 9)
+	private String job;
+
+	@Column(length = 4)
+	private Integer mgr;
+
+	private Date hiredate;
+
+	@Column(length = 7, scale = 2)
+	private BigDecimal sal;
+
+	@Column(length = 7, scale = 2)
+	private BigDecimal comm;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "deptno", foreignKey = @ForeignKey(name = "FK_DEPTNO"))
 	private Dept dept;
 	
 	public Dept getDept() {
@@ -82,12 +102,12 @@ public class Emp extends ToString {
 		this.comm = comm;
 	}
 
-	public Integer getDeptno() {
-		return deptno;
-	}
-
-	public void setDeptno(Integer deptno) {
-		this.deptno = deptno;
+	public String getSimpleDate()
+	{
+		if (hiredate == null)
+			return "0000-00-00";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		return sdf.format(hiredate);
 	}
 
 }

@@ -17,6 +17,7 @@ $(".reset").on("click", function() {
 });
 
 
+
 function animationHover(element, animation)
 {
 	element = $(element);
@@ -31,3 +32,4 @@ function animationHover(element, animation)
 }
 
 animationHover("input[type=button]", "shake");
+

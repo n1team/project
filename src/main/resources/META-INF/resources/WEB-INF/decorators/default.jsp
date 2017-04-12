@@ -30,33 +30,41 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">1-TEAM</a>
+			<a class="navbar-brand active" href="/">1-TEAM</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="/">Home</a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="/dept/list">Dept</a></li>
-						<li><a href="/emp/list">Emp</a></li>
-						<li><a href="/emp/salgrade">Salgrade</a></li>
+						<li><a href="/emp/list">Employee</a></li>
+						<li><a href="/dept/list">Department</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">World<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="/country/page/1">Country</a></li>
-						<li><a href="/city/page/1">City</a></li>
-						<li><a href="/language/page/1">Language</a></li>
+						<li><a href="/country/list">Country</a></li>
+						<li><a href="/city/list">City</a></li>
 					</ul>
 				</li>
 				<li><a href="/note/page/1">Note</a></li>
 				<li><a href="/cosmetic/page/1">Cosmetic</a></li>
 				<li><a href="/book/page/1">Book</a></li>
-				<li><a href="/player/page/1">Player</a></li>
-				<li><a href="/position/page/1">Position</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">BaseBall<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/player/page/1">Player</a></li>
+						<li><a href="/position/page/1">Position</a></li>
+					</ul>
+				</li>
 				<li><a href="/memo/1">Memo</a></li>
+				<security:authorize access="isAuthenticated()">
+					<security:authentication property="principal" var="isAdmin" />
+					<c:if test="${isAdmin.hasAuthority('ADMIN')}">
+						<li><a href="/account/1">Account</a></li>
+					</c:if>
+				</security:authorize>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<security:authorize access="isAnonymous()">
@@ -66,6 +74,7 @@
 				<security:authorize access="isAuthenticated()">
 					<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
 				</security:authorize>
+
 			</ul>
 		</div>
 	</div>

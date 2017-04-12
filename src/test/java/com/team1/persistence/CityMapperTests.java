@@ -1,5 +1,6 @@
 package com.team1.persistence;
 
+import com.team1.mapper.CityMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,17 +2,44 @@ package com.team1.domain;
 
 import com.team1.util.ToString;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
+@Entity
 public class City extends ToString {
 
+	@Id
+	@Column(length = 11)
 	private int id;
+
+	@NotNull
+	@Column(length = 35)
 	private String name;
-	private String countryCode;
+
+	@Column(length = 20)
 	private String district;
+
+	@Column(length = 11)
 	private BigDecimal population;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "country_code", referencedColumnName = "code", foreignKey = @ForeignKey(name = "FK_COUNTRY"))
 	private Country country;
-	
+
+	public City()
+	{
+	}
+
+	public City(int id, String name, String district, BigDecimal population, Country country)
+	{
+		this.id = id;
+		this.name = name;
+		this.district = district;
+		this.population = population;
+		this.country = country;
+	}
+
 	public Country getCountry() {
 		return country;
 	}
@@ -39,18 +66,6 @@ public class City extends ToString {
 			 name = name.trim();
 		}
 		this.name = name;
-	}
-
-	public String getCountryCode() {
-		return countryCode;
-	}
-
-	public void setCountryCode(String countryCode) {
-		
-		if(countryCode != null){
-			countryCode = countryCode.trim();
-		}		
-		this.countryCode = countryCode;
 	}
 
 	public String getDistrict() {
