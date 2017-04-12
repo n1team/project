@@ -2,7 +2,9 @@
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +28,7 @@
 		<tfoot>
 		<tr>
 			<th colspan='4'>
-				<div class="row center-block col-lg-1">
+				<div class="row center-block col-lg-12">
 					<div class="text-center">
 						<c:choose>
 							<c:when test="${data.number > 3}">
@@ -62,7 +64,7 @@
 		<tbody>
 			<c:forEach var="i" items="${data.content}">
 			<tr>
-				<td data-tile="도시명"><a class="button" data-id="${i.id}">${i.name}</a></td>
+				<td data-tile="도시명"><a class="button" data-id="city${i.id}">${i.name}</a></td>
 				<td data-tile="국가명">${i.country.name}</td>
 				<td data-tile="지역">${i.district}</td>
 				<td data-tile="인구수">${i.population}</td>
@@ -71,29 +73,66 @@
 		</tbody>
 	</table>
 
+	<sec:authorize access="isAuthenticated()">
+		<sec:authentication property="principal" var="isAdmin" />
+		<c:if test="${isAdmin.hasAuthority('ADMIN') || isAdmin.hasAuthority('CITY_ADMIN')}">
+			<div class="text-right"><button class="addButton" data-id="cityNew">추가</button></div>
+		</c:if>
+	</sec:authorize>
+
 	<c:forEach var="i" items="${data.content}">
-		<form method="post" action="/city/update/${i.id}" class='detail' id="${i.id}">
+		<form:form action="/city/update" method="post" modelAttribute="city${i.id}" cssClass="detail">
+			<form:errors/>
 			<div class='detail-container'>
 				<dl>
 					<dt>Number</dt>
-					<dd><input type="text" name="id" value="${i.id}" disabled/></dd>
+					<dd><form:input path="id" value="${i.id}" readonly="true"/></dd>
 					<dt>도시명</dt>
-					<dd><input type="text" name="name" value="${i.name}"/></dd>
+					<dd><form:input path="name" value="${i.name}"/></dd>
 					<dt>지역</dt>
-					<dd><input type="text" name="job" value="${i.district}"/></dd>
+					<dd><form:input path="district" value="${i.district}"/></dd>
 					<dt>인구수</dt>
-					<dd><input type="text" name="mgr" value="${i.population}"/></dd>
-					<dt>나라</dt>
-					<dd><input type="text" name="hiredate" value="${i.country.name}"/></dd>
+					<dd><form:input path="population" value="${i.population}"/></dd>
+					<dt>국가 코드</dt>
+					<dd><input type="text" name="cntCode" value="${i.country.code}"/></dd>
 				</dl>
 			</div>
 			<div class='detail-nav'>
-				<button class='closeButton' data-id="${i.id}">Close</button>
-				<input class="modButton" type="submit" name="submit" value="수정"/>
+				<button class='closeButton' data-id="city${i.id}">Close</button>
+				<sec:authorize access="isAuthenticated()">
+					<sec:authentication property="principal" var="p" />
+					<c:if test="${p.hasAuthority('ADMIN') || p.hasAuthority('CITY_ADMIN')}">
+						<input class="modButton" type="submit" name="submit" value="Apply"/>
+						<input class="delButton" type="submit" name="submit" value="Delete"/>
+					</c:if>
+				</sec:authorize>
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			</div>
-		</form>
+		</form:form>
 	</c:forEach>
+
+	<form:form action="/city/insert" method="post" modelAttribute="cityNew" cssClass="detail">
+		<form:errors/>
+		<div class='detail-container'>
+			<dl>
+				<dt>Number</dt>
+				<dd><form:input path="id" value="${i.id}"/></dd>
+				<dt>도시명</dt>
+				<dd><form:input path="name" value="${i.name}"/></dd>
+				<dt>지역</dt>
+				<dd><form:input path="district" value="${i.district}"/></dd>
+				<dt>인구수</dt>
+				<dd><form:input path="population" value="${i.population}"/></dd>
+				<dt>국가 코드</dt>
+				<dd><input type="text" name="cntCode" value="${i.country.code}"/></dd>
+			</dl>
+		</div>
+		<div class='detail-nav'>
+			<button class='closeButton' data-id="cityNew">Close</button>
+			<input class="modButton" type="submit" name="submit" value="추가"/>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		</div>
+	</form:form>
 
 </div>
 </div>

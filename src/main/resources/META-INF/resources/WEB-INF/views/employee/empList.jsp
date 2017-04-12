@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +17,6 @@
 <div class="contentBox">
 <div class="innerCB">
 	<h1 class="headline">Employee List</h1>
-	<div class="text-right"><button class="addButton" data-id="empNew">추가</button></div>
-
 	<table>
 		<thead>
 		<tr>
@@ -31,7 +30,7 @@
 		<tfoot>
 		<tr>
 			<th colspan='5'>
-				<div class="row center-block col-lg-1">
+				<div class="row center-block col-lg-12">
 					<div class="text-center">
 						<c:choose>
 							<c:when test="${data.number > 3}">
@@ -78,6 +77,12 @@
 		</tbody>
 	</table>
 
+	<sec:authorize access="isAuthenticated()">
+		<sec:authentication property="principal" var="isAdmin" />
+		<c:if test="${isAdmin.hasAuthority('ADMIN') || isAdmin.hasAuthority('EMP_ADMIN')}">
+			<div class="text-right"><button class="addButton" data-id="empNew">추가</button></div>
+		</c:if>
+	</sec:authorize>
 
 	<c:forEach var="i" items="${data.content}">
 	<form:form action="/emp/update" method="post" modelAttribute="emp${i.empno}" cssClass="detail">
@@ -105,8 +110,13 @@
 		</div>
 		<div class='detail-nav'>
 			<button class='closeButton' data-id="emp${i.empno}">Close</button>
-			<input class="modButton" type="submit" name="submit" value="Apply"/>
-			<input class="delButton" type="submit" name="submit" value="Delete"/>
+			<sec:authorize access="isAuthenticated()">
+				<sec:authentication property="principal" var="p" />
+				<c:if test="${p.hasAuthority('ADMIN') || p.hasAuthority('EMP_ADMIN')}">
+					<input class="modButton" type="submit" name="submit" value="Apply"/>
+					<input class="delButton" type="submit" name="submit" value="Delete"/>
+				</c:if>
+			</sec:authorize>
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 		</div>
 	</form:form>

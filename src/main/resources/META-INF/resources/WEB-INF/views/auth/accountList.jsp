@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@
 			<tfoot>
 			<tr>
 				<th colspan='3'>
-					<div class="row center-block col-lg-1">
+					<div class="row center-block col-lg-12">
 						<div class="text-center">
 							<c:choose>
 								<c:when test="${data.number > 3}">
@@ -92,7 +93,12 @@
 				</div>
 				<div class='detail-nav'>
 					<button class='closeButton' data-id="account${i.id}">Close</button>
-					<input class="modButton" type="submit" name="submit" value="수정"/>
+					<sec:authorize access="isAuthenticated()">
+						<sec:authentication property="principal" var="p" />
+						<c:if test="${p.hasAuthority('ADMIN')}">
+							<input class="modButton" type="submit" name="submit" value="수정"/>
+						</c:if>
+					</sec:authorize>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 				</div>
 			</form:form>

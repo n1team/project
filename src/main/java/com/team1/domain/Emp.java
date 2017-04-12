@@ -5,8 +5,9 @@ import com.team1.util.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 @Entity
 public class Emp extends ToString {

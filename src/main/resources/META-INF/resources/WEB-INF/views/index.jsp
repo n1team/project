@@ -24,10 +24,10 @@
   <div class="container">
 <div style="text-align: center;" class="bg">
 	<div style="margin: 0 auto;" >
-		<a href="/dept/list" data-toggle="tooltip" title="팀장 : 김진곤"><img class="img" src="##"></a>
-		<a href="/emp/list" data-toggle="tooltip" title="팀장 : 김진곤"><img class="img" src="##"></a>
-		<a href="/country/page/1" data-toggle="tooltip" title="팀장 : 김진곤"><img class="img" src="##"></a>
-		<a href="/city/page/1" data-toggle="tooltip" title="팀장 : 김진곤"><img class="img" src="##"></a>
+		<a href="/emp/list" data-toggle="tooltip" title="팀장 : 김진곤"><img class="img" src="/img/main/emp_main.png"></a>
+		<a href="/dept/list" data-toggle="tooltip" title="팀장 : 김진곤"><img class="img" src="/img/main/dept_main.png"></a>
+		<a href="/country/list" data-toggle="tooltip" title="팀장 : 김진곤"><img class="img" src="/img/main/country_main.png"></a>
+		<a href="/city/list" data-toggle="tooltip" title="팀장 : 김진곤"><img class="img" src="/img/main/city_main.png"></a>
 		<a href="/note/page/1" data-toggle="tooltip" title="조원 : 박성현"><img class="img" src="/img/main/view1.png"></a>
 		<a href="/cosmatic/page/1" data-toggle="tooltip" title="조원 : 이희수"><img class="img" src="/img/main/cosmetic01.JPG"></a>
 		<a href="/book/page/1" data-toggle="tooltip" title="조원 : 민혜진"><img class="img" src="/img/main/book01.JPG"></a>
