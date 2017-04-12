@@ -1,7 +1,15 @@
 .tr {
 	CURSOR: POINTER; 
 	background-color:#EEEEEE; 
-	
+			
+}
+.hi {
+	display: inline-block;
+	 width: 50px; 
+	 white-space: nowrap; 
+	 overflow: hidden; 
+	 text-overflow: ellipsis;
+
 }
 .tr:HOVER {
 
@@ -48,11 +56,28 @@
 	width: 100%;
 	margin: auto;
 }
-.col-lg-10 {
+.col-sm-10 {
 	margin-top: 10px;
 	
 }
-.col-lg-2 {	
+.pagination > li > a,
+.pagination > li > span {
+
+  padding: 6px 6px;
+  border: 0px solid red;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.col-sm-2 {	
 	padding: 0px;
 	height: 100%
 }

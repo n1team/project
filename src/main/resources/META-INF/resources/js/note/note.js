@@ -16,8 +16,8 @@
 
 		$(document).ready(function() {
 			$('#list').click(function() {
-				$('.col-lg-10').toggleClass('list1');
-				$('.col-lg-2').toggleClass('list2');
+				$('.col-sm-10').toggleClass('list1');
+				$('.col-sm-2').toggleClass('list2');
 			});
 		});
 		$(document).ready(function() {

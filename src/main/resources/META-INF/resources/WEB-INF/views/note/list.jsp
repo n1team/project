@@ -83,7 +83,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-10 list1">
+			<div class="col-sm-10 list1">
 				<c:choose>
 					
 					<c:when test="${!empty no}">
@@ -136,7 +136,7 @@
 
 				
 			</div>
-			<div class="col-lg-2 list2" >
+			<div class="col-sm-2 list2" >
 				<table id="panel" class="table table-striped">
 					<c:forEach var="n" items="${page.notes}">
 						<fmt:formatDate value="${n.noteDate}" pattern="yyyy-MM-dd hh:mm:ss "	var="date" />
@@ -146,7 +146,7 @@
 <%-- 						<tr onclick="location.href='/note/summnote/${n.noteNo}?pageNo=${page.paging.pageNo}'" STYLE="CURSOR: POINTER; background-color:#e6ffe6;"> --%>
 							<tr onclick="location.href='/note/summnote/${n.noteNo}?pageNo=${page.paging.pageNo}'" class="tr" >
 							<td>${n.noteNo}</td>
-							<td>${n.noteTitle}</td>
+							<td class="hi">${n.noteTitle}</td>
 							<td>${n.noteId}</td>
 						</tr>
 					</c:forEach>
