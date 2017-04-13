@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="container">
-<h1>수정 완료</h1>
+<h1>수정되었습니다.</h1>
 <hr>
 <a class="btn btn-primary" href="/memo/1">목록으로</a>
 <a class="btn btn-primary" href="/memo/item/${memo.mno}">게시글보기</a>
