@@ -9,12 +9,13 @@
 <meta charset="UTF-8">
 <title>cosmetic_item.jsp</title>
 <link rel="stylesheet" href="/css/cosmetic/item.css">
+<link rel="stylesheet" href="/css/cosmetic/page.css">
 </head>
 
 <body>
 <h1>Cosmetic Detail info</h1>
 <div class="container">
-<button class="btn btn-default" style="text-align: center;"><a href="/cosmetic/page/${param.pageNo}">뒤로가기</a></button>
+<a href="/cosmetic/page/${param.pageNo}"><button class="btn btn-default" style="text-align: center;">뒤로가기</button></a>
 <table class="table table-hover">
 	<tr>
 		<td>Product - Number</td>

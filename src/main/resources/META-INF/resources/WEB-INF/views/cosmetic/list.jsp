@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>cosmetic_list.jsp</title>
-
+<link rel="stylesheet" href="/css/cosmetic/page.css">
 
 </head>
 <body>

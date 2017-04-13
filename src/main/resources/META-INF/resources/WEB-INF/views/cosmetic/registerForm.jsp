@@ -9,6 +9,7 @@
 <head>
 <title>registerForm.jsp</title>
 <link rel="stylesheet" href="/css/cosmetic/form.css">
+<link rel="stylesheet" href="/css/cosmetic/page.css">
 </head>
 
 <body>
@@ -54,7 +55,8 @@
 <!-- 			<option value="LIP">LIP</option> -->
 <!-- 		</select> -->
 	</div>
-	<button class="btn btn-default" style="text-align: center;"><a href="/cosmetic/page/${param.pageNo}">뒤로가기</a></button>
+	<button type="reset" onclick="location.href='/cosmetic/page/${param.pageNo}'" class="btn btn-default" style="text-align: center;">뒤로가기</button>
+	
 	<input type="submit" class="btn btn-default" value="등록">
 </form:form>
 </div>

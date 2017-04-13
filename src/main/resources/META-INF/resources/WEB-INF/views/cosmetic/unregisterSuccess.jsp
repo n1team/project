@@ -9,6 +9,7 @@
 <head>
 <title>registerForm.jsp</title>
 <link rel="stylesheet" href="/css/cosmetic/item.css">
+<link rel="stylesheet" href="/css/cosmetic/page.css">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
 
 <div class="container" style="text-align: center;">
 <label for="deletenumber" style="margin-top:50px;">DELETE NUMBER : ${productno }</label><br>
-<button class="btn btn-default" style="text-align: center;float: none;"><a href="/cosmetic/page/${param.pageNo}">뒤로가기</a></button>
+<a href="/cosmetic/page/${param.pageNo}"><button class="btn btn-default" style="text-align: center;float: none;">뒤로가기</button></a>
 	
 
 </div>

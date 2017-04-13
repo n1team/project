@@ -8,12 +8,13 @@
 <head>
 <title>insert complete.jsp</title>
 <link rel="stylesheet" href="/css/cosmetic/success.css">
+<link rel="stylesheet" href="/css/cosmetic/page.css">
 </head>
 
 <body>
 <h1>cosmetic modify complete :)</h1>
 <div class="container">
-<button class="btn btn-default" style="text-align: center;"><a href="/cosmetic/page/${param.pageNo}">뒤로가기</a></button>
+<a href="/cosmetic/page/${param.pageNo}"><button class="btn btn-default" style="text-align: center;">뒤로가기</button></a>
 <table class="table table-hover">
 	<tr>
 		<td>Product - Number</td>

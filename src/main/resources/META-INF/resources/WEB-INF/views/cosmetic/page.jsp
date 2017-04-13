@@ -9,6 +9,7 @@
 <title>WELCOME*COSMETIC</title>
 
 <link rel="stylesheet" href="/css/cosmetic/page.css">
+
 	
 </head>
 
@@ -20,12 +21,12 @@
 
 <section class="row">    
 <fieldset class="bg">
-	<button class="btn btn-default"><a href="/cosmetic/category/SKINCARE?pageNo=${page.paging.pageNo}">스킨케어 조회하기</a></button>
-	<button class="btn btn-default"><a href="/cosmetic/category/BASE?pageNo=${page.paging.pageNo}">베이스 조회하기</a></button>
-	<button class="btn btn-default"><a href="/cosmetic/category/EYE?pageNo=${page.paging.pageNo}">아이제품 조회하기</a></button>
-	<button class="btn btn-default"><a href="/cosmetic/category/LIP?pageNo=${page.paging.pageNo}">립제품 조회하기</a></button>
+	<a href="/cosmetic/category/SKINCARE?pageNo=${page.paging.pageNo}"><button class="btn btn-default">스킨케어 조회하기</button></a>
+	<a href="/cosmetic/category/BASE?pageNo=${page.paging.pageNo}"><button class="btn btn-default">베이스 조회하기</button></a>
+	<a href="/cosmetic/category/EYE?pageNo=${page.paging.pageNo}"><button class="btn btn-default">아이제품 조회하기</button></a>
+	<a href="/cosmetic/category/LIP?pageNo=${page.paging.pageNo}"><button class="btn btn-default">립제품 조회하기</button></a>
    </fieldset>
-	<button class="btn btn-default"><a href="/cosmetic/register?pageNo=${page.paging.pageNo}">제품추가하기</a></button>
+	<a href="/cosmetic/register?pageNo=${page.paging.pageNo}"><button class="btn btn-default">제품추가하기</button></a>
 </section>
     
     <article>
