@@ -2,7 +2,6 @@ package com.team1.world.controller;
 
 import com.team1.domain.City;
 import com.team1.domain.Country;
-import com.team1.domain.Dept;
 import com.team1.world.CityService;
 import com.team1.world.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,9 +66,10 @@ public class CityController {
 	public String insertDept(@Valid City city,
 	                         BindingResult errors,
 	                         HttpServletRequest req,
-	                         @RequestBody MultiValueMap<String,String> formData,
-	                         Model m)
+	                         @RequestBody MultiValueMap<String,String> formData)
 	{
+		Country c = countryService.getByCode(formData.getFirst("cntCode"));
+		city.setCountry(c);
 		cityService.insert(city, errors);
 		return String.format("redirect:%s", req.getHeader("referer"));
 	}
@@ -78,14 +78,13 @@ public class CityController {
 	public String updateEmp(@Valid City city,
 	                        BindingResult errors,
 	                        HttpServletRequest req,
-	                        @RequestBody MultiValueMap<String,String> formData,
-	                        Model m)
+	                        @RequestBody MultiValueMap<String,String> formData)
 	{
 		if (formData.getFirst("submit").equals("Delete"))
 		{
 			City c = cityService.getById(city.getId());
 			if (c == null)
-				return "redirect:/emp/list/1";
+				return "redirect:/city/list/1";
 			cityService.delete(c, errors);
 		}
 		else

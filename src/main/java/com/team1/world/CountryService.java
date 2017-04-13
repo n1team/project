@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.BindingResult;
 
 @Service
 public class CountryService {
@@ -28,4 +29,34 @@ public class CountryService {
 		return countryRepository.findOne(code);
 	}
 
+	public void insert(Country country, BindingResult errors)
+	{
+		if (countryRepository.findOne(country.getCode()) != null)
+		{
+			errors.reject("InvalidInsertRequest", "레코드가 이미 존재합니다.");
+			return;
+		}
+		countryRepository.save(country);
+	}
+
+	public void update(Country country, BindingResult errors)
+	{
+		if (countryRepository.findOne(country.getCode()) == null)
+		{
+			errors.reject("InvalidUpdateRequest", "레코드가 존재하지 않습니다.");
+			return;
+		}
+		countryRepository.save(country);
+	}
+
+	public void delete(Country country, BindingResult errors)
+	{
+		country = countryRepository.findOne(country.getCode());
+		if (country == null)
+		{
+			errors.reject("InvalidUpdateRequest", "레코드가 존재하지 않습니다.");
+			return;
+		}
+		countryRepository.delete(country);
+	}
 }

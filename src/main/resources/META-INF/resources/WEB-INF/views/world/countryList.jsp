@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +66,7 @@
 		<c:forEach var="i" items="${data.content}">
 		<tr>
 			<td data-title='국가코드'>${i.code}</td>
-			<td data-title='국가명'><a class="button" data-id="${i.code}">${i.name}</a></td>
+			<td data-title='국가명'><a class="button" data-id="cnt${i.code}">${i.name}</a></td>
 			<td data-title='대륙'>${i.continent}</td>
 			<td data-title='지역'>${i.region}</td>
 		</tr>
@@ -73,44 +74,51 @@
 		</tbody>
 	</table>
 
+	<sec:authorize access="isAuthenticated()">
+		<sec:authentication property="principal" var="isAdmin" />
+		<c:if test="${isAdmin.hasAuthority('ADMIN') || isAdmin.hasAuthority('CNT_ADMIN')}">
+			<div class="text-right"><button class="addButton" data-id="cntNew">추가</button></div>
+		</c:if>
+	</sec:authorize>
+
 	<c:forEach var="i" items="${data.content}">
-		<form method="post" action="/country/update/${i.code}" class='detail' id="${i.code}">
+		<form:form action="/country/update" method="post" modelAttribute="cnt${i.code}" cssClass="detail">
 			<div class='detail-container'>
 				<dl>
 					<dt>국가 코드</dt>
-					<dd><input type="text" name="code" value="${i.code}" disabled/></dd>
+					<dd><form:input path="code" value="${i.code}" readonly="true"/></dd>
 					<dt>나라명</dt>
-					<dd><input type="text" name="name" value="${i.name}"/></dd>
+					<dd><form:input path="name" value="${i.name}"/></dd>
 					<dt>대륙명</dt>
-					<dd><input type="text" name="continent" value="${i.continent}"/></dd>
+					<dd><form:input path="continent" value="${i.continent}"/></dd>
 					<dt>지역</dt>
-					<dd><input type="text" name="region" value="${i.region}"/></dd>
+					<dd><form:input path="region" value="${i.region}"/></dd>
 					<dt>면적</dt>
-					<dd><input type="text" name="surfaceArea" value="${i.surfaceArea}"/></dd>
+					<dd><form:input path="surfaceArea" value="${i.surfaceArea}"/></dd>
 					<dt>indepYear</dt>
-					<dd><input type="text" name="indepYear" value="${i.indepYear}"/></dd>
+					<dd><form:input path="indepYear" value="${i.indepYear}"/></dd>
 					<dt>인구수</dt>
-					<dd><input type="text" name="population" value="${i.population}"/></dd>
+					<dd><form:input path="population" value="${i.population}"/></dd>
 					<dt>lifeExpectancy</dt>
-					<dd><input type="text" name="lifeExpectancy" value="${i.lifeExpectancy}"/></dd>
+					<dd><form:input path="lifeExpectancy" value="${i.lifeExpectancy}"/></dd>
 					<dt>gnp</dt>
-					<dd><input type="text" name="gnp" value="${i.gnp}"/></dd>
+					<dd><form:input path="gnp" value="${i.gnp}"/></dd>
 					<dt>gnpOld</dt>
-					<dd><input type="text" name="gnpOld" value="${i.gnpOld}"/></dd>
+					<dd><form:input path="gnpOld" value="${i.gnpOld}"/></dd>
 					<dt>localName</dt>
-					<dd><input type="text" name="localName" value="${i.localName}"/></dd>
+					<dd><form:input path="localName" value="${i.localName}"/></dd>
 					<dt>governmentForm</dt>
-					<dd><input type="text" name="governmentForm" value="${i.governmentForm}"/></dd>
+					<dd><form:input path="governmentForm" value="${i.governmentForm}"/></dd>
 					<dt>headOfState</dt>
-					<dd><input type="text" name="headOfState" value="${i.headOfState}"/></dd>
+					<dd><form:input path="headOfState" value="${i.headOfState}"/></dd>
 					<dt>capital</dt>
-					<dd><input type="text" name="capital" value="${i.capital}"/></dd>
+					<dd><form:input path="capital" value="${i.capital}"/></dd>
 					<dt>code2</dt>
-					<dd><input type="text" name="code2" value="${i.code2}"/></dd>
+					<dd><form:input path="code2" value="${i.code2}"/></dd>
 				</dl>
 			</div>
 			<div class='detail-nav'>
-				<button class='closeButton' data-id="${i.code}">Close</button>
+				<button class='closeButton' data-id="cnt${i.code}">Close</button>
 				<sec:authorize access="isAuthenticated()">
 					<sec:authentication property="principal" var="p" />
 					<c:if test="${p.hasAuthority('ADMIN') || p.hasAuthority('CNT_ADMIN')}">
@@ -120,8 +128,51 @@
 				</sec:authorize>
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 			</div>
-		</form>
+		</form:form>
 	</c:forEach>
+
+	<form:form action="/country/insert" method="post" modelAttribute="cntNew" cssClass="detail">
+		<form:errors/>
+		<div class='detail-container'>
+			<dl>
+				<dt>국가 코드</dt>
+				<dd><form:input path="code"/></dd>
+				<dt>나라명</dt>
+				<dd><form:input path="name"/></dd>
+				<dt>대륙명</dt>
+				<dd><form:input path="continent"/></dd>
+				<dt>지역</dt>
+				<dd><form:input path="region"/></dd>
+				<dt>면적</dt>
+				<dd><form:input path="surfaceArea"/></dd>
+				<dt>indepYear</dt>
+				<dd><form:input path="indepYear"/></dd>
+				<dt>인구수</dt>
+				<dd><form:input path="population"/></dd>
+				<dt>lifeExpectancy</dt>
+				<dd><form:input path="lifeExpectancy"/></dd>
+				<dt>gnp</dt>
+				<dd><form:input path="gnp"/></dd>
+				<dt>gnpOld</dt>
+				<dd><form:input path="gnpOld"/></dd>
+				<dt>localName</dt>
+				<dd><form:input path="localName"/></dd>
+				<dt>governmentForm</dt>
+				<dd><form:input path="governmentForm"/></dd>
+				<dt>headOfState</dt>
+				<dd><form:input path="headOfState"/></dd>
+				<dt>capital</dt>
+				<dd><form:input path="capital"/></dd>
+				<dt>code2</dt>
+				<dd><form:input path="code2"/></dd>
+			</dl>
+		</div>
+		<div class='detail-nav'>
+			<button class='closeButton' data-id="cntNew">Close</button>
+			<input class="modButton" type="submit" name="submit" value="추가"/>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		</div>
+	</form:form>
 
 </div>
 </div>
