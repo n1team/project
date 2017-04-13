@@ -38,8 +38,9 @@
 					<c:choose>
 				
 					<c:when test="${!empty tt}">
-						<li><a href="/note/summnote/${noteForm.noteNo}?pageNo=${page.paging.pageNo}" id="modify" class="btn btn-default btn-sm font">수정 &nbsp; <span class="glyphicon glyphicon-edit"></span>	</a></li>
+						<li><a href="#" id="modify" class="btn btn-default btn-sm font">수정 &nbsp; <span class="glyphicon glyphicon-edit"></span>	</a></li>
 						<li><a href="/note/summnote/${noteForm.noteNo}?pageNo=${page.paging.pageNo}" class="btn btn-default btn-sm font">취소&nbsp;<span class="	glyphicon glyphicon-share"></span>	</a></li>
+						
 					</c:when>
 						
 						<c:when test="${!empty no}">
@@ -113,6 +114,7 @@
 								<form:errors path="noteContent" />
 								<form:hidden path="noteNo" />
 								<input style="visibility: hidden;" id="mo2" type="submit" value="수정">
+<!-- 								<input id="mo2" type="submit" value="수정"> -->
 						</form:form>
 					</c:when>
 					

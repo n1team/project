@@ -34,7 +34,7 @@ public class NoteModifyController {
 
 	@GetMapping("/modify/{noteNo}")
 	public String modifyForm(@PathVariable int noteNo,@Valid NoteForm noteForm,Integer pageNo,Model model,String cc) {
-		System.err.println("NoteForm="+noteForm);
+		log.info("NoteFormmodify="+noteForm);
 		Map<String, Object> page = noteSearchService.getPage(pageNo);
 		Note note = noteSearchService.getListAllNo(noteNo);
 		model.addAttribute("page", page);
@@ -56,16 +56,19 @@ public class NoteModifyController {
 			System.out.println(errors);
 			return "note/list";
 		}
+		log.info("++++++2222222222222++++++++++++++"+pageNo);
 		return "redirect:/note/modifySuccess/"+noteForm.getNoteNo()+"?pageNo="+pageNo;
 	}
 	
 	@GetMapping("/modifySuccess/{noteNo}")
 	public String modifySuccess(@PathVariable int noteNo,Model model,Integer pageNo) {
+		log.info("++++++"+noteNo+"++++++++++++++"+pageNo);
 		Map<String, Object> page = noteSearchService.getPage(pageNo);
 		NoteForm form = new NoteForm();
 		model.addAttribute("noteForm", form);
 		model.addAttribute("page", page);
-		return "note/list";
+		return	"redirect:/note/summnote/"+noteNo+"?pageNo="+pageNo+"&cc=a";
+		
 	}
 
 	
