@@ -1,6 +1,7 @@
 package com.team1.world;
 
 import com.team1.domain.City;
+import com.team1.domain.Country;
 import com.team1.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,6 +20,11 @@ public class CityService {
 		this.cityRepository = cityRepository;
 	}
 
+	public long getTotalCount()
+	{
+		return cityRepository.count();
+	}
+
 	public Page<City> getCities(PageRequest page)
 	{
 		return cityRepository.findAll(page);
@@ -27,6 +33,11 @@ public class CityService {
 	public City getById(int id)
 	{
 		return cityRepository.findOne(id);
+	}
+
+	public Page<City> getCitiesByCountry(Country c, PageRequest page)
+	{
+		return cityRepository.findCitiesByCountryOrderByName(c, page);
 	}
 
 	public void insert(City city, BindingResult errors)

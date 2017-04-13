@@ -249,8 +249,12 @@ dd input[type=text] {
 		padding: 10px;
 	}
 
-	tr:nth-child(2n+2) td {
+	tr:nth-child(2n+2) {
 		background-color: #242e39;
+	}
+
+	tbody tr:hover, tbody tr:focus {
+		background-color: #1e2028;
 	}
 
 	tfoot th {

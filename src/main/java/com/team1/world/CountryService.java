@@ -19,6 +19,11 @@ public class CountryService {
 		this.countryRepository = countryRepository;
 	}
 
+	public long getTotalCount()
+	{
+		return 0;
+	}
+
 	public Page<Country> getCountries(PageRequest page)
 	{
 		return countryRepository.findAll(page);
@@ -27,6 +32,11 @@ public class CountryService {
 	public Country getByCode(String code)
 	{
 		return countryRepository.findOne(code);
+	}
+
+	public Country getByName(String name)
+	{
+		return countryRepository.findCountryByNameIs(name);
 	}
 
 	public void insert(Country country, BindingResult errors)

@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Country list</title>
-<link rel="stylesheet" href="/css/world/list.css">
+<link rel="stylesheet" href="/css/nub/tables.css">
 </head>
 <body>
 <div class="contentBox">
@@ -64,9 +64,9 @@
 
 		<tbody>
 		<c:forEach var="i" items="${data.content}">
-		<tr>
+		<tr class="record" data-id="cnt${i.code}">
 			<td data-title='국가코드'>${i.code}</td>
-			<td data-title='국가명'><a class="button" data-id="cnt${i.code}">${i.name}</a></td>
+			<td data-title='국가명'>${i.name}</td>
 			<td data-title='대륙'>${i.continent}</td>
 			<td data-title='지역'>${i.region}</td>
 		</tr>

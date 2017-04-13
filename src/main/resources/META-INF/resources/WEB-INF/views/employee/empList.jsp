@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Employee list</title>
-<link rel="stylesheet" href="/css/world/list.css">
+<link rel="stylesheet" href="/css/nub/tables.css">
 </head>
 <body>
 
@@ -66,8 +66,8 @@
 
 		<tbody>
 			<c:forEach var="i" items="${data.content}">
-			<tr>
-				<td data-title='이름'><a class="button" data-id="emp${i.empno}">${i.ename}</a></td>
+			<tr class="record" data-id="emp${i.empno}">
+				<td data-title='이름'>${i.ename}</td>
 				<td data-title='부서'>${i.dept.dname}</td>
 				<td data-title='업무'>${i.job}</td>
 				<td data-title='고용일'>${i.getSimpleDate()}</td>

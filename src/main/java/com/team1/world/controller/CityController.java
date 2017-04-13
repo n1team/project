@@ -38,29 +38,54 @@ public class CityController {
 	@RequestMapping("/")
 	public String rootPage()
 	{
-		return "redirect:/city/list/1";
+		return "redirect:/city/list";
 	}
 
 	@RequestMapping("/list")
-	public String listPage()
+	public String listPage(Model m, HttpServletRequest req)
 	{
-		return "redirect:/city/list/1";
-	}
+		String listParam = req.getParameter("list");
+		int pageNumber = listParam != null && listParam.matches("^\\d{1,7}$") ? Integer.parseInt(listParam) : 1;
+		long lastPage = cityService.getTotalCount() / ITEMS_PER_PAGE + 1;
+		pageNumber = (int)Math.min(Math.max(1, pageNumber), lastPage);
 
-	@RequestMapping("/list/{param}")
-	public String listPage(@PathVariable String param, Model m)
-	{
-		if (!param.matches("^\\d{1,5}$"))
-			return "redirect:/city/list/1";
-
-		int pageNumber = Integer.parseInt(param);
-		pageNumber = Math.max(0, pageNumber - 1);
-		Page<City> page = cityService.getCities(new PageRequest(pageNumber, ITEMS_PER_PAGE));
+		Page<City> page;
+		String cntName = req.getParameter("country");
+		if (cntName != null)
+		{
+			Country country = countryService.getByName(cntName);
+			page = cityService.getCitiesByCountry(country, new PageRequest(pageNumber, ITEMS_PER_PAGE));
+		}
+		else
+			page = cityService.getCities(new PageRequest(pageNumber, ITEMS_PER_PAGE));
 		m.addAttribute("data", page);
 		page.getContent().forEach(d -> m.addAttribute("city" + d.getId(), new City()));
 		m.addAttribute("cityNew", new City());
 		return "/world/cityList";
 	}
+
+//	@RequestMapping("/list/{param}")
+//	public String listPage(@PathVariable String param, Model m, HttpServletRequest req)
+//	{
+//		if (!param.matches("^\\d{1,5}$"))
+//			return "redirect:/city/list/1";
+//
+//		int pageNumber = Integer.parseInt(param);
+//		pageNumber = Math.max(0, pageNumber - 1);
+//		Page<City> page;
+//		String cntName = req.getParameter("country");
+//		if (cntName != null)
+//		{
+//			Country country = countryService.getByName(cntName);
+//			page = cityService.getCitiesByCountry(country, new PageRequest(pageNumber, ITEMS_PER_PAGE));
+//		}
+//		else
+//			page = cityService.getCities(new PageRequest(pageNumber, ITEMS_PER_PAGE));
+//		m.addAttribute("data", page);
+//		page.getContent().forEach(d -> m.addAttribute("city" + d.getId(), new City()));
+//		m.addAttribute("cityNew", new City());
+//		return "/world/cityList";
+//	}
 
 	@PostMapping("/insert")
 	public String insertDept(@Valid City city,

@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Department list</title>
-<link rel="stylesheet" href="/css/world/list.css">
+<link rel="stylesheet" href="/css/nub/tables.css">
 </head>
 <body>
 
@@ -64,9 +64,9 @@
 
 		<tbody>
 		<c:forEach var="i" items="${data.content}">
-		<tr>
+		<tr class="record" data-id="dept${i.deptno}">
 			<td data-title='부서번호'>${i.deptno}</td>
-			<td data-title='부서명'><a class="button" data-id="dept${i.deptno}">${i.dname}</a></td>
+			<td data-title='부서명'>${i.dname}</td>
 			<td data-title='위치'>${i.loc}</td>
 		</tr>
 		</c:forEach>

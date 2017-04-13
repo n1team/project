@@ -10,7 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>사용자 리스트</title>
-<link rel="stylesheet" href="/css/world/list.css">
+<link rel="stylesheet" href="/css/nub/tables.css">
 </head>
 <body>
 

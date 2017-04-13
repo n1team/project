@@ -52,7 +52,7 @@ public class CountryController {
 			return "redirect:/country/list/1";
 
 		m.addAttribute("data", c);
-		return "/world/countryItem";
+		return "/country/list";
 	}
 
 	@RequestMapping("/list/{param}")
@@ -65,6 +65,7 @@ public class CountryController {
 		pageNumber = Math.max(0, pageNumber - 1);
 		Page<Country> page = countryService.getCountries(new PageRequest(pageNumber, ITEMS_PER_PAGE));
 		m.addAttribute("data", page);
+		page.getContent().forEach(i -> m.addAttribute(String.format("cnt%s", i.getCode()), new Country()));
 		m.addAttribute("cntNew", new Country());
 		return "/world/countryList";
 	}

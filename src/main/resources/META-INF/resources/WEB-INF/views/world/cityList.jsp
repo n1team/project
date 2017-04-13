@@ -10,12 +10,13 @@
 <head>
 <meta charset="UTF-8">
 <title>City list</title>
-<link rel="stylesheet" href="/css/world/list.css">
+<link rel="stylesheet" href="/css/nub/tables.css">
 </head>
 <body>
 <div class="contentBox">
 <div class="innerCB">
 	<h1 class="headline">City list</h1>
+
 	<table>
 		<thead>
 			<tr>
@@ -63,8 +64,8 @@
 		</tfoot>
 		<tbody>
 			<c:forEach var="i" items="${data.content}">
-			<tr>
-				<td data-tile="도시명"><a class="button" data-id="city${i.id}">${i.name}</a></td>
+			<tr class="record" data-id="city${i.id}">
+				<td data-tile="도시명">${i.name}</td>
 				<td data-tile="국가명">${i.country.name}</td>
 				<td data-tile="지역">${i.district}</td>
 				<td data-tile="인구수">${i.population}</td>
