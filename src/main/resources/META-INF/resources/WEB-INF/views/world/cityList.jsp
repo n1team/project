@@ -49,14 +49,14 @@
 							</c:otherwise>
 						</c:choose>
 
-						<a href="/city/list/">처음페이지</a> |
+						<a href="/city/list">처음페이지</a> |
 						<c:forEach begin="${latest}"
 								   end="${last}"
 								   step="1"
 								   var="i">
-							<a href="/city/list/${i}">${i}</a> |
+							<a href="/city/list?list=${i}">${i}</a> |
 						</c:forEach>
-						<a href="/city/list/${data.totalPages}">마지막페이지</a>
+						<a href="/city/list?list=${data.totalPages}">마지막페이지</a>
 					</div>
 				</div>
 			</th>
