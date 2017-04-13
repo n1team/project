@@ -116,15 +116,15 @@
 		<div class='detail-container'>
 			<dl>
 				<dt>Number</dt>
-				<dd><form:input path="id" value="${i.id}"/></dd>
+				<dd><form:input path="id"/></dd>
 				<dt>도시명</dt>
-				<dd><form:input path="name" value="${i.name}"/></dd>
+				<dd><form:input path="name"/></dd>
 				<dt>지역</dt>
-				<dd><form:input path="district" value="${i.district}"/></dd>
+				<dd><form:input path="district"/></dd>
 				<dt>인구수</dt>
-				<dd><form:input path="population" value="${i.population}"/></dd>
+				<dd><form:input path="population"/></dd>
 				<dt>국가 코드</dt>
-				<dd><input type="text" name="cntCode" value="${i.country.code}"/></dd>
+				<dd><input type="text" name="cntCode"/></dd>
 			</dl>
 		</div>
 		<div class='detail-nav'>
